@@ -1,0 +1,124 @@
+#account > hr {
+    opacity: 0;
+    margin: 50px 0px;
+    transition-duration: 2s;
+}
+
+#register {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 50vh;
+    border-radius: 20px;
+    padding: 60px 0;
+    color: white;
+    align-items: center;
+    transition-duration: 2s;
+    text-align: center;
+    opacity: 0;
+}
+
+#welcome > p:first-of-type {
+    font-size: 40px;
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+
+#welcome > p:nth-of-type(2) {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+#welcome > p:last-of-type {
+    padding-bottom: 20px;
+}
+
+#register-form > input[type="text"], input[type="password"], input[type="tel"], input[type="email"] {
+    background-color: transparent;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    color: white;
+}
+
+#register-form {
+    font-size: 14px;
+    color: white;
+}
+
+#register-form > input:nth-of-type(5) {
+    margin-bottom: 20px;
+}
+
+#register-form > input[type="checkbox"] {
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+#register-form > input:nth-of-type(4) {
+    width: 242px;
+}
+
+#register-form > button:first-of-type {
+    width: 54px;
+    height: 44px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#register-form > button:first-of-type:hover {
+    cursor: pointer;
+    background-color: rgba(0, 255, 200, 0.3);
+}
+
+#register-form > button:last-of-type {
+    width: 16vw;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+#register-form > button:last-of-type:hover {
+    cursor: pointer;
+    background-color: rgba(0, 255, 200, 0.3);
+}
+
+/* 토글 */
+
+#reg-toggle {
+    align-items: center;
+    display: none;
+}
+
+#reg-toggle + #account {
+    background-image: linear-gradient(0deg, rgba(0, 208, 163, 0.5), rgba(0, 0, 0, 0.5) 25%);
+    transition-duration: 2s;
+    filter: hue-rotate(0deg)
+}
+
+#reg-toggle:checked + #account {
+    width: 50vw;
+    filter: hue-rotate(90deg)
+}
+
+#reg-toggle:checked + #account > #register {
+    transition-delay: 1s;
+    opacity: 1;
+}
+
+#reg-toggle:checked + #account > hr {
+    opacity: 1;
+}

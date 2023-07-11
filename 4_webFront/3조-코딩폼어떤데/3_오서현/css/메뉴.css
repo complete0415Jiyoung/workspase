@@ -1,0 +1,511 @@
+*{box-sizing : border-box;}
+
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Noto+Sans+KR:wght@900&display=swap');
+
+
+.container {
+    width: 100%;
+    height: 3000px;
+    margin: 0;
+}
+
+.header {
+    width: 80%;
+    height: 123px;
+    display: flex;
+  
+}
+
+.logo {
+    width: 48%;
+    height: 123px;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo1 {
+    width: 50%;
+    height: 123px;
+    display: flex;
+    align-items: center
+} 
+
+.logo2 {
+    width: 50%;
+    height: 123px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.header-up {
+    width: 95%;
+    height: 61px;
+}
+
+.header-down {
+    width: 95%;
+    height: 60px;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ margin: 55px 9px 12px 78px;
+ 
+}
+.header-down a {
+    text-decoration: none;
+}
+
+
+.float-right {
+    float: right;
+}
+
+.header-up p {
+    color: gray;
+    float: right;
+}
+
+.content-1 {
+    width: 100%;
+    height: 496px;
+}
+
+.content-2{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    text-align: center;
+    font-size: 35px;
+    align-items: center;
+    justify-content: center;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #1a237e;
+}
+
+
+.content-3 {
+    width: 80%;
+    height: 1700px;
+    margin :auto;
+}
+
+
+.content-4 {
+    width: 100%;
+    height: 1000px;
+}
+
+
+.content-5 {
+    width: 100%;
+    height: 1000px;
+}
+
+.menu-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1150px;
+    margin :auto;
+}
+
+.menu1-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-1 p {
+   position: absolute;
+   top: 150;
+   bottom: -350px;
+   font-size: 20px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.menu1-2 {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu1-3 {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.allmenu {
+    margin: auto;
+    width: 1150px;
+    margin-top: 100px;
+}
+
+
+.menu-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1150px;
+    height: 400px;
+    margin-top: 100px;
+    border: 1px solid #ddd;
+    margin :auto;
+}
+
+.menu-2 p {
+    position: absolute;
+    top: 150;
+    bottom: -800px;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+ }
+ 
+ .menu2-1:hover {
+    border: 1px solid #243c82;
+}
+.menu2-2:hover {
+    border: 1px solid #243c82;
+}
+.menu2-3:hover {
+    border: 1px solid #243c82;
+}
+.menu2-4:hover {
+    border: 1px solid #243c82;
+}
+
+
+.menu2-1 {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+.menu2-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+.menu2-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+
+.menu2-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+.menu-3 {
+        display: flex;
+        width: 1150px;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        margin :auto;
+}
+
+.menu-3 p {
+    position: absolute;
+    top: 150;
+    bottom: -1200px;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+ }
+ 
+
+.menu3-1:hover {
+    border: 1px solid #243c82;
+}
+.menu3-2:hover {
+    border: 1px solid #243c82;
+}
+.menu3-3:hover {
+    border: 1px solid #243c82;
+}
+.menu3-4:hover {
+    border: 1px solid #243c82;
+}
+
+
+.menu3-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+.menu3-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+.menu3-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+.menu3-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+.menu-4 {
+    display: flex;
+    width: 1150px;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin :auto;
+}
+
+.menu-4 p {
+    position: absolute;
+    top: 150;
+    bottom: -1600px;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+ }
+ 
+
+.menu4-1:hover {
+    border: 1px solid #243c82;
+}
+.menu4-2:hover {
+    border: 1px solid #243c82;
+}
+.menu4-3:hover {
+    border: 1px solid #243c82;
+}
+.menu4-4:hover {
+    border: 1px solid #243c82;
+}
+
+
+.menu4-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+
+.menu4-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+
+
+.menu4-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+
+
+.menu4-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#ddd;
+    height: 400px;
+}
+
+
+.footer {
+    width: 100%;
+    height: 0px;
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #FEE600;
+}
+
+.theborn {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.menu {
+    display: flex;
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    margin-top: -90px;
+    
+}
+
+.menu p {
+    display: flex;
+    border: 1px solid grey;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: grey;
+}
+
+.menu p:hover {
+    background-color:#FEE600;
+
+}
+
+#menubtn {
+    text-decoration: none;
+    color: black;
+}
+
+.page-top {
+    position:fixed;
+    left: 1600px;
+    top: 800px;
+	width: 50px;
+	height: 50px;
+	background: #FEE600;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5%;
+}
+
+.page-top a {
+    text-decoration: none;
+    position: relative;
+    top: 12px;
+    color: black;
+}
+
+
+.best1 {
+    background-color: #243c82;
+    border-radius: 100%;
+    border: 1px #243c82;
+    color: #FEE600;
+    height: 70px;
+    width: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -70px;
+    left: -50px;
+}
+
+.best1 p {
+    position: relative;
+    top: 0px;
+}
+
+.best2 {
+    background-color: #243c82;
+    border-radius: 100%;
+    border: 1px #243c82;
+    color: #FEE600;
+    height: 70px;
+    width: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -70px;
+    left: -50px;
+}
+
+.best2 p {
+    position: relative;
+    top: 0px;
+}
+
+.best3 {
+    background-color: #243c82;
+    border-radius: 100%;
+    border: 1px #243c82;
+    color: #FEE600;
+    height: 70px;
+    width: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -70px;
+    left: -50px;
+}
+
+.best3 p {
+    position: relative;
+    top: 0px;
+}
+
+
+
+
+
+
+
+
+

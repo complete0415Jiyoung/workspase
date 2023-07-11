@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nunito:wght@200&display=swap');
+
+
+*{box-sizing: border-box;}
+/* div{ border: 1px solid black} */
+
+.web{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+.banner{
+
+    height: 100px;
+
+    font-size: 40px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: end;
+
+    margin-bottom: 30px;
+
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+
+.signup0{
+    width: 600px;
+    height: 800px; 
+
+    border: 1px solid rgb(116, 116, 116);
+    padding: 30px;
+    margin: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.signup1{
+    width: 500px;
+    /* height: 1000px; */
+
+  
+    padding: 30px;
+    margin: 10px;
+
+}
+.title{
+    width: 500px;
+    height: 30px;
+
+    font-size: 22px;
+    font-weight: bolder;
+
+    margin: 8px;
+}
+
+.check1{
+
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.check1-1{
+    height: 40px ;
+    font-size: 17px;
+    font-weight:500;
+
+    margin: 5px;
+
+}
+.check1-2{
+    font-size: 14px;
+    color:  rgb(116, 116, 116);
+
+
+    align-items: center;
+
+}
+
+.check2{
+    height: 70px;
+
+}
+
+.button1{
+    width: 430px;
+    height: 70px;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+    background-color: rgb(255, 236, 67);
+    
+    border-style: none;
+}
+
+/* .check1-1>#checked{
+    border-color: black;
+} */
+
+input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid #999;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  input[type="checkbox"]:checked {
+    content:'✔';
+    background: rgb(255, 236, 67);
+    border: none;
+  }
+
+ 
+
+  .footer>div{
+    display: flex;
+    justify-content: center;
+
+    font-size: 13px;
+    color: black;
+}
+.footer>div a{
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    margin:5px
+}
+
+.footer p{
+    display: flex;
+    justify-content: center;
+
+    font-size: 13px;
+}
+.footer>div i{
+    margin: 5px;
+}

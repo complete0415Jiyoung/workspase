@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <!-- 반응형 웹을 만들기 위한 설정(기계의 넓이를 인식) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_표 관련 태그</title>
+</head>
+<body>
+    <h1>04_표관련 태그</h1>
+
+
+    <!-- HTML문서의 스타일 (크기, 색상, 모양 등)을 지정하는 태그 ==CSS -->
+    <style>
+       .tb3{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        .tb3 th, td{
+            border: 1px solid black;
+        }
+
+        .tb3 thead{
+            background-color: yellowgreen;
+        }
+
+        .tb3 tbody{
+            background-color: yellow;
+        }
+
+        .tb3 tfoot{
+            background-color: orange;
+            color : white;
+        } 
+
+    </style>
+
+    <pre>
+        <h3>table태그</h3>
+            -웹 문서에서 자료정리를 위해 주로 사용하는 태그
+            -행과 열로 이루어져있으며, 행과 열이 교차하는 지점을 셀(cell)이라고함
+
+            -table 태그는 테이블을 나타내는 행과 열이 작성될 수 있는 영역을 지정함
+
+    </pre>
+
+    <pre>
+        <h3>tr태그</h3>
+        -Table Row 의 약자로 한행을 나타내는 태그 
+    </pre>
+
+
+    <pre>
+        <h3>td태그</h3>
+        -Table Data 의 약자로 한행의 컬럼(==셀)을 나타내는 태그 
+    </pre>
+
+    <pre>
+        <h3>th태그</h3>
+        -table Header의 약자로 컬럼명을 표시하는 용도의 태그가
+        -기본성질을 td태그와 같으나
+         추가적으로 붉은 글시와 가운데 정렬이 이루어짐
+    </pre>
+
+    <pre>
+        <h3> caption태그 </h3>
+        -테이블의 제목이나 설명을 추가하는 테그 
+    </pre>
+
+    <!-- border ="1" : table ,td태그에 1px짜리 검정색 태두리 추가 -->
+    <table border="1">
+        
+        <caption>
+            <strong style="color:deeppink">웹브라우저의 종류</strong>
+        </caption>
+
+        <tr><!-- 1행 -->
+            <th>브라우저</th><!-- 1행 1열 -->
+            <th>제조사</th><!-- 1행2열 -->
+            <th>제조사 홈페이지</th><!-- 1행3열 -->
+        </tr>
+
+        <tr><!-- 2행 -->
+            <td>크롬</td><!-- 2행1열 -->
+            <td>google</td><!-- 2행2열 -->
+            <td>http://www.google.com</td><!-- 2행3열 -->
+        </tr>  
+
+        <tr><!-- 3행 -->
+            <td>엣지</td><!-- 3행1열 -->
+            <td>MS</td><!-- 3행2열 -->
+            <td>https://www.microsoft.com</td><!-- 3행3열 -->
+        </tr> 
+
+        <tr><!-- 4행 -->
+            <td>파이어폭스</td><!-- 4행1열 -->
+            <td>Mozilla</td><!-- 4행2열 -->
+            <td>https://www.mozilla.com</td><!-- 4행3열 -->
+        </tr>
+
+
+
+    </table>
+
+    <hr>
+
+    <h2>행병합(rowspan) , 열 병합(colspan)</h2>
+
+    <pre>
+        td또는 th태그에 작성하는 속성
+
+        rowspan: 행 (상하)병합
+        colspan: 열 (좌우)병합
+
+    </pre>
+
+    <pre>
+        <h3>회원정보</h3>
+        <!-- wisth(폭/너비), height(높이) -->
+        <table border="1">
+            <tr><!-- 1행 -->
+                <th width="70px">이름</th>
+                <td width="210px"> </td>
+                <th width="140px" height="140px" rowspan="2"> 사진 </th>
+            </tr>
+
+            <tr><!-- 2행 -->
+                <th>연락처</th>
+                <td></td>
+
+            </tr>
+            
+            <tr><!-- 3행 -->
+                <th height="35px">주소</th>
+                <td colspan="2" height="35px" ></td>
+               
+            </tr>
+            
+            <tr><!-- 4행 -->
+                <th height="140px">자기소개</th>
+                <td colspan="2"></td>
+                
+            </tr>
+
+
+
+        </table>
+
+        <h2>테이블 구조설정 태그</h2>
+        <pre>
+
+            thead :테이블의 상단 부분 영역. (컬럼명)
+            tbody :테이블의 중간 부분 영역. (실제 값, 내용)
+            tfoot :테이블의 하단 부분 영역. (합계)
+
+        </pre>
+
+        <table class="tb3">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>홍길동</td>
+                    <td>20</td>
+                    <td>서울시 구로구</td>
+                </tr>
+                <tr>
+                    <td>김지석</td>
+                    <td>30</td>
+                    <td>서울시 금천구</td>
+                </tr>
+                <tr>
+                    <td>박영희</td>
+                    <td>25</td>
+                    <td>경기도 부천</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                
+                <tr>
+                    <th colspan="2">총인원</th>
+                    <th>3명</th>
+                </tr>
+            </tfoot>
+
+
+        </table>
+
+    </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

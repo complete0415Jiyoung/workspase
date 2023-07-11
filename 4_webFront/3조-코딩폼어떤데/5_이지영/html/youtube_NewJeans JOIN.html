@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 설정2</title>
+    <link rel="stylesheet" href="../css/youtube_New Jeans setting2.css">
+    <script src="https://kit.fontawesome.com/9e44afcd4a.js" crossorigin="anonymous"></script>
+    <style>
+        #fieldset{
+            width: 300px;
+            position: absolute;
+
+            /* 사방으로 요소 당김 */
+            top:0; 
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+
+        }
+        .btn-area{text-align: right;}
+        td{padding: 5px;}
+        .confirm{color: green;}
+        .error{color:red;}
+       
+
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <button type="submit" id="bar-btn" class="fa-solid fa-bars"></button>
+                <a href="../html/youtube_NewJeans Hom.html">
+                    <img src="../NewJeans/1265351_20200122175836_084_0001.jpg" id="home-logo">
+                </a>
+            </div>
+            <div>
+                <div class="search-area">
+                    <!-- form 내부 input 값을 서버 또는 페이지로 전달 -->
+                    <form action="#" name="search_form">
+                        <!-- fieldset :form 내부에서 input을 종류별로 묶는 용도로 많이 사용 -->
+                        <fieldset>
+
+                            <input type="search" id="query" name="query"
+                                placeholder="검색" autocomplete="off"> 
+                            <span>|</span>
+                            <!-- 검색 버튼 -->
+                            <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            
+                        </fieldset>
+                    </form>    
+                </div>
+                <button type="submit" id="vo-btn" class="fa-solid fa-microphone"></button>
+            </div>
+            <div>
+                <div class="btns">
+
+                    <button type="submit" id="video-btn" class="fa-solid fa-video"></button>
+                    <button type="submit" id="bell-btn" class="fa-regular fa-bell"></button>
+                    <div class="mem">사용자</div>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="side">
+               <div>
+                    <div>
+                        설정
+                    </div>
+                   <a href="../html/youtube_NewJeans setting.html" class="side-setting">
+                       <span>계정</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>알림</span>
+                   </a>
+                   <a href="#" class="side-setting" style="background-color: #0e0d0d2f;">
+                       <span>재생 및 실적</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>오프라인 저장 동영상</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>공개 범위 설정</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>연결된 앱</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>구매 항목 및 멤버십</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>청구 및 결제</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>고급설정</span>
+                   </a>
+
+               </div>
+            </div>
+
+            <div class="main">
+                <form action="실습문제2_회원가입 완료.html" method="get" onsubmit="return validate()">
+                    <fieldset>
+                        
+                        <legend>회원 가입 양식</legend>
+                        <table>
+                            <tr>
+                                <td>아이디</td>
+                                <td>
+                                    <input type="text" id="inputId">
+                                </td>
+                                <td>
+                                    <button type="button">중복확인</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>비밀번호</td>
+                                <td>
+                                    <input type="password" id="inputPw">
+                                </td>
+                                <td>
+                                    <span id="pwMessage"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>비밀번호확인</td>
+                                <td>
+                                    <input type="password" id="inputPwConfirm">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>이름</td>
+                                <td>
+                                    <input type="text" id="inputName">
+                                </td>
+                                <td>
+                                    <span id="nameMessage"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>성별</td>
+                                <td>
+                                    <label> 남 <input type="radio" name="gender" value="m"></label> 
+                                    <label> 여 <input type="radio" name="gender" value="f"></label> 
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>전화번호</td>
+                                <td>
+                                    <input type="text" id="inputTel">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>이메일</td>
+                                <td>
+                                    <input type="text" id="inputEmail">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="btn-area">
+                                    <button type="reset">초기화</button>
+                                    <button>회원가입</button>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+            
+                </form>
+            
+                <script src="../../../3_javascript/js/실습문제2_회원가입양식 답안.js"></script>
+                
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

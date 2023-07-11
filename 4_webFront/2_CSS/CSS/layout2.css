@@ -1,0 +1,149 @@
+.box{
+    width:100px;
+    height: 100px;
+    background-color: lightblue
+}
+
+/* content 영역 */
+.content{
+    width: 150px;
+    height: 150px;
+
+    /* width/hight 속성은 
+    기본적으로 content 영역의 크기를 지정하는 속성 
+    */
+}
+
+/* border영역 */
+.border{
+    border: 10px solid red;
+    /* 10px 실선 빨간 테두리 */
+}
+
+/* padding 영역 */
+.padding{
+    /* 내용과 테두리 사이 간격을 상하좌우 30px씩 벌림 */
+    padding: 30px;
+}
+
+/* margin 영역 */
+.margin{
+    margin: 50px;
+    /* 타 요소와의 간격을 상하좌우 50px씩 벌림 */
+}
+#m1{
+    /* 서로 다른 요소의 margine이 겹칠 경우 
+    더 큰 margine의 값에 따른다 */
+    margin: 100px;
+}
+
+/* --------------------------------------------------------------- */
+/* 방향성 */
+.padding-test{
+    /* padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px; */
+
+    /* padding 속성 :
+        작성법에 따라서 padding 특정 방향의 크기 지정할 수 있음
+    */
+
+    /* 값 1개 : 상하좌우*/
+    /* padding: 30px; */
+
+    /* 값 2개 : 상하, 좌우 */
+    /* padding: 50px 100px; */
+
+    /* 값 3개 : 상, 좌우, 하 (위->아래 차례대로) */
+    /* padding: 10px 50px 100px; */
+    
+    /* 값 4개 : 상, 우, 하, 좌 (상 기준 시계반향으로 설정) */
+    padding: 10px 20px 30px 40px;
+}
+.margin-test{
+    /* margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 200px; */
+
+    /* margin속성은 padding 과 속성 동일 */
+    margin: 10px 20px 30px 40px;
+}
+/* border : 속성이 조금 다름 */
+.border-test{
+    /* border: 상하좌우 속성을 별도로 지정할 수 없음 */
+   
+    /* border: 1px 2px 3px 4px solid red; (오류!)*/
+    /* border:4px solid red; */
+
+    /* 스타일 */
+    /* 너비 | 스타일 */
+    /* 스타일 | 색 */
+    /* 너비 | 스타일 | 색 */
+
+    /* 네 방향을 따로 지정하고 싶으면 border-방향으로 따로 지정 */
+    border-top: 1px solid black;
+    border-bottom: 5px dashed magenta; /*dashed : 절취선*/
+    border-left: 10px dotted blue; /*dotted : 점선*/
+    border-right: 7px double orange;/*double : 두 줄*/
+
+    /* border 의 크기(두깨) 만을 설정하는 경우 
+    상하 좌우 한번에 설정 처리할 수 있다
+    */
+    /* 1개 상하좌우 */
+    /* 2개 상하 , 좌우*/
+    /* 3개 상, 좌우, 하(위->아래)*/
+    /* 4개 상, 우, 하, 좌(상기준으로 시계반향)*/
+    border-width: 20px 10px 5px 2px;
+}
+
+/* margin: auto 테스트 */
+.margin-auto{
+/* 부모 자식 관계 요소라도 
+서로 다른 요소이기 때문에 margion 지정시 간격을 두게 된다 */
+    /* margin-top: 100px;
+    margin-left: 200px; */
+
+    /* 좌우 요소간의 간격을 자동으로 지정하여 가운대 정렬 */
+    margin: auto;
+    /* 갑자기 margin-top 무시됐다
+    왜? margin 속성 자체가 상하좌우를 동시에 지정하는 속성이라 
+    상(top) 부분에도 auto가 지정되어 이전 100px 내용을 덮어쓰게 함 */
+
+    /* 해결 방법 :margin-top을 auto 밑에 작성하여 auto를 덮어쓰움 */
+    margin-top: 100px;
+}
+/* box-sizing */
+#box-sizing{
+    /* 테두리 10px , 패딩 20px, 내용 나머지
+    전체요소 크기가 가로 세로 300px인 정사각형 만들기 
+    */
+        padding: 20px;
+        border: 10px solid black;
+
+    /* padding, boder 크기를 감안해서 계산해야함.. */
+    /* width: 240px;
+    height: 240px; */
+    /* 이 문제를 해결하기 위한게 box-sizing이다 */
+    
+    width: 300px;
+    height: 300px;
+    /* width/eight 는 기본적으로 content 영역에 대한 크기를 지정 */
+    /* 이를 변경하는 방버이 box=sizing */
+
+    box-sizing: border-box;
+    /* 
+    border-box
+    -width/height 속성 지정시
+    content +padding+ berder의 크기를 합산한 결과가 
+    지정한 속성값과 같게 자동으로 비율 계산하여 적용
+    
+       content-box(기본값)
+    -width/height 속성 지정시 content 영역만 지정
+    -
+
+    */
+
+
+}

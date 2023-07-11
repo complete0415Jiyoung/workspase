@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_effect 메소드</title>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+
+    <style>
+        .area{
+            width: 400px;
+            height:  300px;
+            border: 1px solid black;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>시각적 효과를 위한 Effect메소드</h1>
+
+    <h3>Show() /hide() 메소드</h3>
+
+    <pre>
+        요소를 점점 커지게 하면서 화면에 나타나거나
+        요소를 점점 작아직[] 하면서 화면에 숨기는 메소드
+
+    </pre>
+
+    <button id="show-btn">show()</button>
+    <button id="hide-btn">hide()</button>
+
+    <div class="area">
+        <img id="img1" src="../images/dogs/dog1.jpg"></img>
+    </div>
+
+
+    <h3>fadeIn /fadeOut()</h3>
+
+    <pre>
+        fadeIn():점점 불투명하면서 사라짐
+        fadeOut():점점 투명하면서 사라짐
+    </pre>
+
+    <button id="fadeIn-btn">fadeIn()</button>
+    <button id="fadeOut-btn">fadeOut()</button>
+
+    <div class="area">
+        <img id="img2" src="../images/dogs/dog2.jpg"></img>
+    </div>
+
+
+
+    <script src="js/08_effect 메소드.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 생성기</title>
+    <!-- <style>
+        #container{
+            display: flex;
+            margin: 30px 50px;
+        }
+
+        #container>div{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        #createLotto{
+            size: 50px;
+            margin: 50px;
+            cursor: pointer;
+        }
+    </style> -->
+
+    <style>
+
+        #container{
+            display: flex;
+            width: 400px;
+            /* border: 1px solid red; */
+            justify-content: space-around;
+
+            margin: 100px auto 50px auto;
+        }
+        #container>div{
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            display:  flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 24px;
+            font-weight: bold;
+
+
+        }
+
+        #createLotto{
+            width: 300px;
+            height: 30px;
+
+            display: block;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    
+    
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <button id="createLotto">로또 번호 생성</button>
+
+    <script>
+        /***************************다른 방식으로 풀어보기***********************************/
+        document.getElementById("createLotto").addEventListener("click",function(){
+            
+            const numbers = document.querySelectorAll("#container>div");
+            //유사 배열로 배열은 아님 그래서 indexOf/ 배열.(sort)을 사용할 수 없음
+            
+            //문제 해결 방법 : 배열을 따로 선언 한 후 
+            //              중복검사(indexOf)와 오름차순정렬(배열.sort) 사용 불가능
+            //              복사하여 값을 넣어줌 
+
+            const lotto = []
+
+            
+            for(let i=0; i<numbers.length;i++){
+                let ran= Math.floor((Math.random()*45)+1);
+
+                for(let x=0; x<i; x++){
+                    lotto.push(ran);
+
+                    
+                }
+                
+                
+                
+            }
+            
+            lotto.sort(function(a,b){return a-b});
+
+            for(let i=0; i<arr.length; i++){
+                arr[i].innerHTML=lotto[i]
+            }
+            
+
+
+        })
+        
+
+        /************************다시풀어보기******************************/
+        /*document.getElementById("createLotto").addEventListener("click",function(){
+
+            const numbers =document.querySelectorAll("#container>div")
+
+            const lotto=[];
+
+            while (lotto.length <6) {
+
+                let ran= Math.floor(Math.random()*45)+1
+
+            
+                    
+                if(lotto.indexOf(ran==-1)){
+                    lotto.push(ran);
+                }
+            }
+            lotto.sort( function(a,b){return a-b;} );
+
+            for(let i =0; i<lotto.length;i++){
+                numbers[i].innerHTML=lotto[i];
+            }
+        });*/
+        
+        /******************선생님 풀이**************************/ 
+        /*document.getElementById("createLotto").addEventListener("click",function(){
+            //로또 번호 생성시 1~45사이의 난수 생성
+           //container 자식의 div 6개 선택
+           const numbers= document.querySelectorAll("#container>div");
+
+           //로또 번호 저장 배열
+           const lotto=[];
+           while(lotto.length < 6){//lotto배열에 저장된 값이 6개가 안되면 반복
+                //1~45사이 난수 생성
+                const ran = Math.floor(Math.random()*45+1);
+
+                //생성된 난수가 배열에 있는지 검사
+                if(lotto.indexOf(ran)==-1){//중복X
+                    //배열에 난수 추가
+                    lotto.push(ran);
+                    //console.log(ran);
+
+                }
+           }
+
+           //lotto에 저장된 난수 오름차순 정렬
+           lotto.sort( function(a,b){return a-b;} );
+
+           //numbers의 인덱스별로lotto 인덱스에 저장된 값 출력
+           for(let i=0; i<lotto.length; i++){
+            numbers[i].innerHTML = lotto[i];
+           }
+
+        })*/
+
+
+        
+
+        //로또 번호 중복 X
+    </script>
+</body>
+</html>

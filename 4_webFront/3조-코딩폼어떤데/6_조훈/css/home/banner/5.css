@@ -1,0 +1,27 @@
+#banner-5 {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 98vh;
+    color: white;
+    opacity: 0;
+    animation: fade-5 100s infinite;
+}
+
+/* Animations */
+
+@keyframes fade-5 {
+    75% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

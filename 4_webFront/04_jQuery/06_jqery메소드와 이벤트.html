@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery메소드와 이벤트</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <style>
+        .cls1{
+            color: red;
+        }
+        .lime{
+            background-color:  lime;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>html(), text(), val()</h3>
+
+
+    <pre>
+        html(): 요소에 작성된 내용을 얻어온다 (태그포함) ===innerHTML
+        text(): 요소에 작성된 내용을 얻어온(태그포함 X)==innerText
+        val(): valuye 속성값을 얻어옴
+    
+    
+        html ("내용"):요소의 내용 출력 (태그인식O)
+        text("내용"): 요소의 내용 출력 (태그인식 X)
+        val("내용") :value 속성값을 지정
+        
+    </pre>
+
+    <div id="area">
+        <p class="cls1">기존에 작성되어 있는 요소</p>
+    </div>
+
+    <button type="button" id="btn1">html메소드</button>
+    <button type="button" id="btn2">text메소드</button>
+
+    <input type="text" id="inputId" value="apple">
+    <button type="button" id="btn3">val메소드</button>
+    
+
+    <hr>
+
+    
+    <pre>
+        선택자 요소(A)를 기준으로 삽입 메소드 매개변수에
+        생성된 요소(B) 또는 함수의 리턴값을 추가
+
+        $(A).append(B) : A요소 내 뒷부분에 B를 추가(자식)
+        $(A).prepend(B) : A요소 내 앞부분에 B를 추가(자식)
+        $(A).after(B) : A의 요소 뒷부분에 B를 추가(형제)
+        $(A).before(B) : A의 요소 앞부분에 B를 추가(형제)
+        
+        생성된 요소(B)를 매개변수로 지정한 선택자(A) 요소에 추가
+        (part1의 메소드와 선택자, 생성구문의 순서가 반대) 
+
+        $(B).appendTo(A) : B를 A의 요소 내 뒷부분에 추가(자식)
+        $(B).prependTo(A) : B를 A의 요소 내 앞부분에 추가(자식)
+        $(B).insertAfter(A) : B를 A의 요소 뒤에 추가(형제)
+        $(B).insertBefore(A) : B를 A의 요소 앞에 추가(형제)
+    </pre>
+    
+
+    <div id="area2">
+
+        <ul id="list2"></ul>   <!-- 기준 -->
+
+    </div>
+
+
+    <hr>
+
+    <button id="btn2-1">empty()</button>
+    <button id="btn2-2">remove()</button>
+    <button id="btn2-3">detach()</button>
+    
+    <div id="area3">
+        <div class="item" id="div3">
+            안녕하세요.
+        </div>
+        <div class="item" id="div4">
+            안녕하세요.
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="area4">
+        <div class="item" id="div5">
+            안녕하세요.
+        </div>
+    </div>
+
+
+
+    <script src="js/06_jqery메소드와 이벤트.js"></script>
+</body>
+</html>

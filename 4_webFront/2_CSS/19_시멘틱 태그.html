@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱태그</title>
+    <link rel="stylesheet" href="css/structure2.css">
+    <script src="https://kit.fontawesome.com/9e44afcd4a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 
+        시멘틱 (sematic, 의미) 태그 (의미 있는 태그)
+
+        - 기본 영역 분활에 주로 사용 되던 div, span등의 태그는 
+        태그 이름만 봤을때 나눈다는 것 이외의 의미를 파악할 수 없다
+        -> 태그만 봤을때 태그의 목적을 알 수 가 없어서 
+        id 또는 class을 반드시 추가 해야만 했다
+
+        이런 문제점을 해결하고자
+        태그 이름 만으로 어떤 역할 을 하는지 알수 있고
+        추가 적으로 웹접근성 향상에 도움이 되는
+        시멘틱 태그가 추가됨(HTML5)
+
+        [제공하는 태그]
+        header  태그 : 문서의 제목이나 머릿말 영역
+        
+        footer  태그 : 문서의 하단 태그 , 꼬릿말, 정보 작성 영역
+        
+        nav     태그 : 나침판 역할( 다른 페이지, 사이트 이동)의 링크 ㅌ작성 영역
+        
+        main    태그 : 현재 문서의 주된 콘텐츠 작성영역
+        
+        section 태그 : 구역 구문을 위한 영역
+        
+        article (작은 토막) 태그 : 본문과 독립된 콘텐츠를 작성하는 영역
+        
+        aside   태그 : 사이드바(보통 양쪽) , 광고 영역
+
+     -->
+    <main>
+        <header>
+            <section>
+                <!-- 클릭 시 메인페이지로 이동 -->
+                <a href="#">
+                    <img src="../images/KH.jpg" id="home-logo">
+                </a>
+            </section>
+            <!-- header의 두번째 자식 div -->
+            <section>
+                <article class="search-area">
+                    <!-- form 내부 input 값을 서버 또는 페이지로 전달 -->
+                    <form action="#" name="search_form">
+                        <!-- fieldset :form 내부에서 input을 종류별로 묶는 용도로 많이 사용 -->
+                        <fieldset>
+
+                            <input type="search" id="query" name="query"
+                                placeholder="검색어를 입력해주세요." autocomplete="off"> 
+                            
+                            <!-- 검색 버튼 -->
+                            <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                        
+                        </fieldset>
+                        
+                    </form>    
+                </article>
+            </section>
+            <section></section>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자유게시판</a></li>
+                <li><a href="#">질문 게시판</a></li>
+                <li><a href="#">F&Q</a></li>
+                <li><a href="#">1:1 문의</a></li>
+            </ul>
+        </nav>
+    
+        <section class="content">
+            <section class="content-1"></section>
+            <section class="content-2">
+                <form action="#" name="login-form">
+                    
+                    <!-- 아이디 / 비밀번호/ 로그인 버튼 영역 -->
+                    <fieldset id="id-pw-area">
+                        <section>
+                            <input type="text" name="inputId" placeholder="아이디">
+                            <input type="password" name="inputPW" placeholder="비밀번호">
+                        </section>
+        
+                        <section>
+                            <button>로그인</button>
+                        </section>
+        
+                    </fieldset>
+        
+                    <!-- 회원가입 / ID/PW 칮기 영역 -->
+                    <article id="singup-find-area">
+                        <a href="#">회원가입</a>
+                        <span>|</span>
+                        <a href="#">ID/PW 찾기</a>
+                    </article>
+
+                    <label>
+                        <input type="checkbox">아이디 저장
+                    </label>
+                </form>
+
+            </section>
+        </section>
+      
+    </main>
+    <footer>
+        <p>Copyright &copy; KH Information Educational Institute M-class</p>
+
+        <article>
+            <a href="#" >프로젝트 소개</a>
+            <span>|</span>
+            <a href="#" >이용약관</a>
+            <span>|</span>
+            <a href="#" >개인정보 처리방침</a>
+            <span>|</span>
+            <a href="#"> 고객센터</a>
+        </article>
+    </footer>
+</body>
+</html>

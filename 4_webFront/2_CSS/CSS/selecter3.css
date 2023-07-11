@@ -1,0 +1,25 @@
+/* ~= : 여러 손섯 값 중 하나라도 일치 하면 선택 */
+
+/*  */
+div[name ~="aaa"]{
+    background-color: darkgreen;
+}
+
+/* ~= : 여러 속성 값이 작성된 속성 중 속성값이 특정 값을 단어로 포함하는 요소를 선택*/
+div[class |= "str"]{
+    color : yellow;
+    font-weight : bold;
+}
+/* ^= : 속성 값이 특정값을 단어로 포함하는 요소를 선택 */
+div[class ^= "class"]{
+    background-color: black;
+    color: white;
+}
+/* $=: 특정 값으로 끝나는 요소 선택 */
+div[class $= "class2"]{
+    font-size: 24px;
+} 
+/* *= 특정 한 값을 포함하는 요소 선택*/
+div[name *= "2"]{
+    border: 3px solid yellow;
+} 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_순회(탐색)메소드1</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+
+        .wrap *{
+
+            border: 1px solid lightgray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+            color: gray;
+        }
+
+        .type {
+            width: 500px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>순회(탐색)메소드1</h1>
+    <h3>Ancestor(조상)메소드 :
+        선택된 요소의 상위 요소들을 선탣할 수 있는 메소드
+    </h3>
+    <pre>
+        $("요소명").parent()
+        - 선택된 요소의 바로 위 상위 요소
+
+        $('요소명').parents([매개변수])
+        - 선택된 요소의 모든 상위 요소 리턴
+        - 매개변수가 있으면 매개변수와 일치하는 부모만 리턴
+
+        $('요소명').parentsUntil(매개변수)
+        - 선택된 요소부터 매개변수 요소 전까지 범위의 요소 리턴
+
+    </pre>
+
+    <div class="wrap">
+        <div class="type">div (great-grand parent)
+            <ul>ul (grand parent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="type">div (grand parent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+    
+
+
+    <script src="JS/03_순회(탐색)메소드.js"></script>
+</body>
+</html>

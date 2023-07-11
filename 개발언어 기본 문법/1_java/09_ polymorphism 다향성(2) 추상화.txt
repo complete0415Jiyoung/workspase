@@ -1,0 +1,56 @@
+09_ polymorphism 다향성(2) 추상화
+
+* 추상 클래스 (abstract class) 
+	: 미완성된 메소드(추상 메소드)을 보유하고 있는 메소드
+	: 추상 클래스는 객체로 직접 만들수 없다 
+	 	->직접 객체를 생성하는 것은 불가능 하지만 
+		 참조변수로 사용이 가능하다.  
+	
+	[접근제한자] abstract class 클래스명(){}
+	
+
+* 추상 메소드 - 자식 클래스에서 추상메소드를 강제 오버라이딩 함  
+
+  ex)	[접근제한자] abstract 반환형 메소드명(); -----------부모 클래스
+	public abstract viod eat();
+	public abstract viod breath();
+
+	Fish Class	--------------------------------------자식 클래스(1)
+	@Overrid 
+	public void eat(){		//강제 오버라이딩
+	System. out. println("뻐끔 거리며 먹는다");}
+	@Overid 
+	public void breath(){
+	System. out. println("아가미로 숨쉰다");}
+
+	Person Class-----------------------------------자식 클래스(2)
+	@Overrid 
+	public void eat(){		//강제 오버라이딩
+	System. out. println("도구를 사용해 먹는다");}
+	@Overrid 
+	public void breath(){
+	System. out. println("코와 입으로 숨을 쉰다");}
+
+
+* 추상 클래스와 다향성 + 바인딩
+
+	Animal [] arr= { new Fish ("물고기" , "잡식"),
+		        new Person("사람", "잡식", "김사랑")} 
+	-> 다향성 업캐스팅 사용 / 객체 배열 선언 및 할당 그리고 초기화
+
+	for( int i = 0 ; arr.length; i++){
+		arr[i].eat();
+		arr[i].breath(); 
+		System. out. println(arr[i]);}
+
+	-실행전(정적바인딩): Animal에 있는 eat()/breath()가르킴
+	-실행후(동적바인딩): Fish/Person에 있는 오버라이딩된 eat()/ breat()가르킴
+
+
+***********************무조건 암기********************************************
+다향성 업캐스팅 상태( 부모 참조변수가 자식 객체를 참조하는 것)에서
+부모 메소드 호출시 동적바인딩으로 오버라이딩 된 자식의 필드, 메소드 호출
+********************************************************************************
+		
+
+

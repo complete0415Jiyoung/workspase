@@ -1,0 +1,473 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nunito:wght@200&display=swap');
+
+
+
+
+
+*{box-sizing: border-box;}
+/* div{ border: 1px solid black} */
+
+
+/* main{
+    width: 1140px;
+    margin: auto;
+} */
+
+.header{
+    height: 130px;
+
+    position:sticky;
+    top:0;
+    background-color: white;
+    /* border-bottom: 2px solid black; */
+}
+
+
+.header>div:nth-child(1){
+    height: 70px;
+}
+.header>div:nth-child(2){
+    height: 60px;
+    /* width: 900px; */
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
+
+.banner{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+}
+
+.banner>a{
+    
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+}
+
+.banner a:hover{
+    cursor: pointer;
+}
+
+
+.nav{
+    width: 100%;
+    height:60px;
+}
+
+.nav>ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+}
+
+.nav>li{
+    flex: 0 1 150px;
+}
+
+.nav a{
+    display: block;
+    height: 100%;
+
+    text-align: center;
+    padding: 11px 0;
+
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+
+
+}
+
+.nav a:hover{
+    border-bottom: 3px solid black;
+    color:rgb(0, 0, 0);
+}
+.banner_right{
+
+    display: flex;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+.banner_right>.q a{
+    font-size: 25px;
+    color: black;
+    padding: 10px;
+    margin-right: 20px;
+}
+.banner_right>.user a{
+    font-size: 25px;
+    color: black;
+}
+
+
+
+.content{
+    height:2500px;
+}
+
+.adv>#banner{
+    height: 530px;
+    width: 100%;
+}
+.content>div:nth-child(2){
+    height: 500px ;
+}
+.content>div:nth-child(3){
+    height: 658px ;
+}
+.content>div:nth-child(4){
+    height: 660px ;
+}
+.newemoticon{
+    height: 500px;
+    display:flex;
+    flex-direction: column;
+}
+
+.nametag {
+    height: 50px;
+    display:flex;
+
+
+
+}
+.nametag a{
+    height: 50px;
+    display:flex;
+
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+
+    margin-left: 430px;
+    align-items: flex-end
+
+
+}
+
+
+
+
+
+
+
+
+.newemo{
+    height: 450px;
+    display:flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    flex-direction: row;
+  
+}
+
+
+
+.newemo1{
+    
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+}
+
+
+.icon:hover{
+    display:flex;
+    width: 200px;
+    height: 200px;
+
+    flex-direction: column;
+    cursor: pointer;
+
+ 
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    font-weight: bold;
+
+    text-decoration-line:underline;
+
+}
+
+
+
+
+.img{
+    height: 150px;
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subs{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+#img{
+    height: 120px;
+    width: 170px;
+}
+
+.popemo{
+    display: flex;
+    /* flex-direction: column; */
+
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+
+}
+/* .popemo> .popemo1{
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.popemo> .popemo1{
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+} */
+
+/* .popemo>div:first-child{
+    display: flex;
+    flex-basis: 50%
+}
+.popemo>div:last-child{
+    display: flex;
+    flex-basis: 50%
+} */
+
+
+
+.popemo1-1{
+    width: 500px;
+    height: 120px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.popemo1-1>.popemo1-1a{
+    display: flex;
+    flex-basis: 20%;
+
+    font-size: 40px;
+
+    justify-content: center;
+    align-items: center;
+}
+.popemo1-1>.popemo1-1aa{
+    display: flex;
+    flex-basis: 20%;
+
+    font-size: 40px;
+    color: rgb(218, 66, 61);
+
+    justify-content: center;
+    align-items: center;
+
+
+}
+.popemo1-1>.popemo1-1b{
+    display: flex;
+    flex-basis: 55%;
+
+    flex-direction: column;
+
+    margin-top: 20px;
+
+}
+.popemo1-1>.popemo1-1c{
+    display: flex;
+    flex-basis: 25%;
+
+}
+
+.popemo1-1b>.popemo2-1{
+    height: 60px;
+
+    font-size: 17px;
+    padding-top: 20px;
+
+}
+.popemo1-1b>.popemo2-2{
+    height: 60px;
+
+    font-size: 15px;
+    color: rgb(90, 90, 90);
+
+}
+
+
+
+.popemo1-1c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popemoimg{
+    width: 120px;
+    height: 100px;
+}
+
+.popemo1-1:hover{
+    cursor: pointer;
+}
+
+.popemo1-1:hover> .popemo1-1b>.popemo2-1{
+    text-decoration-line:underline;
+    font-weight: bold;
+}
+
+
+.styleemo1{
+
+    margin-top: 20px;
+    height: 180px;
+    display: flex;
+
+    justify-content: center;
+}
+
+.styleemo1-1{
+
+
+    width: 180px;;
+    height: 150px;
+
+}
+.styleemo1-2{
+    width: 160px;;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.styleemo1-1a{
+    height: 30px;
+
+    font-size: 20px;
+    font-weight: bolder;
+
+    color: rgb(141, 190, 236);
+}
+.styleemo1-1b{
+    height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    background-color:  rgb(141, 190, 236);
+    color: rgb(255, 255, 255);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#styleimg{
+    height: 130px;
+    width: 130px;
+}
+
+.styleemo1:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.footer{
+    height: 200px;
+    background-color: #a3add342;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    color: rgb(109, 109, 109);
+    font-size:12px ;
+
+}
+
+
+
+.footer > div > *{
+    font-size: 14px;
+}
+
+.footer a {
+    color:black;
+    text-decoration: none;            
+
+}
+
+.footer span{
+    padding: 0 0px;
+}
+
+footer>.footer1{
+    font-size: 5px;
+}
+
+.footer>.fixed-area a{
+    font-size: 30px;
+}
+
+
+
+.main{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
+}

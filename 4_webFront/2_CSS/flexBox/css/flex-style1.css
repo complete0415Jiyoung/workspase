@@ -1,0 +1,144 @@
+.flex-container{
+ background-color: #ddd;
+ height: 700px;
+ display: flex;
+ /* item (내부요소)를 감싸는 요소dml 형식을 flex로 변경 
+ ->item에 자동으로 지정된 margin의 요소가 모두 사라지고 
+    content 영역 만큼으 크기만 가지게 됨
+ 
+    item에 qufehdml  width/height가 지정 되지 않으면
+    item의 높이는 flex-container의 너비/ 높이와 같아지게 된다
+    
+    (flex-container 정렬 방향에 따라 다름)
+    */
+
+    /******************/
+    /* flex-direction */
+    /******************/
+    /* (flex-container의 전용 속성) 
+        main-axis의 방향과 시작 위치를 지정하는 속성
+    */
+
+    /* 행 방향(가로 , 기본 값) */
+    /* flex-direction: row; */
+
+    /* 행 방향(가로) + 순서 반대 */
+    /* flex-direction: row-reverse; */
+
+    /* 열 방향(세로) */
+    /* flex-direction: column; */
+
+    /* 열 방향(세로) + 순서 반대 */
+    /* flex-direction: column-reverse; */
+
+
+    /* ************/
+    /* flex-wrap */
+    /* ************/
+    /* 내부의 item들을 포장하는 속성
+        item들이 강제로 한 줄에 배치되게 할 것인지
+        
+        flex-container가 줄어들면
+        한 줄을 벗어나 여러 줄로 배치할 것인지 지정
+    */
+
+    /* item을 한줄로 배치 (기본값) */
+    flex-wrap: nowrap;
+
+    /* item을 여러줄로 배치 */
+    /* flex-wrap: wrap; */
+
+    /* itemd을 여러 줄로 배치(뒤에서 부터 배치) */
+    /* flex-wrap: wrap-reverse; */
+    
+    
+    /*************/
+    /* flex-flow */
+    /*************/
+    /* flex-container의 
+        main-axis의 방향 순서와 
+        여러줄로 배치 할지 여부를 
+        한번에 성정하는 속성
+        flex-direction + flex-wrap 합쳐진 모양
+    */
+
+            /* flex-direction  flex-wrap */
+    /* flex-flow: row-reverse          wrap; */
+    /* flex-flow: column wrap-reverse; */
+
+   
+   
+    /*******************/
+    /* justify-content */
+    /*******************/
+
+    /* justify :조정한다 */
+    /* justify-content :내용을 조정한다 
+        -main axis 방향으로 
+        item(내용)의 정렬 방향을 조정함
+    
+    */
+    /* main axis 시작 지점을 기준으로 정렬함 (기본 값) */
+    /* justify-content: flex-start; */
+
+    /* main axis 끝 지점을 기준으로 정렬함 */
+    /* justify-content: flex-end; */
+
+    /* 주의!! 
+    순서가 달라지는 flex-drection: row-reverse;와 구분해서 기억
+    */
+
+    /* main axis 가운데 정렬*/
+    /* justify-content: center; */
+
+    /* item 주위에 main axis 방향 양쪽으로 
+        일정한 크기의 공간 추가 
+        -> 양끝은 조금만 공간 있고,
+        item 중간은 넓게 떨어져 있음*/
+    /* justify-content: space-around; */
+
+
+    /* item 이 main axis 내에서 동일한 간격을 가지게됨 */
+    /* justify-content: space-evenly; */
+
+    /* space-evenly에서 양끝을 flex-container에 붙게 함 */
+    justify-content: space-between;
+
+    /* ************* */
+    /* align-items */
+    /* **************/
+
+    /* item들을 cross axis(반대 축, 교차축) 방향으로 정렬하는 방법을 지정하는 속성 */
+    /* item들의 너비 또는 높이를 
+        coss axis 방향으로 늘려서 
+        flex-container와 같은 크기를 가지도록 함
+        (기본값)
+         조건 : item의 corss axis 방향의
+        크기 지정 속성이 없어야한다
+    */
+    /* align-items: stretch; */
+    
+    /* corss axis 시작 지점을 기준
+     (stretch 처럼 늘어나지 않고, content 크기를 유지) */
+
+    /* align-items: flex-start; */
+
+
+    
+    /* cross axis 끝 부분을 기준 */
+    /* align-items: flex-end; */
+
+    /* cross axis 가운데 기준 */
+    /* align-items: center; */
+
+    /* item 내부 content 가 모두 한줄에 배치 될 수 있도록
+        item 요소를 cross axis로 움직이는 설정 */
+    /* align-items: baseline; */
+
+
+}
+
+.item2{padding: 10px;}
+.item3{padding: 20px;}
+.item4{padding: 30px;}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제3 login</title>
+    <style>
+        form .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        button.btn:hover {
+            opacity: 0.8;
+            color: yellow;
+        }
+
+        .cancel:hover {
+            opacity: 0.8;
+            background: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>로그인을 클릭하면 로그인 폼이 나타납니다.</h2>
+
+    <button class="open">로그인</button>
+
+    <div class="form-popup" id="myForm">
+        <form action="08_effect메소드.html" >
+            <fieldset>
+                <legend>로그인</legend>
+
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <br>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <br>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel">Close</button>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <script>
+        // 1. 이 문서를 처음 로드하면 로그인 화면은 보이지 않는다.
+        //-> visibility : hidden; 영역은 존재하지만 보이지 않음
+        //-> display :none; //요소는 존재하지만 보이지 않음, 영역X
+       
+        const box = document.getElementById("myForm");
+        box.style.display="none";
+        
+        // 2. label 태그는 가로로 '80px' 크기를 갖는다.
+
+        const label = document.querySelectorAll("label");
+        for(let i=0; i <label.length; i++){
+            label[i].style.display="inline-block";
+            label[i].style.width="80px";
+        }
+        
+        // 3. 로그인 버튼을 클릭하면 로그인 화면이 화면에 나타난다.
+        const open = document.querySelector(".open");
+        open.addEventListener("click",function(){
+            box.style.display="block";
+        })
+        
+        // 4. Close 버튼을 클릭하면 로그인 화면이 사라진다.
+        document.querySelector(".cancel").addEventListener("click",function(){
+            box.style.display="none";
+        })
+    </script>
+</body>
+</html>

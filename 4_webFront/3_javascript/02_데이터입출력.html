@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_데이터입출력</title>
+    <script src="js/02_데이터입출력.js"></script>
+
+    <style>
+        .box{border: 1px solid black;}
+
+        #area1{
+            width: 520px;
+            height: 300px;
+            border: 1px solid black;
+            background-color: lightcyan;
+
+            overflow: auto;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border:  2px solid palevioletred;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>자바스크립스에서의 데이터 입/출력</h1>
+      <!-- 
+        * window : 자바 스크립트 내장 객체로 브라우저 창이 열릴 때 마다 하나씩 만들어지는 객체
+                    브라우저 창 안에 존재하는 모든 요소의 최사위 객체(생략 가능)
+        * document : 웹 문서 마다 하나씩 만들어 지는 객체(html 문서에 대한 정보들을 가지고 있음)
+       -->
+
+    <h2> 1.데이터를 출력하는 구문</h2>
+    <pre>
+        1) [window.]alert ("알림창에 출력할 문구");
+        2) [window.]consol.log("콘솔창에 출력할 문구");
+        3) document.write("화면 상에 출력할 문구");
+        4) 선택한 요소.innerTexrt="요소에 출력할 문구";
+        5) 선택한 요소. innerHTML="요소에 출력할 문구";
+    </pre>
+
+    <hr>
+    <h3>1) window.alert("내용")</h3>
+
+
+    <pre>
+        - alert(알리다, 경보, 경고)
+        - 브라우저의 대화 상자를 띄우는 함수
+    </pre>
+
+    <!-- 클릭시 "alert버튼 클릭 됨" 대화 상자 출력 -->
+    <button onclick="fnAlert()">alert 확인</button>
+
+    <hr>
+    <h3>3) document.write("내용")</h3>
+    <button onclick="documentWrite()">화면 출력</button>
+
+    <hr>
+    <h3>4) innerText</h3>
+    <per>
+        자바스크립트에서 요소에 작성된 내용을 읽어 들이거나 변경하는 속성
+
+        - 내용을 읽어올 때 태그는 모두 무시함
+        - 내용을 변경할 때 태그는 자체로 해석됨 (태그 해석 X)
+    </per>
+
+    <button onclick="getinnerText()">innerText로 읽어오기</button>
+    <button onclick="setinnerText()">innerText로 변경하기</button>
+
+    <p id="test1" class="box">
+        테스트1 입니다.<br>
+        <strong>안녕하세요</strong>
+    </p>
+
+
+    <hr>
+    <h3>5) innerHTML</h3>
+    <pre>
+        자바스크립트에서 요소 전체를 (태그+ 속성+ 내용) 읽어들이거나 변경하는 속성
+        
+        - 내용을 읽어올때 태그 + 속성도 모두 포함함
+
+        - 내용을 변경할 때 태그는 HTML요소로 해석됨(태그 해석 O)
+    </pre>
+
+    <p id="test2" class="box">
+        테스트2 입니다.<br>
+        <strong>안녕하세요</strong>
+    </p>
+    <button onclick="getInnerHTML1()">Inner HTML로 읽어오기</button>
+    <button onclick="setInnerHTML1()">Inner HTML로 변경하기</button>
+
+
+
+    <hr>
+    <h3>innerHTML응용</h3>
+
+    <button onclick="add()">추가하기</button>
+
+    <div id="area1">
+        <div class="box2"></div>
+    </div>
+
+    <hr>
+    <br><br><br>
+
+    <h2>2. 데이터 입력 받는 구문 (변수에 기록 가능)</h2>
+    <pre>
+        1) 변수 = [window.]comfirm("질문내용");
+        2) 변수 = [window.]prompt("질문내용");
+        3) 변수 = 선택한 요소. 속성(id, classname, innerHTML, innerText,...);
+        4) 변수 - 선택한 input요소.value;
+    </pre>
+
+    <h3>1) window.comfirm("내용")</h3>
+    <pre>
+        질문에 대한 예 / 아니요 결과를 얻고자 할때 사용하는 
+        대화 상자를 출력하는 함수 
+        -> 선택한 결과에 따라 확인 버튼 클릭시 ture또는 취소 버튼 클릭시 false가 반환
+    </pre>
+
+    <button id="confirmBtn" onclick="fnContirm()">confirm확인하기</button>
+
+
+
+    <hr>
+    <h3>2) window.prompt("내용")</h3>
+    <pre>
+        - 텍스트를 작성할 수 있는 대화상자
+
+
+        - 확인 : 입력한 값을 반환 (문자열)
+        - 취소 : null 반환
+    </pre>
+
+    <button onclick="fnPrompt1()">클릭</button>
+    <div id="area2"></div>
+
+    <br>
+    <button onclick="fnPrompt2()">확인하기</button>
+    <p id="area3"></p>
+
+    <hr>
+    <h3> 4) 선택한 input 요소.value</h3>
+    아이디:<input type="text" id="userId"><br>
+    비밀번호:<input type="password" id="userPwd"><br>
+
+    <button onclick="fuInput()">클릭</button>
+    <br>
+    <input type="text" id="area4">
+
+
+
+</body>
+
+
+
+</html>

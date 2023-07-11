@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nunito:wght@200&display=swap');
+
+
+*{box-sizing: border-box;}
+/* div{ border: 1px solid black} */
+
+
+/* main{
+    width: 1140px;
+    margin: auto;
+} */
+
+.header{
+    height: 130px;
+
+    position:sticky;
+    top:0;
+    background-color: white;
+    /* border-bottom: 2px solid black; */
+}
+
+
+.header>div:nth-child(1){
+    height: 70px;
+}
+.header>div:nth-child(2){
+    height: 60px;
+    /* width: 900px; */
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
+
+.banner{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+}
+
+.banner>a{
+    
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+}
+
+.banner a:hover{
+    cursor: pointer;
+}
+
+
+.nav{
+    width: 100%;
+    height:60px;
+}
+
+.nav>ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+}
+
+.nav>li{
+    flex: 0 1 150px;
+}
+
+.nav a{
+    display: block;
+    height: 100%;
+
+    text-align: center;
+    padding: 11px 0;
+
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+
+
+}
+
+.nav a:hover{
+    border-bottom: 3px solid black;
+    color:rgb(0, 0, 0);
+}
+
+.mainbanner{
+    height: 210px;
+}
+
+.banner_right{
+
+    display: flex;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+.banner_right>.q a{
+    font-size: 25px;
+    color: black;
+    padding: 10px;
+    margin-right: 20px;
+}
+.banner_right>.user a{
+    font-size: 25px;
+    color: black;
+}
+
+
+
+
+
+.cont0{
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cont1{
+    height: 160px;
+
+    display: flex;
+}
+
+.cont1-1{
+    height: 160px;
+    width: 350px;
+}
+
+.cont1-1a{
+    height: 80px;
+
+    font-size: 20px;
+    font-weight:500;
+
+    display: flex;
+
+    align-items: end;
+}
+.cont1-1b{
+    height: 60px;
+
+    font-size: 15px;
+    color: rgb(88, 88, 88);
+}
+.cont1-2{
+    height: 160px;
+    width: 160px;
+}
+
+#contimg{
+    height: 140px;
+    width: 140px;
+}
+
+.cont1:hover{
+    cursor: pointer;
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+
+
+}
+
+.cont1:hover>.cont1-1>.cont1-1a{
+    font-size: larger;
+    font-weight: bolder;
+    text-decoration-line:underline;
+
+
+
+
+}
+
+
+.footer{
+    height: 200px;
+    background-color: #a3add342;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    color: rgb(109, 109, 109);
+    font-size:12px ;
+
+}
+
+
+
+.footer > div > *{
+    font-size: 14px;
+}
+
+.footer a {
+    color:black;
+    text-decoration: none;            
+
+}
+
+.footer span{
+    padding: 0 0px;
+}
+
+footer>.footer1{
+    font-size: 5px;
+}
+
+.footer>.fixed-area a{
+    font-size: 30px;
+}
+
+
+.main{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
+}

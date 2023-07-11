@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="../css/account/login.css">
+    <link rel="stylesheet" href="../css/account/register.css">
+    <link rel="stylesheet" href="../css/general/footer.css">
+</head>
+<body>
+    <img id="bg" src="../source/bg6.jpg"></img>
+    <main>
+        <section>
+            <input type="checkbox" id="reg-toggle">
+            <section id="account">
+                <section id="login">
+                    <section id="notice">
+                        <img id="logo" src="../source/logo.png">
+                        <p>BOOKFLY</p>
+                        <p>로그인이 필요한 서비스입니다.</p>
+                    </section>
+                    <section id="input">
+                        <form id="login-form">
+                            <input type="text" placeholder="USERNAME">
+                            <input type="password" placeholder="PASSWORD">
+                            <button type=button onclick="location.href='home.html'">LOGIN</button>
+                        </form>
+                    </section>
+                    <section id="extra">
+                        <p>계정이 없으신가요? &nbsp;&nbsp;<label style="text-decoration: underline;" for="reg-toggle">회원가입</label></p>
+                        &nbsp;&nbsp;<label style="text-decoration: underline;" for="find-toggle">아이디 또는 비밀번호를 잊어버렸습니다.</label>
+                    </section>
+                </section>
+                <hr>
+                <section id="register">
+                    <section id="welcome">
+                        <p>회원가입</p>
+                        <p>BOOKFLY에 오신 것을 환영합니다!</p>
+                        <p>다음 정보들을 입력해 주세요.</p>
+                    </section>
+                    <form id="register-form">
+                        <input type="text" placeholder="유저명">
+                        <input type="password" placeholder="비밀번호">
+                        <input type="password" placeholder="비밀번호 재입력">
+                        <input type="tel" placeholder="전화번호">
+                        <button>인증</button>
+                        <input type="email" placeholder="이메일(선택)"><br>
+                        <input type="checkbox">이용약관 동의<br>
+                        <input type="checkbox">개인정보 수집 및 이용 동의<br>
+                        <input type="checkbox">마케팅 활용 및 광고성 정보 수신 동의(선택)<br>
+                        <button type="submit">REGISTER</button><br>
+                    </form>
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <section><p>이용약관</p><p>개인정보처리방침</p><p>고객센터</p></section>
+        <section><p>© 2023. Absoler All Rights Reserved.</p></section>
+    </footer>
+</body>
+</html>

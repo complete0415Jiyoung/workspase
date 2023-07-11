@@ -1,0 +1,63 @@
+#contents {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0, 0, 20px, black;
+    z-index: 1;
+}
+
+#contents > div:first-of-type {
+    height: 1.15vw;
+    background: black;
+    animation: gradation 100s linear infinite;
+}
+
+#contents > div:last-of-type > p {
+    font-family: "Tway";
+    font-size: 100px;
+}
+
+#contents > section:first-of-type {
+    position: relative;
+    height: 30vw;
+    background-color: white;
+}
+
+#contents > section:nth-of-type(2) {
+    height: 30vw;
+    background-color: white;
+}
+
+#contents > section:last-of-type {
+    height: 30vw;
+    background-color: white;
+}
+
+#contents > section > section {
+    height: 30vw;
+    background-color: white;
+}
+
+#contents > section p {
+    margin: 2vh 0;
+    padding: 2vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    font-size: 50px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 5px;
+}
+
+#popular-reviews {
+    display: flex;
+}
+
+#popular-reviews p {
+    width: 33vw;
+    margin: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 2px;
+}

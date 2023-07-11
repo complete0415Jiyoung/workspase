@@ -1,0 +1,31 @@
+/* 5순위 태그 선택자 */
+div{
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite !important;
+        /* 1순위 !important */
+}
+
+/* 4순위 : 클래스 선택자 */
+.cls1{
+    background-color: cadetblue
+/* 배경색이 푸른색으로 변경되지만, 겹치지 않는 width, height 그대로 반영됨 */
+}
+
+.cls1{
+    background-color: thistle;
+    /* 동일한 우선 순위에서는 마지막에 작성된 설정 값이 적용된다 */
+
+}
+
+/* 3순위 : 아이디 선택자 */
+#test1{
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+

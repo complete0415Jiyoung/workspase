@@ -1,0 +1,39 @@
+#banner-2 {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 98vh;
+    color: white;
+    opacity: 0;
+    animation: fade-2 100s infinite;
+    box-shadow: 0px 0px 20px black inset;
+}
+
+.b2-head {
+    flex-basis: 20%;
+}
+
+#b2-quotation_close {
+    padding-left: 355px;
+}
+
+/* ---------- info ---------- */
+
+
+/* Animations */
+
+@keyframes fade-2 {
+    15% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+}

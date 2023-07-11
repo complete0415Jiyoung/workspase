@@ -1,0 +1,117 @@
+/* CSS 파일 
+    파일 전체가 style 태그 내부라고 생각하면 됨
+*/
+
+/*기본속성 선택자*/
+div[name = "name-1"]{background-color: orangered;}
+        
+[name="name-2"]{background-color: blueviolet;}
+
+p[name = name-1]{background-color: salmon;}
+
+/*자식선택자*/
+#parent-ul > li {background-color: orange;}
+
+#parent-ul > li > span {background-color: red;}
+
+/*후손선택자*/
+#test-div {border: 2px solid black }
+#test-div p{background-color: pink;}
+
+/*반응 선택자*/
+.div-cls{
+    /*block 형식 요소만 크기 조정 가능 */
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: #ddd; /*16진수 표기법*/
+    /*아래쪽 요소와의 간격*/
+    margin-bottom: 30px;
+    /*요소에 마우스 커서가 올라오면 손가락 모양으로 변경*/
+    cursor: pointer;
+}
+
+/*클릭하고 있을 때만 반응 하는 :active*/
+#active-test:active{
+    background-color: plum;
+}
+
+/*마우스 포인터가 올라 갔을 때만 반응하는 :hover*/    
+#hover-test:hover{
+    border: 2px solid purple;
+    background-color: palevioletred;
+    width: 230px;
+    height: 230px;
+
+    /*변화 시간 지정*/
+    /* transition-duration: 0.5s;*/
+}
+
+/*#hover-test 가 변화를 일으키면 0.5초 동안 변함 */
+#hover-test{
+    transition-duration: 0.5s;
+}
+
+
+
+
+/*상태 선택자*/
+/* 요소에 초점이 맞춰졌을 때 (:focus) */
+#focus-test:focus{
+    background-color: aquamarine;
+}
+
+/* 요소가 체크 되었을때 (:checked) */
+input[name="fruits"]:checked{
+    height: 30px;
+    width: 30px;
+
+    background-color: red;
+    /* radio와 checkbox는 크기을 제와한 스타일 적용 안됨 */
+}
+
+/* 사용가능 /불가능(:enable /:disable ) */
+#test-div2 > input:enabled{
+    background-color: lightgreen;
+}
+#test-div2 > input:disabled{
+    background-color: lightcoral;
+}
+
+
+
+
+/* 동의 선택자 */
+/* A바로 뒤에 있는 B요소 선택(+) */
+#div1 + div{
+    background-color: olive;
+}
+
+/* A뒤에 있는 모든 요소 선택 */
+#div3 ~ div{
+    background-color: cornflowerblue
+}
+
+/* label 태그 스타일 지정 */
+#check1 + label{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    /* 수평 분할 + 크기 조절 가능 */
+    display: inline-block;
+
+    cursor: pointer;  /*마우스 손가락모양*/
+
+    /* 모서리 라운딩 처리 */
+    border-radius: 15%;
+}
+
+#check1:checked + label{
+    background-image: url(../../images/check.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* check1 존재는 하지만 화면에 보이지 않게 하기 */
+#check1{
+    display: none;
+}

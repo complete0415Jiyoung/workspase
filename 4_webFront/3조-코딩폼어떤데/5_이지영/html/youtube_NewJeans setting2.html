@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 설정2</title>
+    <link rel="stylesheet" href="../css/youtube_New Jeans setting2.css">
+    <script src="https://kit.fontawesome.com/9e44afcd4a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <button type="submit" id="bar-btn" class="fa-solid fa-bars"></button>
+                <a href="../html/youtube_NewJeans Hom.html">
+                    <img src="../NewJeans/1265351_20200122175836_084_0001.jpg" id="home-logo">
+                </a>
+            </div>
+            <div>
+                <div class="search-area">
+                    <!-- form 내부 input 값을 서버 또는 페이지로 전달 -->
+                    <form action="#" name="search_form">
+                        <!-- fieldset :form 내부에서 input을 종류별로 묶는 용도로 많이 사용 -->
+                        <fieldset>
+
+                            <input type="search" id="query" name="query"
+                                placeholder="검색" autocomplete="off"> 
+                            <span>|</span>
+                            <!-- 검색 버튼 -->
+                            <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            
+                        </fieldset>
+                    </form>    
+                </div>
+                <button type="submit" id="vo-btn" class="fa-solid fa-microphone"></button>
+            </div>
+            <div>
+                <div class="btns">
+
+                    <button type="submit" id="video-btn" class="fa-solid fa-video"></button>
+                    <button type="submit" id="bell-btn" class="fa-regular fa-bell"></button>
+                    <div class="mem">사용자</div>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="side">
+               <div>
+                    <div>
+                        설정
+                    </div>
+                   <a href="../html/youtube_NewJeans setting.html" class="side-setting">
+                       <span>계정</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>알림</span>
+                   </a>
+                   <a href="#" class="side-setting" style="background-color: #0e0d0d2f;">
+                       <span>재생 및 실적</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>오프라인 저장 동영상</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>공개 범위 설정</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>연결된 앱</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>구매 항목 및 멤버십</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>청구 및 결제</span>
+                   </a>
+                   <a href="#" class="side-setting">
+                       <span>고급설정</span>
+                   </a>
+
+               </div>
+            </div>
+
+            <div class="main">
+                <div class="top">
+                    <div class="top-text">
+                        <div>재생 및 실적</div>
+                        <div>동영상 시청 환경을 관리하세요</div>
+                        <div>재생 설정이 이 브라우저에만 적용됩니다</div>
+
+                    </div>
+                    <img src="../NewJeans/재생 및 실적.PNG" id="top-img">
+                </div>
+                <div class="middle">
+                    <div>
+                        <div class="f">정보 카드</div>
+                        <div class="checked-a">
+                            <div class="checked-box">
+                                <div class="focus">
+                                    
+                                    <input type="checkbox" id="check1" name="myInfo" value="myInfo" checked>
+                                    <label for = "check1"> 
+                                        <div class="w">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="check-a">동영상 내 정보 카드 표시</div>
+
+                            </div>
+                            
+                        </div>    
+                           
+                    </div>
+                    <div>
+                        <div class="f">자막</div>
+                        <div class="checked-a">
+                            <div class="checked-box">
+                                <div class="focus">
+                                    
+                                    <input type="checkbox" id="check2" name="subtitle" value="subtitle" checked>
+                                    <label for = "check2"> 
+                                        <div class="w">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="check-a">항상 자막 표시</div>
+
+                            </div>
+                            <div class="checked-box">
+                                <div class="focus">
+                                    
+                                    <input type="checkbox" id="check3" name="subtitle2" value="subtitle2">
+                                    <label for = "check3"> 
+                                        <div class="w">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+
+                                    </label>
+                                </div>
+                                <div class="check-a">자동 생성된 자막포함(사용 가능한 경우)</div>
+
+                            </div>
+                            
+                        </div>    
+
+                    </div>
+                    <div>
+                        <div class="f">AV1</div>
+                        <div class="checked-a">
+                            <div class="checked-box">
+                                <div class="focus">
+                                    
+                                    <input type="checkbox" id="check4" name="auto" value="auto" checked>
+                                    <label for = "check4"> 
+                                        <div class="r"></div>
+                                    </label>
+                                </div>
+                                <div class="check-a">자동(권장)</div>
+
+                            </div>
+                            <div class="checked-box">
+                                <div class="focus">
+                                    
+                                    <input type="checkbox" id="check5" name="auto" value="auto">
+                                    <label for = "check5"> 
+                                        <div class="r"></div>
+                                    </label>
+                                </div>
+                                <div class="check-a">SD에 av1 사용</div>
+
+                            </div>
+                            <div class="checked-box">
+                                <div class="focus">
+                                    
+                                    <input type="checkbox" id="check6" name="auto" value="auto">
+                                    <label for = "check6"> 
+                                        <div class="r"></div>
+                                    </label>
+                                </div>
+                                <div class="check-a">항상 av1사용</div>
+
+                            </div>
+                            
+                            
+                        </div>    
+
+                    </div>
+                    <div class="bar">
+                        <div>둘러보기</div>
+                        <div class="checked-a">
+                            <div class="focus-a">
+                                <input type="range" min="0" max="1" id="bar-a">
+                                <div>
+                                    <div>
+                                        인라인 재생
+                                    </div>
+                                    <div>홈 및 검색페이지에서 동연상 위에 마우스를 가져가면 동영상이 재생됩니다.</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

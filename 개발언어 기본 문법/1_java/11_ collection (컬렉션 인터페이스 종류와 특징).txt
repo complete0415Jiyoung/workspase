@@ -1,0 +1,92 @@
+11_ collection (컬렉션 인터페이스 종류와 특징)
+
+[List 컬렉션 인터페이스 ] : 배열의 모양
+
+[구현 클래스] ArrayList : 검색에 효율적 
+		 LinkedList : 추가, 삭제, 수정에 효율적이다. 
+
+[List 주요 메서드] 
+	add(객체) : 주어진 객체를 추가 
+	set(int index, 객체) : 주어진 인덱스에 저장된 객체를 주어진 객체로 바꿈 
+	contains(객체) : 주어진 객체를 포함하고 있는가? T/F 반환
+	get(index) : 주어진 인덱스에 저장장 객체를 반환
+	isEmpty() : 컬렉션이 비어 있는가 조사 
+	size() : 저장된 객체의 수 반환 
+	remove(index) : 주어진 인덱스의 객체 삭제 
+	remove(객체 )  : 주어진 객체 삭제 
+
+-----------------------------------------------------------------------
+
+[Set 컬렉션 인터페이스] : 주머니 모양 ( 중복 X / 순서 X )
+
+[구현클래스]  HashSet : 중복없이 데이터를 저장하여 데이터 검색이 빠름 
+		LinkeHashSet : 추가되는 순서를 유지 
+		TreeSet : 오름차순으로 정렬 
+
+
+[ 순서 X, Set에 저장된 객체( 데이터) 하나씩 얻어오기 ]
+
+1) Iterator(반복자)  : 컬렉션에 있는 객체를 하나씩 반복함 
+
+	ex) Iterator it = set. interator();
+	   (참조변수)    / (객체) .iterator();
+	   whlie(it.hasnext()){
+	   System.out.println(it.next());
+	   			변수명.next()
+	   
+	* 관련 메소드 
+		.interator() : 객체를 하나씩 꺼낼 수 있는 모양으로 반환 
+		.hasnext() : 다음값이 있으면 true로 반환 
+		.next() : 다음 값을 얻어옴 
+
+
+2) 향상된 for문 
+	for(String temp : Set) { System.out.println(temp); }
+	for(하나씩 꺼내서 저장할 변수 : 배열 또는 컬렉션) { 수행구문 }
+
+
+-----------------------------------------------------------------------
+
+[Map 인터페이스] : key와 value 한쌍이 데이터가 되어 이를 모아둔 데이터 객체 
+			- key을 모아두면 Set의 특징 (중복 X) 
+			  value을 모아두면 List 특징 (중복 o)
+
+[구현 클래스]	HashMap
+	Map <Integer, String> map = new HashMap <Iteger,String>();
+
+	(객체).put(k,v) : 추가 (put : 놓다)
+
+
+
+[Map에 저장된 데이터 순차적으로 접근하기]
+	Map에서key만 모아 두면 Set의 특성을 가진다. 
+	이를 활용할 수 있도록 Map에서 keySet() 메소드 제공 
+	--> key 만 모아서 Set으로 반환 
+
+	ex) Set <String> set = map. keySet();
+	   System.out.println (set);
+				//[id, pw, age]
+	   for(String key : set){
+ 	     System.out.println (Map.get(key)); 
+				//key가 반복 될 때 마다 변경된 key에 맞는 value값이 나옴  
+
+
+-----------------------------------------------------------------------
+<제네릭 >: 컬렉션에 저장되는 객체의 타입을 한가지로 제한 
+	
+[Wrapper Class] : 기본자료형을 객체로 포장하는 클래스 
+
+	int	 ->	Integer
+	double ->	Double
+	boolean -> 	Boolean
+	byte	  ->	Byte
+	short	  ->	Short 
+	long	  ->	Long
+	Float	  ->	float
+	char	  ->	Character  
+
+	*AutoBoxing	 : 기본 자료형 -> 객체로 포장 
+	*AutoUnBoxing : 객체의 포장을 벗겨냄 -> 기본자료형 
+				주로 연산시 사용 
+
+

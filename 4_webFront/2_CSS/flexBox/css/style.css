@@ -1,0 +1,40 @@
+div{
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* content + boeder+ padding 합으로 width/height 지정 */
+
+}
+.item{
+    width: 75px;
+    height: 75px;
+}
+.item1{background-color: red;}
+.item2{background-color: orangered;}
+.item3{background-color: orange;}
+.item4{background-color: yellow;}
+.item5{background-color: yellowgreen;}
+.item6{background-color: green;}
+.item7{background-color: lightblue;}
+.item8{background-color: blue;}
+.item9{background-color: violet;}
+
+/* 요소 정가운데 배치하기 */
+#con{
+    width: 450px;
+    height: 450px;
+
+    display: flex;
+    
+    /* 중심축 방향으로 가운데 정렬 */
+    justify-content: center;
+    
+    /* 교차축 방향으로 가운데 정렬 */
+    align-items: center;
+
+}
+#center{
+    width: 80px;
+    height: 80px;
+    background-color: red;
+}
+

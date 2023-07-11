@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_JQuery메소드와 이벤트2</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <style>
+        .area{ 
+        width: 200px;
+        height: 40px;
+        border: 1px solid black;
+        }
+        .text1{
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="area"></h1>
+    <button type="button" id="stop">정지</button>
+
+    <hr>
+
+    <h3>input태그 관련 이벤트</h3>
+    
+
+    <pre>
+        focus : input 태그에 포커스가 맞춰 졌을 때
+                ex) text인 경우 커서가 깜빡 거릴 때
+
+        blur : 포커스가 해제되었을 때
+
+        change : input 태그의 값이 변했을 때
+            1) checkbox, radio, select (마우스 선택 요소)
+                -> 값이 변했을 때 change 이벤트 발생
+
+            2) text 관련 요소 (키보드로 값 변경하는 요소)
+                -> 포커스가 해제되었을 때 이전 값과 다를 경우
+                    change 이벤트 발생
+        
+        select : 선택한 요소 입력 영역 값에 블럭이 설정된 경우
+
+        input : 입력과 관련된 모든 이벤트
+    </pre>
+
+    focus / blur : <input type="text" id="focus-blur"> <br>
+
+    change 1 : <input type="checkbox" id="change1"> <br>
+    change 2 : <input type="text" id="change2"> <br>
+
+    select : <input type="text" id="select"> <br>
+
+    <hr>
+
+    <h3>동적으로 글자 수 세기</h3>
+    <div>
+        <p> <span id="counter">0</span>/150 </p>
+        <textarea id="input-content" rows="5" cols="50"
+            style="resize: none;"></textarea>
+    </div>
+
+
+    <script src="JS/07_JQuery메소드와 이벤트2.js"></script>
+</body>
+</html>

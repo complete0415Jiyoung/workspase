@@ -1,0 +1,85 @@
+div{
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.test{
+    width: 300px;
+    height: 200px;
+    background-color: #eee;
+}
+.float-left{
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    /* 요소를 왼쪽으로 흐름을 주어서 왼쪽 정렬 */
+    float: left;
+
+    /* 뛰워지면서 한줄을 다 차지하려고 하던
+    block 형식의 오른쪽 margin가 사짐
+    ->오른쪽에 다른 요소가 붙게 됨 (한줄로 요소가 배치됨) */
+
+
+}
+
+.float-right{
+    width: 50px;
+    height: 50px;
+    background-color: cornflowerblue;
+    float: right;
+    
+    /* 오른쪽으로 먼저 작성된 요소가 
+    차곡차곡 쌓이기 때문에 
+    출력되는 순서가 반대로 보인다 */
+    
+    
+}
+
+.clear{
+    background-color: red;
+    color: white;
+    /* 현재 요소부터 겹쳐지는 float 상태를 해제
+        *clear의 방향성
+            -float는 left/right가 나누어져 있는데 
+            지정된 float 흐름과 같은 방향을 해재해야 
+            겹침 문제가 해결된다
+    */
+    /* clear: left; */
+    /* clear:  right; */
+
+    /* float: left/right 모두 해제 */
+    clear: both;
+}
+
+
+/*좌우 2분활 */
+.container{
+    width: 400px;
+    height: 200px;
+}
+
+.div-1{
+    width: 50%;
+    height: 100%;
+
+    float: left;
+    
+}
+.bg-1{background-color: red;}
+.bg-2{background-color: orange;}
+.bg-3{background-color: yellow;}
+.bg-4{background-color: green;}
+.bg-5{background-color: blue;}
+.bg-6{background-color: navy;}
+.bg-7{background-color: violet;}
+
+/* 4분활 */
+.row-2{
+    height: 50%;
+    /* width: 100%; 기본값*/
+
+}
+
+.container-3{
+    width: 400px;
+    height: 400px;;
+}

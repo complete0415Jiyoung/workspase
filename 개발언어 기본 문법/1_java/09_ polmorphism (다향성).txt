@@ -1,0 +1,106 @@
+09_ polmorphism (다향성)
+
+<다향성> 
+: 상속을 이용한 기술로 
+ 부모로 부터 받은 클래스 타입 참조변수 하나로
+ 상속관계에 있는 여러 타입의 자식 객체를 참조하는 기술 
+
+* 업캐스팅(upcasting)
+ : 부모 타입의 참조 변수가 모든 자식 타입 객체의 주소를 참조할 수 있음
+
+*다향성 업캐스팅 작성법
+	
+	1) 자식 객체가 부모 객체로 변하였기 때문에 
+	   자식만의 고유한 필드, 메소드를 자용 할 수 없다   
+
+	ex) 	Car c1= new Tesla();
+		//c1 . setBettercapcity(5000); (X오류 발생) 
+		c1. setEngine( "전기엔진"); 
+		c1. setFuel( "전기" );
+		c1. setWheel( 4 ); 
+			
+ 
+	2)다향성을 이용한 객체 배열 
+
+	ex)	Car[]= { new Car(), new Tesla(), new Spark()};
+			
+	
+	3) 다향성 업캐스팅을 이용한 매개변수 
+
+	ex) 	public void printCar(Car temp){
+		system. out. println( temp. getEngine());}
+		Tesla t = new Tesla();
+		Spark s = new spark();
+
+		printCar(t); //Tesla의 엔진명 출력 
+			
+
+	4) 다향성을 이용한 변환형 사용 
+		ex) 
+		public Car createCar(int num){
+		car result = null;
+		switch(num) {
+		case 1 : result =new Car(); break;
+		case 2 : result =new Tesla(); break;
+		case 3 : result =new Spark(); break;}
+
+		return result;
+		
+		Car[]arr = { createCar(1), createCar(2), createCar(3)}
+
+
+ 
+* instanceof 연산자 : 객체의 자료형을 검사하는 연산자 
+		 참조하는 객체의 특정 자료형이거나
+		 부모쪽 상속 관계인지 확인하는 연산자 
+
+	ex) System.out. println( arr[] instanceof Tesla)
+		//arr[1]이 참조하고 있는 객체가 Tesla이면 True, 아니면 False
+
+	ex) for( int i = 0; i < arr.length ; i++){
+		if( arr[i] instanceof Tesla){
+		System.out.println( "Tesla객체 입니다"); 
+		}else if( arr[i] instanceof Spark){
+		System.out.println( "Spark객체 입니다"); 
+		}else{
+		System.out.println( "Car객체 입니다"); }
+
+* 다향성 중 다운캐스킹 (Down Casting)
+	: 부모 타입의 참조변수가 자식 객체를 참조하는 업캐스팅 상태에서만
+	   진행할 수 있는 기술
+
+	부모타입을 지식 타입으로 자료형을 "강제 형변환"해서 
+	자식 객체의 본래 필드, 메소드를 사용하게 한다.
+
+	ex1) Car c1 = nwe Tesla("전기엔진", "전기", 4, 50000 );
+		System.out.println(((Tesla)c1).getBetterCapcity()); 
+		
+		!주의! "." 연산자가 (Tesla) 연산자 보다 우선 순위가 높음
+
+	ex2) Tesla t1 = (Tesla) c1 ; //얕은 복사 + 형변환
+		System.out.println(t1. getBetterCapacity());  
+
+
+* 다운캐스팅시 주의 사항 
+	Car c1= new Tesla (); 
+	Spark s1 = (Spark) c1; //(다운캐스팅 실패 )
+	
+	c1이 참조하고 있는 객체는 Tesla인데 
+	Spark 참조 변수로  Tesla을 참조하려고 해서 문제 발생 
+
+* 바인딩 ( Binding) 
+	: 실제 실행하는 코드와 연결 시키는 것 
+
+* 다향성 적용 시 바인딩 
+
+	Car c1 = nwe Tesla("전기엔진", "전기", 4, 50000 );
+	System.out.println(c1.toString());
+	
+	-실행 전(정적바인딩): 부모 클래스의 toString()메소드와 바인딩
+ 	-실행 후(동적바인딩): 지식 클래스의 오버라이딩 된 toString()메소드와 바인딩
+
+* 동적 바인딩의 장점 
+	: 업캐스팅 된 침조변수를 별도의 다운 캐스팅 없이 
+	  자식의 오버라이딩 된 메소드를 수행할 수 있다
+
+  

@@ -1,0 +1,439 @@
+*{box-sizing : border-box;}
+
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Noto+Sans+KR:wght@900&display=swap');
+
+
+.container {
+    width: 100%;
+    height: 3220px;
+    margin: 0;
+}
+
+.header {
+    width: 80%;
+    height: 123px;
+    display: flex;
+}
+
+
+.logo {
+    width: 48%;
+    height: 123px;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo1 {
+    width: 50%;
+    height: 123px;
+    display: flex;
+    align-items: center
+} 
+
+.logo2 {
+    width: 50%;
+    height: 123px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.header-up {
+    width: 95%;
+    height: 61px;
+}
+
+.none a{
+    text-decoration: none;
+}
+
+.header-down {
+    width: 95%;
+    height: 60px;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ margin: 55px 9px 12px 78px;
+ 
+}
+
+
+.header-up p {
+    color: gray;
+    float: right;
+}
+
+
+.content-1 {
+    width: 100%;
+    height: 575px;
+}
+
+
+
+.content-3 {
+    width: 100%;
+    height: 530px;
+    margin: auto;
+  
+}
+
+.content-4 {
+    width: 100%;
+    height: 550px;
+    display: flex;
+}
+
+.content4-1 {
+    width: 60%;
+    height: 550px;
+    transition-duration: 1s;
+}
+
+.content4-2 {
+    width: 40%;
+    height: 550px;
+    transition-duration: 1s;
+}
+
+.content-5 {
+    width: 100%;
+    height: 600px;
+    display: flex;
+}
+
+.left{
+    width: 45%;
+    height: 600px;
+    
+}
+
+.left1 {
+    width: 65%;
+    height: 335px;
+    margin: auto;
+    margin-top:10px;
+    margin-right: 20px;
+}
+
+.left2 {
+    width: 65%;
+    height: 335px;
+    margin: auto;
+    margin-top: -2px;
+    margin-right: 20px;
+
+}
+
+.right {
+    width: 60%;
+    height: 700px;
+    transition-duration: 1s;
+    margin-top: 10px;
+}
+
+#plus {
+    position : relative;
+    top: -120px; 
+    left: 300px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    width: 10%;
+    cursor: pointer;
+    font-size: 4em;
+    transition-duration: 1s;
+   
+
+}
+
+#plus:hover {
+    transform: rotate(700deg);
+    background-color: transparent;
+
+}
+
+#plus2 {
+    position : relative;
+    top:88px; 
+    left: -800px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    width: 10%;
+    cursor: pointer;
+    font-size: 4em;
+    transition-duration: 1s;
+    
+}
+
+
+#plus2:hover {
+    transform: rotate(700deg);
+    background-color: transparent;
+
+}
+
+
+
+.content4-1:hover {
+    transform: scale(1.04, 1.04); transition-duration: 3s;
+}
+
+.content4-2:hover {
+    transform: scale(1.04, 1.04); transition-duration: 3s;
+}
+
+.right:hover {
+    transform: scale(1.04, 1.04); transition-duration: 3s;
+}
+
+.left1 fieldset {
+    position: absolute;
+    padding: 6px;
+    margin: -130px 93px;
+    border: 3px solid #455ba8;
+    display: flex;
+    width: 20%;
+}
+
+#query {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 92%;
+    border: none;
+    outline: 0; 
+}
+
+#search-btn {
+    width: 8%;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: #455ba8;
+    background-color: white;
+    border: 0; 
+    margin-left: -10px;
+}
+
+.footer {
+    width: 100%;
+    height: 0px;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #FEE600;
+}
+
+.theborn {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+
+#plus3 {
+    position : relative;
+    top: -115px;
+    left: 40px;
+    border: 0;
+    width: 10%;
+    cursor: pointer;
+    font-size: 4em;
+    transition-duration: 1s;
+    background-color: transparent;
+}
+
+#plus3:hover {
+    transform: rotate(700deg);
+    background-color: transparent;
+
+}
+
+#plus4 {
+    position : relative;
+    top: -115px;
+    left: 230px;
+    border: 0;
+    width: 10%;
+    cursor: pointer;
+    font-size: 4em;
+    transition-duration: 1s;
+    background-color: transparent;
+}
+
+#plus4:hover {
+    transform: rotate(700deg);
+    background-color: transparent;
+
+}
+
+#plus5 {
+    position : relative;
+    top: -115px;
+    left: 40px;
+    border: 0;
+    width: 10%;
+    cursor: pointer;
+    font-size: 4em;
+    transition-duration: 1s;
+    background-color: transparent;
+}
+
+#plus5:hover {
+    transform: rotate(700deg);
+    background-color: transparent;
+
+}
+
+
+.content-3 p {
+    position: relative;
+    top: -550px;
+    right: -300px;
+    font-size: 60px;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #6d4d34;
+
+}
+
+.content-3 p:nth-child(3) {
+    position: relative;
+    top: -630px;
+    right: -300px;
+    font-size: 18px;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+.content4-1 p:nth-child(3) {
+    position: relative;
+   top:-650px;
+   right:-250px;
+    font-size: 60px;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #1a237e;
+}
+
+.content4-1 p:nth-child(4){
+    position: relative;
+   top:-700px;
+   right:-250px;
+    font-size: 19px;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+.content4-2 p:nth-child(3){
+    position: relative;
+    top:-650px;
+   right:-20px;
+     font-size: 60px;
+     font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color: #f4ac1c;
+}
+
+.content4-2 p:nth-child(4){
+    position: relative;
+    top:-700px;
+   right:-30px;
+     font-size: 18px;
+     font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color: black;
+}
+
+#menubtn {
+    text-decoration: none;
+    color: black;
+}
+
+
+.page-top {
+    position:fixed;
+    left: 1600px;
+    top: 800px;
+	width: 50px;
+	height: 50px;
+	background: #FEE600;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5%;
+}
+
+.page-top a {
+    text-decoration: none;
+    position: relative;
+    top: 12px;
+    color: black;
+}
+
+
+.content2 {
+    width: 100%;
+    height: 340px;
+    display:flex;
+}
+
+
+.content2-1 {
+    width: 50%;
+    height: 340px;
+    position : relative;
+    
+}
+
+.content2-2 {
+    width: 50%;
+    height: 340px;
+   display: flex;
+    
+}
+
+.right p {
+    color: white;
+    position: relative;
+    left: 40px;
+    top: -750px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.right p:last-child {
+    color: white;
+    position: relative;
+    left: 40px;
+    top: -800px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.one {
+    width: 10%;
+    height: 100px;
+    position: fixed;
+    top: 200px;
+    left: 1650px;
+}
+
+.two {
+    width: 10%;
+    height: 100px;
+    position: fixed;
+    top: 350px;
+    left: 1650px;
+}

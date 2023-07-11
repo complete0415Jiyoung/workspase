@@ -1,0 +1,33 @@
+<!-- ____________________________________________________ -->
+<h1>간이 계산기 만들기</h1>
+첫번째 값 : <input type="text" id="num3"><br>
+두번째 값 : <input type="text" id="num4"><br>
+
+<button onclick="calculate2('+')">+</button>
+<button onclick="calculate2('-')">-</button>
+<button onclick="calculate2('*')">*</button>
+<button onclick="calculate2('/')">/</button>
+<button onclick="calculate2('%')">%</button><br>
+
+계산 결과: <span id="result2"></span>
+
+<script>
+    function calculate2(op){
+
+        const num3 = Number(document.getElementById("num3").value);
+        const num4 = Number(document.getElementById("num4").value);
+
+        let res1=0;
+
+        switch(op){
+            case '+' : rel=num3 + num4; break; 
+            case '-' : rel=num3 - num4; break; 
+            case '*' : rel=num3 * num4; break; 
+            case '/' : rel=num3 / num4; break; 
+            case '%' : rel=num3 % num4; break; 
+        }
+
+        document.getElementById("result2").innerHTML=res1;
+    }
+</script>
+

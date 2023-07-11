@@ -1,0 +1,494 @@
+div{  
+    background-color: #03242b;
+}
+
+*{box-sizing: border-box;}
+
+body{
+    margin: 0px;
+}
+
+.container{
+    width: 100vw;
+    height: 1855px;
+    margin: auto;
+}
+
+
+.header{
+    height: 50px;
+    display: flex;
+    position:sticky;
+    top:0;
+}
+
+.header > div:nth-child(1){
+    width: 7%;
+}
+
+#arrow{
+    margin-left: 13px;
+    margin-top: 1px;
+}
+
+/* 로고 */
+.logo{
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+/* 서울 */
+.header > div:nth-child(2){
+    display: flex;
+    width: 6%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-right: 1px solid white;
+    
+}
+.header > div:nth-child(3){
+    display: flex;
+    width: 6%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    
+}
+.header > div:nth-child(4){
+    width: 42%;
+}
+
+/* 검색창 */
+.header > div:nth-child(5){
+    width: 28%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-area{
+    width: 90%;
+    height: 90%;
+}
+.search-area fieldset{
+    padding: 2px;
+    margin: 0;
+    border : 2px solid  #03242b;
+    border-radius: 5px;
+    display: flex;
+}
+#query{
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+
+    width: 90%;
+
+    border: none;
+
+    outline: 0;
+}
+#search-btn{
+    width: 8%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color : black;
+    background-color: white;
+    border:0; 
+}
+.header > div:nth-child(6){
+    width: 15%;
+    color: white;
+    display:flex;
+    
+}
+
+/* 하트부터 */
+.header a {
+    color: white;
+}
+.header > div:nth-child(6) > div:nth-child(1){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > div:nth-child(6) > div:nth-child(2){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > div:nth-child(6) > div:nth-child(3){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > div:nth-child(6) > div:nth-child(4){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.picture{
+    width: 100%;
+    height: 41%;
+}
+.picture img:nth-child(1){
+    width: 100%;
+    height: 750px;
+}
+
+/* 중간부터 묶어두는 div 컨테이너 */
+.second{
+    width: 60%;
+    margin: auto;
+}
+
+/* 중간 배너 */
+.list{
+    height: 60px;
+    display: flex;
+    border-bottom: 1px solid white;
+    
+}
+.list > div:nth-child(1){
+    width: 1100px;
+    display:flex;
+    
+}
+.list > div:nth-child(2){
+    width: 78px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.list > div:nth-child(3){
+    width: 78px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.list a{
+    color:white;
+}
+.content > div > div > div{
+    background-color: white;
+}
+.content2 > div > div > div{
+    background-color: white;
+}
+
+/* 예약하는 곳 */
+.content{
+    height: 400px;
+}
+/* 첫번째 단락 */
+.content > div:nth-child(1){
+    height: 400px;
+    display: flex;
+}
+/* 1-1사진 */
+.content > div > div:nth-child(1){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content > div > div:nth-child(1) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content > div > div:nth-child(1) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+/* 1-2사진 */
+.content > div > div:nth-child(2){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content > div > div:nth-child(2) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content > div > div:nth-child(2) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 1-3사진 */
+.content > div > div:nth-child(3){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content > div > div:nth-child(3) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content > div > div:nth-child(3) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 1-4사진 */
+.content > div > div:nth-child(4){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content > div > div:nth-child(4) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content > div > div:nth-child(4) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* 예약하는 곳 사진 파일 들 */
+.content img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+.content2 img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+/* 두 번째 단락 */
+.content2{
+    height: 400px;
+}
+.content2 > div:nth-child(1){
+    height: 400px;
+    display: flex;
+}
+
+/* 2-1사진 */
+.content2 > div > div:nth-child(1){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content2 > div > div:nth-child(1) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content2 > div > div:nth-child(1) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 2-2사진 */
+.content2 > div > div:nth-child(2){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content2 > div > div:nth-child(2) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content2 > div > div:nth-child(2) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 2-3 사진 */
+.content2 > div > div:nth-child(3){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content2 > div > div:nth-child(3) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content2 > div > div:nth-child(3) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 2-4사진 */
+.content2 > div > div:nth-child(4){
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+}
+.content2 > div > div:nth-child(4) > div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.content2 > div > div:nth-child(4) > div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 사진 밑 설명 */
+.info > div:nth-child(1){
+    height: 50%;
+    font-size: 18px;
+    background-color: white;
+    font-weight: 400;
+    margin: 0px 6px 6px 6px;
+    font-family: 'Orbit', sans-serif;
+    
+    
+   
+}
+
+.info > div:nth-child(2){
+    height: 15%;
+    font-size: 8pt;
+    background-color: white;
+    color: gray;
+    margin: 2px;
+    
+}
+.info > div:nth-child(3){
+    height: 35%;
+    font-size: 14;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    
+}
+
+/* 가격표 ㅋㅋ */
+.info div{
+    background-color: white;
+}
+.content a{
+    color: black;
+    text-decoration: none;
+}
+.content2 a{
+    color: black;
+    text-decoration: none;
+}
+
+.info > div:nth-child(3) > div:nth-child(1){
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    width: 50%;
+    align-items: end;
+    color:rgb(173, 128, 14);
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 6px;
+    
+}
+.info > div:nth-child(3) > div:nth-child(2){
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: right;
+
+}
+
+/* 가격 */
+.info div > span:nth-child(1){
+    margin-top: 4px;
+    margin-right: 4px;
+    font-size: 10px;
+}
+.info div > span:nth-child(2){
+    font-size: 18px;
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+
+.info i{
+    padding: 5px;
+}
+
+
+
+
+/* 맨 밑 */
+.foot{
+    height: 186px;
+    background-color: black;
+}
+
+.foot > div:nth-child(1){
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+.foot > div:nth-child(1) > img{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+ul{
+    height: 100%;
+    font-size: 15px;
+    margin:0px
+}
+
+

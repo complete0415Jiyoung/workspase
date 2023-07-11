@@ -1,0 +1,143 @@
+Server : 서비스를 제공하는 프로그램 또는 컴퓨터
+Client : 서버에 서비스를 요청하여 사용하는 프로그램 또는 컴퓨터 
+
+TCP : 데이터 전달의 신뢰성을 최대한 보장하기 위한 방식( 연결 지향형 통신)
+
+Socket : 프로세스 (프로그램)의 통신에 사용 되는 양 끝단. 
+	서버와 클라이언트가 통신을 하기 위한 매개체
+
+ServerSocket : 서버용 소켓 
+	- port와 연결되어 외부 요청을 기다리는 역할 
+	- 클라이언트 요청이 올 경우 이를 수락 (accet)하고 
+		클라이언트가 사용할 수 있는 소켓을 생성 
+	----> 서버 소켓과 클라이언트 소켓이 연결 되어 데이터 통신이 가능해짐
+  
+
+
+// 1. 서버의 포트번호를 정함
+int port =8500; //port번호는 0~ 65535사이 지정 가능
+		//단, 1023번 이하는 이미 사용 중인 경우가 많음
+
+//* 사용할 변수 미리 선언 *
+ServerSocket  serverSocket = null; 서버 소켓 저장 변수 
+Socket clientSocket = null;  클라이언트 소켓 저장변수 
+InputStream  is = null;클라이언트-> 서버 입력용 변수 
+Befferedreader br= null; //입력용 보조스트림 변수 
+OutputStream os = null서버 -> 클라이언트 출력용 변수 
+PrintWriter pw = null;//출력용 보조스트림 변수 
+
+try{
+//2. 서버용 소캣 객체 생성 
+ServerSocket = new ServerSoket(port); //서버용 소켓에 포트 번호 담기
+ 
+//3.클라이언트 쪽에서 접속 요청이 오길 기다림 
+//- 서버용 소켓은 생성되면 클라이언트 요청이 오기 전까지
+//	 다음 코드를 수행하지 않고 대기하고 있음 
+System.out.println( "서버");
+System.out.println("클라이언트 요청를 기다리고 있습니다")
+
+//4. 접속요청이 오면 수락후 해당 클라이언트에 대한 소켓 객체 생성 
+	//요청을 수락하면 자동으로 Socket 객체가 얻어와짐
+cilentSocket = serverSocket.accept(); 
+//클라이언트소켓 = 포트를 포함한 서버 소켓이 수락했을 때 
+
+//접속한 클라이언트의 Ip을 얻어와서 출력 
+String clientIP = cilentSocket. getIntAddress().getHostAdress();
+System.out.println(cilentIP + "가 연결을 요청함..")
+
+
+//5.연결된 클라이언트와 입출력 스트림 생성 
+is = clientSocket.getInputStream(); 
+os = clientSocket.getOutPutStream();
+
+//6. 보조스트림을 통해 성능 개선
+br= new BufferedReaber(new InputStreamReader is);
+//InputStreamReader :문자 기반 스트림과 바이트 기반 스트림을 연결에 사용 되는 스트림 
+pw= new PrintWriter(os);
+
+//7. 스트림을 통해 읽고 쓰기 
+//7-1) 서버에서 클라이언트에게 출력 (메세지전송)
+Date now = new Date(now);
+
+SimpleDateFormat sdf = SimpleDateFormet("yyyy-MM-dd  hh:bb:ss");
+String time = sdf. formet(now); //now에 저장된 시간 포멧을 변경 
+pw.println(time + "[서버접속 성공]"); 
+pw.flush();//스트림에 있는 내용을 밀어냄 
+
+7-2)클라이언트 -> 서버에게 입력 (메세지 전송 받기)
+String message = br.readLine();// 클라이언트에게 메세지 한줄 읽어옴 
+syso(clientIP + "가 보낸 메시지 : "+ message);
+
+}catch(IOException e){
+e. printStackTrace();
+
+}finally {
+//8. 통신 종료
+//사용한 스크림과 자원 모두 반환(close)
+try{
+
+//보조스트림 close시 연결 기반 스트림 (is,os)도 같이 스트림 
+if(pw != null) 	pw.close();
+if(br != null) 	br.close();
+if(serverSorket != null) serverSocket.close();
+if(clientSocket != null) clientSocket.close(); 
+}catch(IOException e){
+e.printstack
+}
+
+
+------------------------------------------------------------------------
+
+클라이언트용 UDP 
+
+//1. 서버의 Ip주소와 서버가 정한 포트번호를 메게 변수로 하여 클라이언트용 소켓 객체 생성
+String serverIP = "127.0.0.1" //loop back ip(내 커퓨터를 가르치는 ip주소)
+int port = 8500;  //소켓이 기다리고 있는 포트번호 작성
+
+//*필요한 변수 선언* 
+Sorcket clientSocket = null;  //서버와 연결한   클라이언트 용 소켓을 저장할 변수 
+BerfferedReader br = null; //서버 -> 클라이언트로 읽어 오는 보조 스트림 
+printWriter pw = null; //클라이언트 -> 서버로 출력하는 보조스트림 
+
+try {
+//2. 서버와의 입출력 스트림 오픈 -> 먼저 소켓이 필요 
+syso("[client]");
+
+clientSocket = new Socet(serverIP, port);
+//throw UnknownHostException, IOException
+
+//3. 보조 스트림을 통해 성능을 개선 
+//2,3 동시 진행
+br =new BefferedReader( new InputStreamReader(clientSocket. getInputStream());
+
+pw = new PrintReder(clientSocket. getOutputStream());
+ 
+//4. 스트림을 통해 읽고 쓰기 
+//4-1 ) 서버 접속 성공시 
+//	 서버가 출력한 "[서버 접속 성공]" 메세지 읽어오기 
+String message = br.readLine(); 
+syso(" 서버로 받은 메세지 : " + message);
+
+//4-2) 클라이언트 -> 서버로 메세지 전송 
+Scanner sc= new Scanner(System.in); 
+syso("입력");
+String input = sc. nextLine();
+pw. println (input);
+pw. flush(); 
+
+}catch(Exception e){
+//UnkownException, IOException 한꺼번에 예외 처리
+}finally{
+//5. 통신 종료
+try{ 
+if(pw != null) pw.close();
+if(br != null) br.close();
+if(clientSocket !=null) cilentSocker.close();
+
+
+}catch(IOException e) {
+e. printStackTrance();
+}
+
+
+

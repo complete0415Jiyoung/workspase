@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_순회탐색3</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+
+        .wrap *{
+
+            border: 1px solid lightgray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+            color: gray;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    
+    <h1>순회(탐색) 메소드</h1>
+    <h3>sideways(옆으로, 옆에서) 메소드 :
+        같은 레벨에 있는 요소(형제)를 선택할 수 있는 메소드
+    </h3>
+
+    <pre>
+        $('요소명').siblings([매개변수])
+         - 선택된 요소와 같은 레벨(형제)에 있는 모든 요소 리턴
+         - 매개변수가 있으면 같은 레벨에 있는 요소 중 매개변수와 일치하는 모든 요소 리턴
+
+        $('요소명').next()
+         - 선택된 요소의 같은 레벨 중 선택된 요소 다음 한 개 요소 리턴
+
+         $('요소명').nextAll()
+         - 선택된 요소의 같은 레벨 중 선택된 요소 다음의 모든 요소 리턴
+
+         $('요소명').nextUntil(매개변수)
+         - 선택된 요소의 같은 레벨 중 매개변수 이전 까지의 모든 요소 리턴
+
+
+         $('요소명').prev()
+         - 선택된 요소의 같은 레벨 중 선택된 요소 이전 한 개 요소 리턴
+
+         $('요소명').prevAll()
+         - 선택된 요소의 같은 레벨 중 선택된 요소 이전의 모든 요소 리턴
+
+         $('요소명').prevUntil(매개변수)
+         - 선택된 요소의 같은 레벨 중 매개변수 이전 까지의 모든 요소 리턴
+
+
+
+    </pre>
+
+    
+    <div class="wrap">div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+
+    <span>테스트용 span 태그</span>
+    <h2>테스트용 h2태그</h2>
+
+    <script src="JS/05_순회 탐색메소드3.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+#pages {
+    display: flex;
+    position: absolute;
+    left: 4vh;
+    bottom: 5vh;
+    align-items: flex-end;
+}
+
+#pages > div {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#pages > div:nth-child(1) {
+    animation: page-1 100s infinite;
+}
+
+#pages > div:nth-child(2) {
+    animation: page-2 100s infinite;
+}
+
+#pages > div:nth-child(3) {
+    animation: page-3 100s infinite;
+}
+
+#pages > div:nth-child(4) {
+    animation: page-4 100s infinite;
+}
+
+#pages > div:nth-child(5) {
+    animation: page-5 100s infinite;
+}
+
+@keyframes page-1 {
+    0% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    19.9% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    20% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+@keyframes page-2 {
+    19.9% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    20% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    39.9% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    40% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+@keyframes page-2 {
+    19.9% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    20% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    39.9% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    40% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+@keyframes page-3 {
+    39.9% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    40% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    59.9% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    60% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+@keyframes page-4 {
+    59.9% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    60% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    79.9% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    80% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+@keyframes page-5 {
+    79.9% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    80% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+    99.9% {
+        background-color: rgba(0, 255, 200, 0.9);
+    }
+}

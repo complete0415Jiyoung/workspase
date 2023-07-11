@@ -1,0 +1,133 @@
+.area1{ background-color: red;}
+.area2{ background-color: orange;}
+.area3{ background-color: yellow}
+.area4{ background-color: green}
+.area5{ background-color: blue}
+
+.block{
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    color: white;
+    
+    display: block; /*요소형식을 block으로 변경*/
+}
+
+.inline{
+    display: inline; /*요소형식을 inline으로 변경*/
+}
+
+.inline-block{
+    display: inline-block;
+    /*요소형식을 inline-block으로 변경*/
+}
+
+
+/* 감싸는 요소 */
+#container-1{
+    border: 3px solid black;
+    width: 300px;
+    height: 500px;
+}
+
+/* 내부 요소 */
+.div-1{
+    /* 고정크기 단위 
+    ->감싸는 영역의 크기가 변하면 다시 계산(힘들어..)
+    */
+    /* width: 300px;
+    height: 250px; */
+
+    /* 가변크기 단위(%) 
+    ->화면이나 감싸는 영역의 크기에 비례해서 크기가 자동 계산
+    */
+    width: 100%; /* 323px* 100%/ 100=323px */
+    height: 50%; /* 472px* 150%/ 100=236px */
+
+
+
+}
+
+/* 위쪽 분할 요소 */
+#container-1>.div-1:first-of-type{
+    background-color: red;
+    height: 30%;
+}
+/* 아랫쪽 분할 요소 */
+#container-1>.div-1:last-of-type{
+    background-color: blue;
+    height: 70%;
+}
+
+
+
+/* 상하 3분할(20:30:50) */
+/* 감싸는 요소 */
+#container-2{
+    border: 3px solid black;
+    width: 300px;
+    height: 500px;
+}
+
+/* block형식의 요소는
+ 별도의 width가 지정 되어 있지 않으면 항상 100% */
+ /* .div{
+    width
+} */
+/* 위쪽 분할 요소 */
+#container-2>.div-2:nth-child(1){
+    background-color: pink;
+    height: 20%;
+}
+/* 중간 분할 요소 */
+#container-2>.div-2:nth-child(2){
+    background-color: plum;
+    height: 30%;
+}
+/* 아랫쪽 분할 요소 */
+#container-2>.div-2:last-of-type{
+    background-color: palevioletred;
+    height: 50%;
+}
+
+
+/* 좌우 2분할 */
+
+#container-3{/* 감싸는 영역 */
+    border: 5px solid red;
+    width: 400px;
+    height: 200px;
+
+}
+
+.div-3{/* 내부영역 */
+    width: 50%;
+    height: 100%;
+
+    display: inline-block;
+}
+
+#container-3>.div-3:first-child{
+    background-color: pink;
+
+}
+#container-3>.div-3:last-child{
+    background-color: plum;
+}
+
+/* display :none; / visibility :hidden;*/
+
+.div-4{
+    border: 3px solid black;
+    height: 100px;
+}
+
+#test4{
+    background-color: deeppink;
+    /* 요소가 투명색의 변함 */
+    /* visibility:hidden; */
+
+    /* 요소는 존재하지만 화면에 보이지 않음 (영역 차지 하지 않음) */
+    display:  none;
+
+}

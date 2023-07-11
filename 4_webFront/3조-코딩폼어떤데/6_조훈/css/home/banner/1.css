@@ -1,0 +1,113 @@
+#banner-1 {
+    display: flex;
+    height: 98vh;
+    color: white;
+    animation: fade-1 100s infinite;
+}
+/* ---------- info ---------- */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 75%;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+.description {
+    flex-basis: 10%;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.head {
+    flex-basis: 30%;
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+.quotation {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+
+.quotation > img {
+    width: 50px;
+}
+
+.quotation > img:first-of-type {
+    padding-bottom: 10px;
+}
+
+.quotation > p {
+    padding-left: 35px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.quotation > img:last-of-type {
+    padding-left: 455px;
+    padding-bottom: 40px;
+}
+
+/* ---------- review ---------- */
+
+.review {
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+    padding-bottom: 50px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.review > section:first-of-type {
+    display: flex;
+    margin-bottom: 15px;
+    font-size: 25px;
+    align-items: flex-end;
+    letter-spacing: 3px;
+}
+
+.review img {
+    margin-bottom: -5px;
+    margin-right: 10px;
+    width: 80px;
+}
+
+.review > section:last-of-type {
+    width: 550px;
+    padding: 20px;
+    margin-bottom: 5vw;
+    border-radius: 20px 0;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+
+@keyframes fade-1 {
+    15% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

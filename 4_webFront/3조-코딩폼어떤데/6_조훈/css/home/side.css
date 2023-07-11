@@ -1,0 +1,70 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -250px;
+    width: 251px;
+    height: 98vh;
+    z-index: 5;
+    transition-duration: 0.5s;
+}
+
+aside:hover {
+    transform: translateX(-250px);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+aside > img:last-of-type {
+    position: absolute;
+    top: 40vh;
+    right: 26vh;
+    width: 100px;
+    filter:opacity(0.5)
+}
+
+aside > section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+aside > section > img:first-of-type{
+    margin-top: 5vh;
+}
+
+aside > section > p:first-of-type {
+    margin-bottom: 1vh;
+    color: rgb(0, 255, 200);
+    font-size: 40px;
+    font-weight: 900;
+}
+
+aside > section > button {
+    width: 50%;
+    padding: 20px;
+    margin: 40px 0px;
+    border: transparent;
+    border-radius: 20px;
+    color: rgb(0, 255, 200);
+    font-size: 30px;
+    font-weight: 800;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition-duration: 0.4s;
+}
+
+aside > section > button:hover {
+    background-color: transparent;
+    filter: saturate(0%) brightness(150%);
+}
+
+aside > section > button > img {
+    width: 80px;
+    transition-duration: 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+#logo {
+    width: 160px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제1</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <h1>간이계산기</h1>
+
+    첫번째 값: <input type="text" id="num1" value="10"><br>
+    두번째 값: <input type="text" id="num2" value="20"><br>
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+    <button onclick="multi()">*</button>
+    <button onclick="div()">/</button>
+    <button onclick="mod()">%</button>
+
+    <br><br>
+    계산 결과: <span id="result"></span>
+ 
+    <script>
+        const num1 = document.getElementById("num1");
+        const num2 = document.getElementById("num2");
+       
+        //결과 출력용 요소
+        const result = document.getElementById("result");
+
+        function plus(){
+            result.innerHTML = Number(num1.value) + Number(num2.value);
+        }
+        function minus(){
+            result.innerHTML = Number(num1.value) - Number(num2.value);
+        }
+        function multi(){
+            result.innerHTML = Number(num1.value) * Number(num2.value);
+        }
+        function div(){
+            result.innerHTML = Number(num1.value) / Number(num2.value);
+        }
+        function mod(){
+            result.innerHTML = Number(num1.value) % Number(num2.value);
+        }
+
+        //Number(문자열) :문자열을 number형태로 변환 
+        //console.log(Number(num1.value) + Number(num2.value));
+
+        // num1.value="";
+        // num2.value="";
+
+        // num1.focus();
+    </script>
+</body>
+</html>

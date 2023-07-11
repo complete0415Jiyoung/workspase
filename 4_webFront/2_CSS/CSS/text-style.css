@@ -1,0 +1,112 @@
+/* color 속성 */
+#color-ul>li{
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+#color-ul > li:nth-child(1){color: red;}
+#color-ul > li:nth-child(2){color: #C5BFE3;}
+#color-ul > li:nth-child(3){color: rgb(4,90,177);}/*0~255 */
+#color-ul > li:nth-child(4){color: rgba(34,101,26,0.5);}
+/*a: 투명도 : (투명) 0~1(불투명) */
+#color-ul > li:nth-child(5){color: hsl(233,59%,25%);}
+#color-ul > li:nth-child(6){color: hsla(233,59%,25%,0.5);}
+
+
+/*text-decoration : 텍스트 줄 긋기 */
+#deco-ul > li:nth-child(1){ text-decoration: underline;}
+#deco-ul > li:nth-child(2){ text-decoration: line-through;}
+#deco-ul > li:nth-child(3){ text-decoration: overline;}
+#deco-ul > li:nth-child(4)>a{ text-decoration: none;}
+
+
+/* text-align : 글자 정렬 */
+#align-test{
+    width: 350px;
+    border: 2px solid black;
+}
+#align-test span{background-color: pink;}
+#align-test > p:nth-child(1){ text-align: left;}/*기본값*/
+#align-test > p:nth-child(2){ text-align: right;}
+#align-test > p:nth-child(3){ text-align: center;}
+#align-test > p:nth-child(4){ text-align: justify}
+/* flexbox의 speace-between과 같음 */
+
+/* inline-block도 적용되는지 확인 */
+#div1{text-align: center;}
+
+#div1 > div {
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+    display: inline-block;
+}
+
+
+/* line-height: 줄간격 */
+#line-test > p:last-child{
+    line-height: 30px;
+}
+
+
+#center-test{
+width: 200px;
+height: 200px;
+border: 1px solid black;
+line-height: 200px;
+
+text-align: center;
+}
+
+#center-test > span{
+    background-color: hotpink;
+}
+
+
+/* letter-spacing */
+#letter-test{
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1.5px;
+}
+
+#letter-test2{
+    letter-spacing: 10px;
+}
+/* text-shadow */
+
+#shadow-test{
+    background-color: black;
+    padding: 30px;
+}
+#shadow-test > p{
+    font-size: 75px;
+    font-weight: bold;
+}
+#shadow-test >p:nth-child(1){
+    color: orange;
+    text-shadow: 5px 5px white
+            /*가로 세로 색상 */
+}
+#shadow-test >p:nth-child(2){
+    color: white;
+    text-shadow: 4px 4px 4px #bbb;
+            /*가로 세로 번짐 색상 */
+}
+#shadow-test >p:nth-child(3){
+    color: rgba(255,101,26,0.9);
+    text-shadow: 0px 0px 10px pink;
+            /*가로 세로 번짐 색상 */
+            /* 네온 사인 효과 */
+}
+#shadow-test >p:nth-child(4){
+    
+    text-shadow: 0px 0px 4px #ccc,
+                 0px -5px 4px #ff3,
+                 2px -10px 6px #fd3,
+                 -2px -15px 11px #f80,
+                 2px -20px 18px #f20;
+            /*가로 세로 번짐 색상 */
+            /* 불타는 효과 */
+}

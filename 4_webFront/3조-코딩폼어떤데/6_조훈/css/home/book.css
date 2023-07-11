@@ -1,0 +1,49 @@
+.book {
+    position: absolute;
+    top: 3vh;
+    right: 2vw;
+    width: 10vw;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
+}
+
+#book-1 {
+    animation: book 100s infinite;
+    z-index: 4;
+}
+
+#book-2 {
+    animation: book 100s infinite;
+    z-index: 3;
+    animation-delay: -80s;
+}
+
+#book-3 {
+    animation: book 100s infinite;
+    z-index: 2;
+    animation-delay: -60s;
+}
+
+#book-4 {
+    animation: book 100s infinite;
+    z-index: 1;
+    animation-delay: -40s;
+}
+
+#book-5 {
+    animation: book 100s infinite;
+    z-index: 0;
+    animation-delay: -20s;
+}
+
+@keyframes book {
+    15% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-150%);
+    }
+    95% {
+        transform: translateY(-150%);
+    }
+}

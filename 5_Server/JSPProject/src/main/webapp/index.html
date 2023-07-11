@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSP 프로젝트</title>
+</head>
+<body>
+    
+    
+
+    <ul>
+        <li>
+            <!-- 상대 경로 작성법 -->
+            <a href="EL.html">1.EL(Expression Language)</a>
+        </li>
+        <li>
+            <a href="scope.html">2. Servlete/JSP 내장객체와 범위(scope)</a>
+        </li>
+        <li>
+            <a href="jstl_1.jsp">3. JSTL -1</a>
+        </li>
+
+        <li>
+            <a href="jstl_2.jsp">4. JSTL -2</a>
+        </li>
+
+        <li>
+            <a href="member.html">5. 통합 테스트</a>
+        </li>
+
+    </ul>
+    <!-- <a href="/JSPProject/test/test1.html">test1</a> -->
+    <a href="test/test1.html">test1</a>
+
+    <hr>
+    <hr>
+    <hr>
+
+
+    <h3>GET 방식 요청</h3>
+
+    <form action="/JSPProject/login" method="GET">
+        <!-- 
+            요청 주소 : /JSPProject/login
+            데이터 전달 방식 : get(주소뒤에 데이터가 붙어서 전달됨)
+
+         -->
+
+         ID : <input type="text" name="inputId"> <br>
+         PW : <input type="password" name="inputPw"> <br>
+         <button type="submit">로그인</button>
+
+
+    </form>
+
+    <hr>
+
+    <h3>JSP 테스트</h3>
+
+    <form action="/JSPProject/pizzaOrder" method="get">
+        피자 선택(1만원) : 
+        <select name="pizza">
+            <option value="치즈 피자">치즈 피자</option>
+            <option value="고구마 피자">고구마 피자</option>
+            <option value="쉬림프 피자">쉬림프 피자</option>
+            <option value="콤비네이션 피자">콤비네이션 피자</option>
+            <option value="시카고 피자">시카고 피자</option>
+        </select>
+
+        <br><br>
+
+        사이즈(L 선택 시 2천원 추가) : 
+        <label>R <input type="radio" name="size" value="R"></label>
+        <label>L <input type="radio" name="size" value="L"></label>
+
+        <br><br>
+
+        수량 : <input type="number" name="amount" min="1" max="10" value="1">판
+
+        <button>주문하기</button>
+
+    </form>
+
+    <hr>
+
+    <h3>회원가입</h3>
+
+    <form action="/JSPProject/signUp" method="post">
+        <table>
+            <tr>
+                <th>아이디 : </th>
+                <td>
+                    <input type="text" name="memberId">
+                </td>
+            </tr>
+
+            <tr>
+                <th>비밀번호 : </th>
+                <td>
+                    <input type="password" name="memberPw">
+                </td>
+            </tr>
+            <tr>
+                <th>이름 : </th>
+                <td>
+                    <input type="text" name="memberName">
+                </td>
+            </tr>
+            <tr>
+                <th>자기소개 : </th>
+                <td>
+                    <textarea name="intro" cols="30" rows="3"></textarea>
+                </td>
+            </tr>
+        </table>
+
+        <button>회원가입</button>
+        <button type="reset">초기화</button>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+* {
+    font-family: "Apple SD Gothic Neo";
+}
+
+p {
+    margin: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh + 200px;
+    margin: 0;
+    flex-direction: column;
+    -ms-overflow-style: none;
+}
+
+#bg {
+    position: absolute;
+    width: 102vw;
+    height: 104vh;
+    top: -2vh;
+    left: -1vw;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main > section {
+    display: flex;
+}
+
+#account {
+    display: flex;
+    width: 25vw;
+    border-radius: 20px;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    border-radius: 20px;
+    padding: 60px 0;
+    color: white;
+}
+
+#logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+#notice {
+    flex-basis: 35%;
+    display: flex;
+    width: 25vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#notice > p:first-of-type {
+    color: rgb(0, 255, 200);
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+#notice > p:last-of-type {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#input {
+    flex-basis: 45%;
+    display: flex;
+    width: 25vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form > input {
+    background-color: transparent;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    color: white;
+}
+
+#login-form > button {
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+#login-form > button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 255, 200, 0.3);
+}
+#extra {
+    flex-basis: 20%;
+    display: flex;
+    width: 25vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+#extra > p {
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+#extra a {
+    color: white;
+    font-weight: 500;
+}

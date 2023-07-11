@@ -1,0 +1,636 @@
+
+
+*{box-sizing: border-box;}
+
+body{
+    margin: 0px;
+}
+
+.container{
+    background-color: #03242b;
+    width: 100vw;
+    margin: auto;
+}
+
+
+.header{
+    height: 50px;
+    display: flex;
+    position:sticky;
+    top:0;
+    background-color: #03242b;
+}
+
+.header > div:nth-child(1){
+    width: 7%;
+}
+
+#arrow{
+    margin-left: 13px;
+    margin-top: 1px;
+}
+
+/* 로고 */
+.logo{
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+/* 서울 */
+.header > div:nth-child(2){
+    display: flex;
+    width: 6%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-right: 1px solid white;
+    
+}
+.header > div:nth-child(3){
+    display: flex;
+    width: 6%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    
+}
+.header > div:nth-child(4){
+    width: 42%;
+}
+
+/* 검색창 */
+.header > div:nth-child(5){
+    width: 28%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-area{
+    width: 90%;
+    height: 90%;
+}
+.search-area fieldset{
+    padding: 2px;
+    margin: 0;
+    border : 2px solid  #03242b;
+    border-radius: 5px;
+    display: flex;
+}
+#query{
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+
+    width: 90%;
+
+    border: none;
+
+    outline: 0;
+}
+#search-btn{
+    width: 8%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color : black;
+    background-color: white;
+    border:0; 
+}
+.header > div:nth-child(6){
+    width: 15%;
+    color: white;
+    display:flex;
+    
+}
+
+/* 하트부터 */
+.header a {
+    color: white;
+}
+.header > div:nth-child(6) > div:nth-child(1){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > div:nth-child(6) > div:nth-child(2){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > div:nth-child(6) > div:nth-child(3){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > div:nth-child(6) > div:nth-child(4){
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 두번째 컨테이너 65% */
+.secon-con{
+    height: 11%;
+    width: 65%;
+    margin: auto;
+}
+
+
+/* main 시작 */
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: #03242b;
+}
+
+.main > div:nth-child(1){
+    height: 30px;
+}
+.main > div:nth-child(2){
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+/* 사진 */
+.main > div:nth-child(2) > div:nth-child(1){
+    width: 24%;
+}
+/* 사진 크기 */
+.main > div:nth-child(2) > div:nth-child(1) img{
+    margin-top: 15px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.main > div:nth-child(2) > div:nth-child(1) img:hover{
+    margin-top: 15px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px -40px 68px #ff3, 0px 0px 61px #fd3;
+    transition-duration: 2s;
+}
+
+/* 사진 옆 설명 */
+.main > div:nth-child(2) > div:nth-child(2){
+    width: 76%;
+}
+
+.blank > div:nth-child(1){
+    height: 50%;
+}
+.blank > div:nth-child(2){
+    height: 50%;
+}
+
+/* 사진 옆 설명 */
+.blank > div:nth-child(2) > :nth-child(1){
+    width: 58%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-weight: 400;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* 3번째 컨테이너 배경 하얗 */
+.white{
+    width: 100%;
+    height: 85%;
+    background-color: white;
+}
+
+/* 나누기 */
+.con3{
+    width:65%;
+    height: 100%;
+    margin: auto;
+}
+
+
+
+/* seating까지 */
+.information{
+  
+    height: 60%;
+}
+
+center{
+    padding: 20px;
+}
+
+/* 도움이 필요하세요 */
+.help{
+    height: 3%;
+}
+
+
+
+/* 장소정보 */
+.place{
+    height: 10%;
+}
+/* 첫번째 단락 */
+.place > div:nth-child(1) > :nth-child(1){
+    width: 100%;
+    height: 15%;
+}
+.place > div:nth-child(1) > :nth-child(2){
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+/* 정동 아트센터 */
+.place > div:nth-child(1) > div:nth-child(2) > div:nth-child(1){
+   
+    width: 40%;
+    height: 100%;
+    margin-right: 20px;
+}
+/* 사진  */
+.place > div:nth-child(1) > div:nth-child(2) > div:nth-child(2){
+    display: flex;
+    width: 60%;
+    height: 100%;
+}
+#palace{
+    width: 100%;
+    border-radius: 7px;
+    
+}
+
+
+/* 주소확인 */
+.address{
+    height: 8%;
+}
+/* 첫번째 단락 */
+.address > div:nth-child(1) > :nth-child(1){
+    width: 100%;
+    height: 15%;
+}
+.address > div:nth-child(1) > :nth-child(2){
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+/* 정동 아트센터 */
+.address > div:nth-child(1) > div:nth-child(2) > div:nth-child(1){
+   
+    width: 40%;
+    height: 100%;
+    margin-right: 20px;
+}
+.address > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) a{
+    color: black;
+}
+/* 사진  */
+.address > div:nth-child(1) > div:nth-child(2) > div:nth-child(2){
+    display: flex;
+    width: 60%;
+    height: 100%;
+}
+#address{
+    width: 100%;
+    height: 200px;
+    border-radius: 7px;
+    
+}
+
+
+.information > div:nth-child(1){
+    width: 70%;
+    height: 100%;
+}
+.help > div:nth-child(1){
+    width: 70%;
+    height: 100%;
+}
+.place > div:nth-child(1){
+    width: 70%;
+    height: 100%;
+}
+.address > div:nth-child(1){
+    width: 70%;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+.reservation{
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    top: 300px;
+    bottom: 1200px;
+    right: 0px;
+    left: 1350px;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 3px 2px 3px gray, 0px 0px 10px gray;
+}
+
+
+/* 날짜 및 세션 선택 */
+.reservation > div:nth-child(1){
+    width: 100%;
+    height: 10%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color:#03242b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.reservation > div:nth-child(2){
+    width: 100%;
+    height: 12%;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.reservation > div:nth-child(2) center{
+    padding: 2px;
+}
+/* 날짜선택 */
+.date{
+  background-color: white;
+  border: 2px solid #0d7d96;
+  color: #0d7d96;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+
+/* 시간 선택 */
+.reservation > div:nth-child(3){
+    width: 100%;
+    height: 18%;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+.time > div:nth-child(1){
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 88px;
+    cursor: pointer;
+    
+}
+
+.time > div:nth-child(1) > button{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    cursor: pointer;
+}
+.time > div:nth-child(1) > button:focus{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    color: #0d7d96;
+    cursor: pointer;
+
+}
+.time > div:nth-child(1) > button:hover{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    color: #0d7d96;
+    cursor: pointer;
+
+}
+.time > div:nth-child(2){
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.time > div:nth-child(2) > button{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    cursor: pointer;
+}
+.time > div:nth-child(2) > button:focus{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    color: #0d7d96;
+    cursor: pointer;
+
+}
+.time > div:nth-child(2) > button:hover{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    color: #0d7d96;
+    cursor: pointer;
+
+}
+
+.time div > button{
+    border-radius: 7px;
+}
+
+
+/* 구역 선택 */
+.reservation > div:nth-child(4){
+    width: 100%;
+    height: 18%;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+.section div > button{
+    border-radius: 7px;
+}
+.section > div:nth-child(1){
+    width: 110px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.section > div:nth-child(2){
+    width: 110px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.section > div:nth-child(3){
+    width: 110px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.section div > button{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    cursor: pointer;
+}
+.section div > button:focus{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    color: #0d7d96;
+    cursor: pointer;
+
+}
+.section div > button:hover{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    color: #0d7d96;
+    cursor: pointer;
+
+}
+
+
+.reservation > div:nth-child(5){
+    width: 100%;
+    height: 20%;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid gray;
+
+}
+.add > div:nth-child(1){
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 44px;
+}
+
+
+/* 버튼 */
+.add > div:nth-child(1) button{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    color: gray;
+    border-radius: 7px;
+}
+.add > div:nth-child(1) button:hover{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    background-color: #0d7d96;
+    color: white;
+    border-radius: 7px;
+}
+.add > div:nth-child(1) button:focus{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    background-color: #0d7d96;
+    color: white;
+    border-radius: 7px;
+}
+
+.add > div:nth-child(3) button{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    color: gray;
+    border-radius: 7px;
+}
+.add > div:nth-child(3) button:hover{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    background-color: #0d7d96;
+    color: white;
+    border-radius: 7px;
+}
+.add > div:nth-child(3) button:focus{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0d7d96;
+    background-color: #0d7d96;
+    color: white;
+    border-radius: 7px;
+}
+.add > div:nth-child(2){
+    width: 170px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+.add > div:nth-child(3){
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+
+
+.reservation > div:nth-child(6){
+    width: 100%;
+    height: 12%;
+    background-color: white;
+
+}
+
+/* 결제 */
+.buy > div:nth-child(1){
+    width: 250px;
+    height: 50px;
+    border: 0px;
+    border-radius: 7px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-left: 75px;
+    background-color: #0d7d96;
+    
+}
+
+#credit{
+    color: white;
+    text-decoration: none;
+}
+
+
+

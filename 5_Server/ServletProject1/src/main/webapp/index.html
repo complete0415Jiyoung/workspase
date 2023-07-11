@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>index라는 이름이 붙은 파일은 메인페이지 역할을 합니다.</h1>
+
+
+    <hr>
+    <h3>테스트1</h3>
+    <pre>
+        form태그 : 
+            내부에 작성된 input태그의 값을 서버 또는 페이지로 
+            제출 (전달)하는 역할 
+
+        * 이 때, 어떤 input태그에 작성된 값이 제출 된것인지 알수 있도록
+        input 태그에 name속성을 반드시 작성한다!!!!!
+        
+        * form태그 속성
+        - action: input태그 값을 전달할 서버 또는 페이지 주소를 작성하는 속성
+
+        - method : 데이터 전달 방식 지정하는 속성 (get/ post)
+
+
+    </pre>
+
+    <!-- http://localhost:8080                  /ServletProject1/ 
+    
+        - http://아이피:포트번호 : 통신규약 서버 컴퓨터 위치 지정
+            예)카페
+    
+        - /ServletProject1/ : 요청하고자 하는 내용을 나타내는 주소 
+            예)"아아주세욤" -> 요청하는 것 
+    -->
+
+
+    <form  action="/ServletProject1/example1.do">
+        <!-- ServletProject1 이라는 프로젝트에 example1.do 라는 요청을 전달한다
+                -> 예제 1번을 수행해서 결과를 응답할 예정 
+        -->
+
+        이름 : <input type="text" name="inputName"><br>
+        나이 : <input type="text" name="inputAge"><br>
+
+        <button type="submit">서버로 제출하기</button>
+    </form>
+
+
+    <hr>
+
+
+    <h3>GET방식 요청 및 응답</h3>
+    
+    <pre>
+        GET 방식 : 요청하려는 주소 뒤에 
+                전달하려는 값(input 태그에 작성되는 값)을
+                문자열 형태로 붙여서 서버로 전달하는 방식
+
+        - 장점 : 단순함, 캐싱 가능(요청 저장 가능 == 북마크, 즐겨찾기)
+        - 단점 : 보안에 취약함(눈에 다 보임)
+
+        * form 태그, a태그, 주소창 입력하는 모든 것이 GET방식
+        * form 태그 method 속성 기본 값
+
+
+    </pre>
+    <form action="/ServletProject1/example2.do" method="get">
+
+        주문자 : <input type="text" name="orderer"><br>
+
+        <label>
+            <input type="checkbox" name="coffee" value="아이스아메리카노">
+            아이스 아메리카노 
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="coffee" value="카라멜 마끼야또">
+            카라멜 마끼야또 
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="coffee" value="녹차 라떼">
+            녹차 라떼 
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="coffee" value="초코칩 프라페">
+            초코칩 프라페 
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="coffee" value="민트초코 라떼">
+            민트초코 라떼 
+        </label>
+        <br>
+
+        <button>주문서 제출하기</button>
+
+    </form>   
+
+
+    <hr>
+    <h3>회원 정보 제출하기</h3>
+
+    <pre>
+        
+        요청 주소(action) : /ServletProject1/example3.do
+
+        데이터 전달 방식(method) : GET 
+
+        * 비밀번호가 일치하지 않으면
+          응답화면에 h1태그로 "비밀번호가 일치하지 않습니다";
+
+          일치하면 가입된 회원 정보 출력
+
+        * 좋아하는 색을 체크하지 않으면 "없습니다" 출력
+
+        (참고) 
+        - 서버로 제출된 input 태그 값은 모두 [String] 입니다.
+
+        - input type="password" 는 화면에서만 안보이지 
+          서버로 제출된 경우 입력된 값이 그대로 보입니다.
+    </pre>
+
+    <form action="/ServletProject1/example3.do" method="GET">
+
+        아이디 : <input type="text" name="inputId"> <br>
+        비밀번호 : <input type="password" name="inputPw1"> <br>
+        비밀번호 확인 : <input type="password" name="inputPw2"> <br>
+        
+        이름 : <input type="text" name="inputName"> <br>
+        이메일 : <input type="email" name="inputEmail"> <br>
+
+        좋아하는 색<br>
+        <label><input type="checkbox" name="color" value="빨강">빨강</label>
+        <label><input type="checkbox" name="color" value="노랑">노랑</label>
+        <label><input type="checkbox" name="color" value="초록">초록</label>
+        <br>
+        <label><input type="checkbox" name="color" value="파랑">파랑</label>
+        <label><input type="checkbox" name="color" value="분홍">분홍</label>
+        <label><input type="checkbox" name="color" value="검정">검정</label>
+
+        <br>
+
+        <button>회원 정보 제출하기</button>
+        
+    </form>
+    
+</body>
+</html>

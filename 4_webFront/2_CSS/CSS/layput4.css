@@ -1,0 +1,88 @@
+div{
+    border: 1px solid black;
+    box-sizing: border-box;
+    
+    /* ->width/height의 값이 
+        content+ passing + border 합한 값에 맞게 
+        알아서 비율 조정 
+     */
+
+}
+.container-1{
+    border: 2px dashed red;
+
+    position: relative;
+    /* 내부에 작성되는 요소에 
+        상대적인 위치 (top/bottom/left/right )지정할 수 있다
+     */
+}
+.first{
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+}
+
+.second{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    
+    position: absolute;/*요소의 기본 배치 무시가능(겹치기 가능)*/
+    /* 사위 요소가 relative -> 내부에 아무 배치가능 */
+    top: 50px;  /*위쪽에서 얼마 만큼 떨어지겠다*/
+    left: 50px; /*왼쪽에서 얼마 만큼 떨어지겠다*/
+}
+
+.third{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    position: absolute;
+
+    top: 100px;
+    left: 100px;
+
+}
+
+/* 정가운데 배치하기 */
+.container-2{
+    width: 300px;
+    height: 300px;
+    position: relative; /*내부요소의 상대위치 지정 */
+}
+
+#center{
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    
+    /* relative 내부 요소 중에서
+        position이 absoluate(4방향) top/bottom등을 사용할 수 있다
+     */
+    position: absolute;
+
+    /* 사방으로 요소 당김 */
+    top:0; 
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+    
+}
+
+.fixed-area{
+    width: 120px;
+    /* align : 맞추다, 정렬하다 */
+    text-align: center;
+    position: fixed;
+    /* 화면 (뷰포트, 브라우저) 기준으로 배치됨 
+       + 다른 요소와 겹쳐질 수 있고
+        별도로 화면을 차지하려고 하지 않음
+    */
+
+    bottom: 50px;
+    right: 50px;
+
+}

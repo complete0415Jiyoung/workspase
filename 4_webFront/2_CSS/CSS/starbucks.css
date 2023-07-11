@@ -1,0 +1,386 @@
+*{ box-sizing: border-box;}
+
+.container{
+    width: 1140px;
+    margin: auto;
+    flex-wrap: wrap;
+
+    position: relative;
+}
+.header{
+    height: 200px;
+    display: flex;
+    background-color: antiquewhite;
+}
+
+.header > div:nth-of-type(1){
+    flex-basis: 20%;
+
+    /* 로고 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home-logo{
+    width: 120px;
+    height: auto;
+    
+}
+
+
+.header > div:nth-of-type(2){
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header-1{
+    flex-basis: 40%;
+    display: flex;
+    justify-content: flex-end; 
+    
+}
+.first{
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.header-1 fieldset{
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    
+}
+#search-btn{
+    width: 100%;
+    cursor: pointer;
+    font-size: 2.8em;
+    background: white;
+    border: none;
+}
+
+.text{
+    cursor: pointer;
+    text-align: center;
+    color: lightslategrey;
+ 
+}
+.header-2{
+    flex-basis:60%;
+
+    display: flex;
+
+
+}
+.second{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.second > .text{
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+
+
+
+
+
+
+.content{
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+}
+.content > div:nth-of-type(1){
+    flex-basis: 80%;
+    position: relative;
+
+
+
+}
+#main{
+    width: 100%;
+    height: 100%;
+}
+
+.button{
+    width: 85px;
+    height: 45px;
+
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(236, 124, 124);;
+    color: white;
+
+    position: absolute;
+    top: 239px;
+    left: 215px;
+    
+    cursor: pointer;
+
+}
+.button:hover{
+    text-decoration: underline;
+    background-color: white;
+    color: black;
+}
+.content > div:nth-of-type(2){
+    flex-basis: 20%;
+    display: flex;
+
+
+}
+.con-text-1{
+    flex-basis: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.con-text-1 > div:only-child{
+    flex-basis: 80%;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.con-text-1 > div:only-child >.text{
+    color: white;
+    font-weight: bold;
+}
+.con-text-1 > div:only-child >.text:nth-of-type(1){
+    font-size: 20px;
+}
+
+.con-text-2{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#icon-1{
+    flex-basis: 20%;
+    
+
+}
+.f:hover{
+    text-decoration: underline;
+}
+.plus{
+    width: 100%;
+    cursor: pointer;
+    
+}
+.con-text-2 > div:only-child{
+    flex-basis: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.con-text-2 > div:only-child >.text{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.footer{
+    height: 200px;
+    background-color: #015744;
+    display: flex;
+
+   
+    
+}
+.footer > div:nth-child(1){
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+    
+}
+.starbucks{
+    flex-basis: 20%;
+
+    /* 로고 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+#starbucks-logo{
+    width: 150px;
+    cursor: pointer;
+}
+.footer-1{
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.a{
+    flex-basis:60%;
+    display: flex;
+    flex-direction: column;
+
+    
+
+}
+.a> div:nth-child(1){
+    flex-basis: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content:  space-evenly;
+
+}
+.text2{
+    color: white;
+}   
+.a> div:nth-of-type(1)>.text2{
+    font-size: 20px;
+}
+
+
+.b{
+    border-top: 1px solid white;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.b>div:nth-of-type(1){
+    flex-basis: 50%;
+    display: flex;
+}
+.footer-2{
+    flex-basis: 20%;
+
+    display: flex;
+    flex-direction: column;
+}
+.a2{
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+.b2{
+    flex-basis: 40%;
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.login{
+    width: 100px;
+    height: 50px;
+    border: 2px solid white;
+    background-color: #015744;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    cursor: pointer;
+}
+.e-gift{
+    width: 200px;
+    height: 50px;
+    border: 2px solid white;
+    background-color: #015744;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.bbbb{
+    width: 100px;
+    height: 50px;
+    border: 2px solid green;
+    background-color:  green;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    cursor: pointer;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+
+    position: absolute;
+    position: fixed;
+
+
+    top: 230px;
+    right: 0;
+}
+
+#cc{
+    display: flex;
+    flex-wrap: wrap;
+    width: 130px;
+    height: 90px;
+    cursor: pointer;
+}
+.ss{
+    width: 100px;
+    height: 50px;
+    border: 2px solid white;
+    background-color:  hotpink;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    
+    border-radius: 10px;
+
+
+
+    top:450px;
+    left: 210px;
+
+    cursor: pointer;
+    
+    
+}
+
+.ss>div{
+    text-align: center;
+    color: white;
+}
+
+
+
+
+
+

@@ -1,0 +1,380 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+/* div{
+    border: 1px solid black;
+} */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+.container{
+
+    margin: auto;
+    background-color: white;
+}
+
+.header{
+  height: 70px;
+  display: flex;
+  top: 0;
+  position: sticky;
+  background-color: white;
+
+}
+.header > div:nth-of-type(1){
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+
+}
+
+#bar-btn{
+    width:10%;
+    height: 70%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: black;
+
+    border:none;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 10px;
+}
+#bar-btn:hover{
+    border-radius: 50%px;
+    background-color: #B5B5B5;
+}
+#home-logo{
+    height: 30px;
+    margin-top: 8px;
+}
+
+/* 검색 스타일 */
+.header > div:nth-of-type(2){
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-area{
+    width: 500px;
+}
+.search-area fieldset{
+    padding: 2px;
+    margin: 0;
+    border: 2px solid #B5B5B5;
+    border-radius: 25px;
+
+    display: flex;
+    justify-items: center;
+}
+#query{
+    padding:10px;
+    font-size: 18px;
+    font-weight: bold;
+
+    width:90%;
+    height: 90%;
+
+
+    border: white;
+    border-radius: 30px;
+
+    /* outline :input 태그에 포커스가 맞춰졌을 때 
+                이를 표현하기 위한 바깥 선
+                (테두리보다 바깥에 존재) */
+    outline: 0; /* none 도 가능 */
+}
+fieldset span{
+    font-size: 30px;
+    color: #b5b5b5bd;
+}
+#search-btn{
+    width: 8%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #575757;
+    background: white;
+    border-radius: 25px;
+    border: 0;
+}
+
+#search-btn:hover{
+    background: #b5b5b5bd;
+    border-radius: 25px;
+}
+
+#vo-btn{
+    width: 5%;
+    height: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: black;
+
+    border:none;
+    border-radius: 25px;
+    background-color: white;
+    margin: 0 10px;
+}
+#vo-btn:hover{
+    border-radius: 50%;
+    background-color: #B5B5B5;
+}
+.header>div:nth-of-type(3){
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header>div:nth-of-type(3)>btn{
+    flex-basis: 40%;
+}
+.btns{
+    flex-basis: 30%;
+    display: flex; 
+    align-items: center;   
+}
+#video-btn, #bell-btn{
+    width: 70px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: black;
+
+    border:none;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 20px;
+    
+}
+#video-btn:hover, #bell-btn:hover{
+    border-radius: 50%;
+    background-color: #B5B5B5;
+}
+
+.mem{
+    width: 60px;
+    height: 60px;
+    background-color: darkgreen;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    cursor: pointer;
+
+}
+.content{
+    height: 100%;
+
+    display: flex;
+}
+.content>div:nth-of-type(1){
+    width: 15%;
+    height: 100%;
+    background-color: white;
+
+
+    
+    position: fixed;
+   
+ 
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.content>div:nth-of-type(2){
+    width: 70%;
+    margin: 0 20%;
+
+}
+
+.side-setting{
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+
+
+    font-size:18px ;
+    text-decoration: none;
+    color: #575757;
+    border-radius: 25px;
+
+    margin: 10px;
+
+}
+
+.side-setting>span{
+    margin: 20px;   
+}
+
+.side>div>div{
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #575757;
+}
+
+.side-setting:hover{
+    background-color: #0e0d0d2f;
+}
+
+.main{
+    height: 900px;
+
+}
+
+.top{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #575757;
+}
+.top-text{
+    width: 80%;
+}
+
+.top-text>div:nth-of-type(1){
+    height: 20%;
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.top-text>div:nth-of-type(2){
+    height: 20%;
+    width: 80%;
+    margin-top: 1%;
+    margin-left: 10%;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+.top-text>div:nth-of-type(3){
+    height: 20%;
+    width: 30%;
+
+    margin-left: 10%;
+}
+
+.middle{
+    height: 35%;
+
+    border-bottom:1px solid #575757 ;
+}
+
+.middle-text{
+    height: 40%;
+
+
+}
+.middle-text>div:nth-of-type(1){
+    height: 50%;
+    width: 30%;
+    margin-top: 1.5%;
+    margin-left: 8%;
+
+}
+.middle-text>div{
+
+    margin-left: 8%;
+
+}
+.middle-text>div:last-of-type{
+    margin-top: 1%;
+}
+.href{
+    height: 60%;
+
+
+}
+.href>div:nth-of-type(1){
+    width: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5%;
+    margin-left:20% ;
+    margin-bottom: 1%;
+}
+.href>div:nth-of-type(2){
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-left:22% ;
+
+}
+.href>div:nth-of-type(2)>a{
+    color: blue;
+    text-decoration: 0;
+    margin: 1.7%;
+    font-size: 15px;
+}
+
+.last{
+    height: 40%;
+}
+.last>div{
+    height: 30%;
+}
+.last>div:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    margin-left: 8%;
+}
+.last>div:nth-of-type(1)>:first-child{
+    font-size: 18px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.last>div:nth-of-type(2),.last>div:nth-of-type(3){
+    display: flex;
+
+    margin-left: 8%;
+
+}
+.last>div:nth-of-type(2)>div:first-child,
+.last>div:nth-of-type(3)>div:first-child{
+    width: 30%;
+    margin-bottom: 1%;
+
+}
+.last>div:nth-of-type(2)>div:last-child,
+.last>div:nth-of-type(3)>div:last-child{
+    width: 70%;
+    margin-bottom: 1%;
+
+}
+.color2{
+    display: flex;
+}
+.color2>:last-child{
+    cursor: pointer;
+}
+
+#top-img{
+    width: 220px;
+    height: 150px;
+    margin-top: 2.5%;
+}
+.last>div:nth-of-type(2){
+    margin-top: 2%;
+}
+#cursor{
+    cursor: pointer;
+    color: rgb(78, 175, 240); 
+}

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nunito:wght@200&display=swap');
+
+
+*{box-sizing: border-box;}
+/* div{ border: 1px solid black} */
+
+.web{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+.banner{
+
+    height: 190px;
+
+    font-size: 40px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: end;
+
+    margin-bottom: 30px;
+
+}
+
+.login{
+    width: 550px;
+    height: 500px;
+
+    flex-direction: column;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid  rgba(116, 116, 116, 0.616);
+
+}
+
+
+.cont{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.login1{
+    width: 470px;
+    height: 70px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.login1-0{
+    width: 470px;
+    height: 40px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.login1-1{
+    width: 470px;
+    height: 30px;
+    color: rgb(116, 116, 116);
+
+    display: flex;
+    justify-content: center;
+
+}
+.login2{
+    display: flex;
+
+
+
+    width: 470px;
+    height: 70px;
+
+}
+
+#loginbox{
+    width: 450px;
+    height: 60px;
+
+    border-style: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+
+    border-bottom: 2px solid rgba(116, 116, 116, 0.616);
+    
+}
+
+.button1{
+    width: 450px;
+    height: 60px;
+
+    background-color: rgb(255, 236, 67);
+
+    width: 450px;
+    height: 60px;
+    border-radius: 3px;
+    border-style: none;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+.button{
+    width: 450px;
+    height: 60px;
+    border-radius: 3px;
+    border-style: none;
+
+    font-size: 15px;   
+     cursor: pointer;
+
+}
+
+.login2{
+    display: flex;
+
+    width: 470px;
+    height: 40px;
+
+}
+
+.login2-1{
+    width: 100px;
+    margin-left: 10px;
+
+
+}
+.login2-2{
+    width: 70px;
+    margin-left: 180px;
+
+
+}
+
+.login span{
+   margin: 5px;
+   
+
+}
+.login2-3>{
+    width: 100px;
+    
+
+}
+
+.login2>div *{
+    
+    color: black;
+    font-size: 13px;
+}
+
+.footer>div{
+    display: flex;
+    justify-content: center;
+
+    font-size: 13px;
+    color: black;
+}
+.footer>div a{
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    margin:5px
+}
+
+.footer p{
+    display: flex;
+    justify-content: center;
+
+    font-size: 13px;
+}
+.footer>div i{
+    margin: 5px;
+}
+

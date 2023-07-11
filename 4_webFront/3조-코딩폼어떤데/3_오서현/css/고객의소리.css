@@ -1,0 +1,569 @@
+
+*{box-sizing : border-box;}
+
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Noto+Sans+KR:wght@900&display=swap');
+
+
+.container {
+    width: 100%;
+    height: 2300px;
+    margin: auto;
+}
+
+.header {
+    width: 70%;
+    height: 100px;
+    display: flex;
+    top: 0;
+ 
+}
+
+.logo {
+    width: 48%;
+    height: 123px;
+    display: flex;
+    align-items: center;
+}
+
+.logo1 {
+    width: 50%;
+    height: 123px;
+    display: flex;
+} 
+
+.logo2 {
+    width: 50%;
+    height: 123px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 80px;
+    margin-top: -15px;
+}
+
+
+.header-down {
+    width: 95%;
+    height: 60px;
+    display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ position: relative;
+ margin: auto;
+}
+
+.content-2 {
+    display: flex;
+    height: 65px;
+}
+
+.content2-1 {
+    border-bottom:2px solid #ddd;
+    width: 20%;
+    height: 65px;
+}
+
+.content2-2 {
+    border-bottom:2px solid red;
+    width: 60%;
+    height: 65px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.content2-3 {
+    border-bottom:2px solid #ddd;
+    width: 20%;
+    height: 65px;
+}
+
+.content-3 {
+    display: flex;
+    height: 250px;
+}
+
+.content3-1 {
+    height: 250px;
+    width: 20%;
+}
+
+.content3-2 {
+    height: 250px;
+    border-bottom:3px solid #ddd;
+    width: 60%;
+}
+
+.content3-3 {
+    height: 250px;
+    width: 20%;
+}
+
+
+
+.content-3 p:nth-child(1){
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    position: relative;
+    margin-top: 80px;
+    color: gray;
+}
+
+
+.content-3 p:nth-child(2) {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    position: relative;
+    color: gray;
+}
+
+.content4-1 {
+    height: 70px;
+    display: flex;
+    position: relative;
+}
+
+/* 줄 나누기 코드 */
+#a {
+    width: 20%;
+}
+
+#b {
+    width: 60%;
+    border-bottom:1px solid #ddd;
+    
+}
+
+#c {
+    width: 20%;
+}
+
+.content4-1 form {
+    position: relative;
+    top: 25px;
+}
+
+
+
+.content4-2 {
+    height: 70px;
+    display: flex;
+    position: relative;
+}
+
+/* 줄 나누기 코드 */
+#a {
+    width: 20%;
+}
+
+#b {
+    width: 60%;
+    border-bottom:1px solid #ddd;
+    
+}
+
+#c {
+    width: 20%;
+}
+
+/* 문의유형 */
+.content4-2 form {
+    position: relative;
+    top: 20px;
+}
+
+#search4-2 {
+    border: 1px solid #ddd;
+    height: 35px;
+    width: 250px;
+}
+
+#btn4-2 {
+background-color: red;
+color: white;
+border : none;
+width: 70px;
+height: 30px;
+cursor:pointer;
+}
+
+#sel {
+    border: 1px solid #ddd;
+    color: gray;
+}
+
+/* 대분류,중분류,소분류 */
+#sel1 {
+    border: 1px solid #ddd;
+    color: gray;
+    width: 110px;
+    height: 25px;
+    position: relative;
+    left: 78px;
+    top: -37px;
+}
+
+
+.content4-3 {
+    display: flex;
+    height: 100px;
+}
+
+#sel2 {
+    border: 1px solid #ddd;
+    color: gray;
+    width: 110px;
+    height: 25px;
+}
+
+#sel3 {
+    border: 1px solid #ddd;
+    color: gray;
+    width: 110px;
+    height: 25px;
+    position: relative;
+}
+
+/* 문의유형 글자 */
+.content4-3 p {
+    position: relative;
+    left: 25px;
+}
+
+.content4-4 {
+    height: 210px;
+    display: flex;
+    left: 55px;
+}
+
+.content4-4 p {
+    position: relative;
+    left: 25px;
+}
+
+
+.content4-4 form {
+      position: relative;
+      left: 130px;
+      top: -35px;
+}
+
+#date {
+    position: relative;
+    left: 85px;
+    top: -42px;
+    width: 20%;
+    height: 35px;
+    border: 1px solid #ddd;
+    color : gray;
+}
+
+.content4-4 p:nth-child(5){
+    position: relative;
+    top: -40px;
+    left: 10px;
+}
+
+.content4-4 p:last-child{
+    position: relative;
+    top: -40px;
+    left: 10px;
+}
+
+
+#time {
+    position: relative;
+    top: -79px;
+    left: 83px;
+
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+
+}
+
+#time2 {
+    position: relative;
+    top: -79px;
+    left: 83px;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+
+}
+
+#time3 {
+    position: relative;
+    top: -110px;
+    left: 83px;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+}
+
+#last {
+    position: relative;
+    top: -72px;
+    left: 10px;
+}
+
+.content4-5 {
+    display: flex;
+    height: 60px;
+}
+
+.content4-5 form {
+    display: flex;
+    position: relative;
+    top: -35px;
+    left: 160px;
+}
+
+.content4-6 {
+    display: flex;
+    height: 60px;
+}
+
+.content4-6 p {
+    position: relative;
+    left: 40px;
+}
+
+#name {
+    position: relative;
+    top: -41px;
+    left: 140px;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+}
+
+.content4-7 {
+    display: flex;
+    height: 60px;
+}
+
+.content4-7 p:nth-child(1) {
+    position: relative;
+    left: 30px;
+}
+
+#phone {
+    position: relative;
+    top: -41px;
+    left: 140px;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+}
+
+.content4-8 {
+    display: flex;
+    height: 60px;
+}
+
+
+.content4-8 p:nth-child(1) {
+    position: relative;
+    left: 30px;
+}
+
+.content4-8 p:nth-child(2) {
+    position: relative;
+    left: 372px;
+    top: -85px;
+}
+
+
+#email1 {
+    position: relative;
+    top: -41px;
+    left: 140px;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+}
+
+#email2 {
+    position: relative;
+    top: -128px;
+    left: 400px;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+
+}
+
+.content4-9 {
+    display: flex;
+    height: 60px;
+}
+
+#email {
+    position: relative;
+    top: -128px;
+    left: 400px;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 35px;
+}
+
+#title {
+    position: relative;
+    top: -41px;
+    left: 140px;
+    border: 1px solid #ddd;
+    width: 67%;
+    height: 35px;
+}
+
+.content4-10 {
+    display: flex;
+    height: 260px;
+}
+
+
+#in {
+    position: relative;
+    top: -41px;
+    left: 140px;
+    border: 1px solid #ddd;
+    width: 67%;
+    height: 200px;
+}
+
+.content4-9 p:nth-child(1) {
+    position: relative;
+    left: 40px;
+}
+
+
+
+.content4-10 p:nth-child(1) {
+    position: relative;
+    left: 40px;
+}
+
+.content-5 {
+    display: flex;
+}
+
+#bb {
+    position: relative;
+    left: -80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.check {
+   display: flex;
+   position: relative;
+   left: 140px;
+   font-size: 14px;
+}
+
+.lastbtn1 {
+    background-color: red;
+    border: none;
+    color: white;
+    width: 65px;
+    height: 40px;
+    cursor:pointer;
+}
+
+.lastbtn2 {
+    background-color: red;
+    border: none;
+    color: white;
+    width: 65px;
+    height: 40px;
+    cursor:pointer;
+}
+
+.lastbtn1, .lastbtn2 {
+    position: relative;
+    left: 600px;
+}
+
+.footer {
+    position: relative;
+    top: 150px;
+    border-top: 2px solid red;
+}
+
+.footer-logo{
+    position: relative;
+    left: 400px;
+    top: 23px;
+}
+
+.footer1 {
+    display: flex;
+    font-size: 13px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer1 p:nth-child(1){
+    display: flex;
+    color: red;
+    position: relative;
+    left: 600px;
+    top: -22px;
+}
+
+.footer1 p:nth-child(2){
+    display: flex;
+    position: relative;
+    left: 620px;
+    top: -22px;
+}
+
+.footer2 {
+    font-size: 13px;
+    position: relative;
+    left: 600px;
+    top: -30px;
+}
+
+
+.footer3 {
+    font-size: 13px;
+    position: relative;
+    left: 600px;
+    top: -30px;
+}
+
+.page-top {
+    position:fixed;
+    left: 1600px;
+    top: 800px;
+	width: 50px;
+	height: 50px;
+	background: red;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5%;
+}
+
+.page-top a {
+    text-decoration: none;
+    position: relative;
+    top: 12px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

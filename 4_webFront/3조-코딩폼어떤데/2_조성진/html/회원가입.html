@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+
+    <link rel="stylesheet" href="../css/회원가입.css">
+
+    <script src="https://kit.fontawesome.com/a5af36132e.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+    <header>
+       <section><a href=""><img style="width: 100%; height: 100%;" src="../img/이피엘.jfif"></a></section> 
+       <section>English Premier League</section> 
+    </header>
+
+    <nav>
+        <section><a href="https://www.premierleague.com/fixtures?co=1&cl=-1" target="_blank">경기 일정</a></section>
+        <section><a href="https://www.premierleague.com/results" target="_blank">경기 결과</a></section>
+        <section><a href="https://www.premierleague.com/clubs" target="_blank">구단</a></section>
+        <section><a href="https://www.premierleague.com/players" target="_blank">선수검색 <button style="margin-left: 10px; cursor: pointer; width: 30px; height: 30px; background-color: #eee;" type="submit" id="find" class="fa-solid fa-magnifying-glass"></button></a></section>
+        <section><a href="http://192.168.10.40:5500/%EC%A1%B0%EC%84%B1%EC%A7%84(%EB%AF%B8%EB%8B%88%ED%94%84%EC%A0%9D)/%EB%A1%9C%EA%B7%B8%EC%9D%B8/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.html" target="_blank">
+            로그인</a></section>
+    </nav>
+
+    <main>
+        <section class="login-form">
+            <article class="login-top">
+                <article>로그인</article>
+                <article>회원가입</article>
+            </article>
+            <article class="login">
+                <article class="id-pw">
+                   <article></article>
+                   <article id="id">
+                        <article>ID 입력</article>
+                        <article><input type="text" placeholder="ID를 입력하세요."></article>
+                   </article>
+                   <article id="pw">
+                        <article>비밀번호 입력</article>
+                        <article><input type="password" placeholder="비밀번호를 입력하세요."></article>
+                   </article>
+                   <article></article>
+                </article>
+                <article class="register">
+                    <article style="margin-bottom: 34px;" id="가입">
+                        계정이 없으신가요?
+                    </article>
+                    <article id="가입-1">
+                        <article>지금 가입하시고 회원의 혜택을 즐기세요!</article>
+                        <article><button style="margin-left: 2px;"><a style="text-decoration: none; color: white;" href="file:///C:/workspace/4_webFront/3%EC%A1%B0-%EC%BD%94%EB%94%A9%ED%8F%BC%EC%96%B4%EB%96%A4%EB%8D%B0/2_%EC%A1%B0%EC%84%B1%EC%A7%84/html/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80.html">회원가입</a></button></article>
+                    </article>
+                    <article></article>
+                </article>
+            </article>
+
+            <article class="sns">
+                <article id="sns-1">
+                    <article id="sns-1-1">
+                        <article><button style="margin-left: 0px; background-color: #1877f2;;"><a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=122423114856457&kid_directed_site=0&app_id=122423114856457&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.12%2Fdialog%2Foauth%3Fclient_id%3D122423114856457%26redirect_uri%3Dhttps%253A%252F%252Fusers.premierleague.com%252Faccounts%252Ffacebook%252Flogin%252Fcallback%252F%26scope%3Demail%252Cpublic_profile%26response_type%3Dcode%26state%3Dhvj4fz94LTuw%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Db0a462a5-cf7f-4c75-9a0e-edaa3ca4ccd5%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fusers.premierleague.com%2Faccounts%2Ffacebook%2Flogin%2Fcallback%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dhvj4fz94LTuw%23_%3D_&display=page&locale=ko_KR&pl_dbl=0"><i class="fa-brands fa-facebook"></i> Facebook</a></button></article>
+                        <article><button style="background-color: #00aced"><a href="https://api.twitter.com/oauth/authenticate?oauth_token=PqnjvAAAAAAAv-EGAAABiMUo1Xo&oauth_callback=https%3A%2F%2Fusers.premierleague.com%2Faccounts%2Ftwitter%2Flogin%2Fcallback%2F"><i class="fa-brands fa-twitter"></i> Twitter</a></button></article>
+                    </article>
+
+                    <article id="sns-1-2">
+                        <article><button style="margin-left: 0px;  background-color: white; border: 1px solid #ccc; "><a style="color: #000;" href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?client_id=713263538084-mq4c5k91ums3t46v22ik382rc5qd7pmp.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fusers.premierleague.com%2Faccounts%2Fgoogle%2Flogin%2Fcallback%2F&scope=profile%20email&response_type=code&state=LuuQd0a6A5g3&service=lso&o2v=1&flowName=GeneralOAuthFlow"><i class="fa-brands fa-google" style="color: #5d61ea;"></i> Google</a></button></article>
+                        <article><button style="background-color: #000;"><a href="https://appleid.apple.com/auth/authorize?client_id=com.premierleague.users&redirect_uri=https%3A%2F%2Fusers.premierleague.com%2Faccounts%2Fapple%2Flogin%2Fcallback%2F&response_mode=form_post&scope=email%20name&response_type=code%20id_token&state=7MiodKk2ImoA"><i class="fa-brands fa-apple" style="color: #ffffff;"></i> Apple</a></button></article>
+                    </article>
+                </article>
+                <article></article>
+            </article>
+        </section>
+
+    </main>
+    
+    <footer>
+        <section class="sponsor">
+            <!-- 스폰서 그림 -->
+            <section>
+                <section><img src="../img/스폰서1.png" alt=""></section>
+                <section><img src="../img/스폰서2.png" alt=""></section>
+                <section><img src="../img/스폰서3.png" alt=""></section>
+                <section><img src="../img/스폰서4.png" alt=""></section>
+                <section><img src="../img/스폰서5.png" alt=""></section>
+                <section><img src="../img/스폰서6.png" alt=""></section>
+                <section><img src="../img/스폰서7.png" alt=""></section>
+                <section><img src="../img/스폰서8.png" alt=""></section>
+
+            </section>
+            <!-- 스폰서명 -->
+            <section id="sponsor-name">
+                <section><a style="text-decoration: none; color: black;" href="https://www.ea.com/games/fifa/fifa-23">Lead Partner</a></section>
+                <section><a style="text-decoration: none; color: black;" href=https://home.barclays>Official Bank</a></section>
+                <section><a style="text-decoration: none; color: black;" href="https://www.budweiser.com/en">Official Beer</a></section>
+                <section><a style="text-decoration: none; color: black;" href="https://www.castrol.com/en_gb/united-kingdom/home.html">Official Engine Oil Partner</a></section>
+                <section><a style="text-decoration: none; color: black;" href="https://www.ea.com/games/fifa/fifa-23">Official Timekeeper</a></section>
+                <section><a style="text-decoration: none; color: black;" href="https://www.nike.com/gb/w/mens-premier-league-accessories-equipment-2spkszawwpwznik1">Official Ball</a></section>
+                <section><a style="text-decoration: none; color: black;" href="https://www.oracle.com/premier-league/">Official Cloud Partner</a></section>
+                <section><a style="text-decoration: none; color: black;" href="https://sport.averydennison.com/">Official Licensee</a></section>
+            </section>
+
+        </section>
+
+        <!-- 공식 약관 -->
+        <section id="약관">
+            <section>&copy;PRIMIER LEAGUE 2023</section>
+            <section><a href="https://www.premierleague.com/modern-slavery-statement">Modern Slavery Statement</a></section>
+            <section><a href="https://www.premierleague.com/equality-diversity-and-inclusion-standard">Inclusion Standard</a></section>
+            <section><a href="https://www.premierleague.com/terms-and-conditions">Terms&Conditions</a></section>
+            <section><a href="https://www.premierleague.com/premier-league-policies">Policies</a></section>
+            <section><a href="https://www.premierleague.com/cookie-policy">Cookie-Policy</a></section>
+            <section><a href="https://www.premierleague.com/manageCookies">Manage Cookies</a></section>
+            <section><a href="https://www.premierleague.com/stats#">Back to Top</a></section>
+        </section>
+    </footer>
+
+</body>
+</html>

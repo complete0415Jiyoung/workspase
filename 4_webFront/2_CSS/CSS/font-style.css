@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Sunflower:wght@300&display=swap');
+
+#size-test > li:nth-child(1){ font-size:  24px;}
+#size-test > li:nth-child(2){ font-size:  18pt;}
+
+#size-test > li:nth-child(3){ font-size:  150%;}
+#size-test > li:nth-child(4){ font-size:  1.5em;}
+/* 크롬 부라우저 기준
+기본 글꼴 크기 : 16px 
+*/
+
+#font-weight >li{
+    font-size: 34px;
+}
+    
+    
+#font-weight > li:nth-child(1){ font-weight: 600;}
+#font-weight > li:nth-child(2){ font-weight: bold;}
+#font-weight > li:nth-child(3){ font-weight: bolder;}
+#font-weight > li:nth-child(4){ font-weight: lighter;}
+
+
+#font-weight > li:nth-child(5){ 
+    font-weight: normal;
+    font-style: italic;
+
+    /* font-style :글꼴의 모양을 지정하는 속성 */
+    /* italic :폰트에서 제공하는 비듬한 글자 */
+    /* oblique : 강제로 글자를 비스듬하게 변경 */
+
+}
+
+/* font-family */
+.cls > li{ font-size: 24px;}
+
+#family-test > li:nth-child(1){
+    font-family: '궁서'; /*설치된 폰트인 경우*/
+}
+#family-test > li:nth-child(2){
+    font-family: '동서남북체'; 
+    /*없는 폰트인 경우 기본 폰트 설정됨*/
+}
+#family-test > li:nth-child(3){
+    font-family: '동서남북체','굴림체'; 
+    /* 없으면 뒤에 글꼴 사용해라~~ */
+    
+}
+/* 웹폰트 */
+/* link 태그 이용한 방법 */
+#family-test2 > li:nth-child(1){
+    font-family: 'Sunflower', sans-serif;
+}
+/* @impor는 css 파일 제일 상단에 작성해야함 */
+#family-test2 > li:nth-child(2){
+    font-family: 'Gaegu', cursive;
+}
+@font-face {
+    font-family: 'KBO-Dia-Gothic_bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* @font-face 이용 */
+#family-test2 > li:nth-child(3){
+    font-family: 'KBO-Dia-Gothic_bold';
+}
+
+
+

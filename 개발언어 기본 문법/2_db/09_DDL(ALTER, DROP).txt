@@ -1,0 +1,36 @@
+09_DDL 
+
+DDL :데이터 정의 언어 - CREATE/ ALTER / DROP 
+-------------------------------------------------------------------------------------------------------------------------
+
+ALTER ( 바꾸다, 변조하다) 
+수정 가능 한 것 : 컬럼( 추가/ 수정/ 삭제) , 제약조건 (추가, 삭제) , 이름 변경(테이블, 컬럼, 제약 조건) 
+
+[작성법]
+테이블을 수정해야하는 경우 
+ALTER TABLE 테이블 명 ADD | MODIFY | DROP 수정할 내용; 
+
+1. 제약 조건 추가/ 삭제 
+ 제약조건 추가 : ALTER TABLE 테이블명 ADD [CONSTRAINT 제약조건명] 제약조건(컬럼명) [REFERENCES 테이블명 [(컬럼명)]];
+
+	--DEPT_COPY 테이블에 PK추가 : 
+	ALTER TABLE DEPT_COPY ADD PRIMARY KEY (DEPT_ID);
+
+ ALTER TABLE DEPT_COPY DROP CONSTRAINT DEPT_TITLE_U;
+ 제약조건 삭제 : ALTER TABLE 테이블명 DROP CONSTRANT 제약조건명;  
+
+	--DEPT_COPY 테이블에  UNIQUE 제약조건 삭제 
+	ALTER TABLE DEPT_COPY DROP CONSTRAINT DEPT_TITLE_U;
+
+	--NOT NULL 제거하기 
+	ALTER TABLE DEPT_COPY MODIFY DEPT_TITLE CONSTRAINT SYS_C007571 NULL; 
+
+
+2. 컬럼 추가 / 수정/ 삭제 
+ 컬럼 추가 : ALTER TABLE 테이블명 ADD (컬럼명 데이터 타입 [DEFAULT '값' ]);  
+
+ 컬럼 수정 : ALTER TABLE 테이블명 MODIFY 컬럼명 데이터 타입; --( 데이터 타입 변경) 
+	   ALTER TABLE 테이블명 MODIFY 컬럼명 DEFAULT '값';  (기본 값 변경)
+
+컬럼 삭제 : ALTER TABLE 테이블명 DROP (삭제할 컬럼명);
+ 	  ALTER TABLE 테이블명 DROP CULUMN 삭제할 컬럼명;  

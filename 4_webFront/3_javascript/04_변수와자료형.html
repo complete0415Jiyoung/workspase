@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_변수와자료형</title>
+    
+    <!-- external방식 JS파일 연결 -->
+    <script src="js/04_변수와자료형.js"></script>
+
+    <style>
+        #typeBox{
+            border: 2px solid black;
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>변수 선언 위치에따른 구분</h1>
+
+    <h4>Java</h4>
+    <pre>
+        public class Student{
+
+            //필드(멤버변수)
+            private String name; //인스턴스 변수
+            public static String schoolName; //클래스 변수(==static변수)
+
+            //메소드
+            public setName(String name/*메소드 지역 변수*/){
+                this.name = name;
+                int num= 10; //메소드 지역 변수
+
+                if(){
+                    int a =20; //if 지역변수
+                }
+
+            }
+        }
+
+    </pre>
+
+    <hr>
+    <h4>Javascript</h4>
+    <pre>
+        (js 파일)
+
+        var num1;   //전역 변수 (선언된 후 같은 문서 내에서 어디서든지 사용 가능)
+        num2;       //전역 변수 (변수명 앞에 아무런 키워드가 없으면 전역 변수가 된다)
+
+        function test(){
+            var num3; //function 지역변수
+            num4; // 전역변수 (변수명 앞에 아무런 키워드가 없으면 전역 변수가 된다)
+        }
+
+
+        if(조건식){
+
+            var num5; //전역변수
+            num6;//전역변수(변수명앞에 아무런 키워드가 없으면 전역변수가 된다)
+        }
+
+        num5;
+
+    </pre>
+
+    <script>
+        console.log("[script태그 내부]");
+        console.log("num1 : " + num1);
+        console.log("num2 : " + num2);
+
+    </script>
+
+
+    <hr>
+
+    <h1>변수선언 방식</h1>
+    <pre>
+        var   : 변수, 변수명 중복 O (덮어쓰기), 함수 레벨 scope
+        let   : 변수, 변수명 중복 X, 블록{}레벨 scope
+        const : 상수, 변수명 중복 X, 블록{}레벨 scope
+
+        1순위 : const
+                (JS는 특정요소를 선택해서 사용하는 경우가 많아서 상수에 고정시켜둠)
+
+        2순위 : let
+        
+        3순위 : var(ES6 이후 부터 사용 빈도가 많이 적어짐)
+    </pre>
+
+    <hr>
+
+    <h1>자바스크립스의 자료형</h1>
+    <pre>
+        자바스크립트는 변수 선언시 별도의 자료형 지정 하지 않음.
+        -> 변수에 대입되는 값(리터럴)에 의해서 자료형 결정됨.
+
+
+        - string (문자열)
+        - num (숫자) -> 정수, 실수 모두 포함
+        - boolean (논리값)
+        - object (객체) -> 배열(Arry), 자바스크립스 객체{k:v,k:v}
+        - function (함수)
+        - undefined (정의되지 않는 변수)-> 변수가 선언만 되고, 값이 대입되지 않음
+
+        (참고)
+        - null(참조하는게 없음) -> document.getElementById("오타")(가장 흔한 경우)
+                                -> id가 일치하는 요소가 없어서 참조 할 수 없다 
+        (null은 타입 보다는 값(리터럴)의 개념)
+    </pre>
+
+    <button onclick="typeTest()">자료형 확인</button>
+
+    <div id="typeBox"></div>
+
+
+    <h1>원시타입과 참조 타입</h1>
+    <pre>
+        * 원시타입 : 데이터 복사가 일어날때 메모리 공간을 새로 확보하여 독립적인 값을 저장
+            -> 숫자(number),boolean, null, undefined, 문자열(string)
+
+        * 참조타입 : 메모리의 위치(주소)에 대한 간접적인 참조를 통해 메모리에 접근 
+    </pre>
+
+
+
+    
+</body>
+</html>
