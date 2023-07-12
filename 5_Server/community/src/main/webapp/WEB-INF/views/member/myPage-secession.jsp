@@ -38,7 +38,7 @@
                 	http://localhost:8080/community/member/myPage/secession(GET방식)
                 	http://localhost:8080/community/member/myPage/secession(POST방식)
                  -->
-                <form action="secession" method="post" name="myPage-form">
+                <form action="secession" method="post" name="myPage-form" onsubmit="return secessionValidate()">
                     <div class="myPage-row">
                         <label>비밀번호</label>
                         <input type="password" name="memberPw" maxlength="30">
@@ -90,6 +90,6 @@
 
    <!-- footer.jsp연결 -->
    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
+   <script src="${contextPath}/resources/js/member/myPage.js"></script>
 </body>
 </html>

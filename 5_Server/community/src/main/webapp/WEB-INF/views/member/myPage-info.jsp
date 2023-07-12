@@ -34,7 +34,7 @@
                 <span class="myPage-explanation">원하는 회원정보를 수정할 수 있습니다.</span>
                 
                 <!-- 가야할 주소와 현재 주소가 겹칠 때는 마지막 주소만 쓰면 된당(GET/POST) -->
-                <form action="info" method="post" name="myPage-form">
+                <form action="info" method="post" name="myPage-form" onsubmit="return myInfoValidate()">
                     <div class="myPage-row">
                         <label>닉네임</label>
                         <input type="text" name="memberNickname" value="${loginMember.memberNickname }" maxlength="10">
@@ -78,6 +78,6 @@
 
    <!-- footer.jsp연결 -->
    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+<script src="${contextPath}/resources/js/member/myPage.js"></script>
 
-</body>
 </html>

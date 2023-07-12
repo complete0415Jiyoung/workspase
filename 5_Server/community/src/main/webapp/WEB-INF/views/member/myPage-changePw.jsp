@@ -38,7 +38,7 @@
                 	http://localhost:8080/community/member/myPage/changePw(POST방식)
                  -->
                
-                <form action="changePw" method="post" name="myPage-form">
+                <form action="changePw" method="post" name="myPage-form" onsubmit="return changePwValidate()">
                     
                     <div class="myPage-row">
                         <label>현재 비밀번호</label>
@@ -64,6 +64,6 @@
 
    <!-- footer.jsp연결 -->
    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
+    <script src="${contextPath}/resources/js/member/myPage.js"></script>
 </body>
 </html>

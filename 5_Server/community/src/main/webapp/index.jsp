@@ -54,7 +54,7 @@
 						<!-- 절대 경로 : /community/member/login -->
 
 						<!-- 상대 경로(index.jsp) 기준  -->
-						<form action="member/login" method="post" name="login-form">
+						<form action="member/login" method="post" name="login-form" onsubmit="return loginValidate()">
 
 							<!-- 아이디(이메일)/비밀번호/로그인버튼 영역 -->
 							<fieldset id="id-pw-area">
@@ -93,7 +93,7 @@
 
 							</c:if>
 
-							<label> <input type="checkbox" name="saveId" ${chk}>아이디
+							<label> <input type="checkbox" name="saveId" ${chk} id="saveId">아이디
 								저장
 							</label>
 
@@ -112,11 +112,11 @@
 							<!-- 회원 정보 + 로그아웃 버튼 -->
 							<div class="my-info">
 								<div>
-									<a href="${contextPath}/member/myPage/info" id="nickname">닉네임</a> <a
+									<a href="${contextPath}/member/myPage/info" id="nickname">${loginMember.memberNickname}</a> <a
 										href="/community/member/logout" id="logout-btn">로그아웃</a>
 								</div>
 
-								<p>로그인한 이메일</p>
+								<p>${loginMember.memberEmail}</p>
 
 							</div>
 
@@ -134,6 +134,8 @@
 	<!-- footer include -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	
+	<!--main.js 연결-->
+	<script src="${contextPath}/resources/js/main.js"></script>
 
 </body>
 </html>

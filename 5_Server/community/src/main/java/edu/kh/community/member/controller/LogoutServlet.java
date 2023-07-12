@@ -36,22 +36,6 @@ public class LogoutServlet extends HttpServlet {
 		
 						// 메인페이지 == 최상위 주소(/community)로 요청했을 때 화면
 		resp.sendRedirect(req.getContextPath());
-		
-		
-		
-		
-		
+			
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
