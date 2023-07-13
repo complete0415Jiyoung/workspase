@@ -43,3 +43,12 @@ SECESSION_FL='Y'
 WHERE MEMBER_NO=?
 AND MEMBER_PW=?;
 
+
+
+
+--이메일 중복 검사 
+SELECT COUNT(*) FROM MEMBER
+WHERE MEMBER_EMAIL='user01@kh.or.kr';
+
+
+

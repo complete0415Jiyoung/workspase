@@ -14,7 +14,8 @@
 <link rel="stylesheet" href="../resources/css/signUp-style.css">
 
 <script src="https://kit.fontawesome.com/a5af36132e.js"
-	crossorigin="anonymous"></script>
+	crossorigin="anonymous">
+</script>
 
 </head>
 <body>
@@ -29,7 +30,7 @@
 		<!-- 회원 가입 -->
 		<section class="signUp-content">
 
-			<form action="#" method="post" name="signUp-form">
+			<form action="signUp" method="post" name="signUp-form" onsubmit="return signValidate()">
 				<!-- 회원가입 화면 전환 주소(GET)와 같은 주소로 
                     실제 회원가입을 요청 (POST)
                     -> 요청 주소가 같아도 데이터 전달 방식이 다르면 중복 허용
@@ -57,9 +58,10 @@
 
 				</div>
 
-				<span class="signUp-message">메일을 받을 수 있는 이메일을 입력해주세요.</span> <label
-					for="emailCheck"> <span class="required">*</span> 인증번호
-
+				<span class="signUp-message" id="emailMessage">메일을 받을 수 있는 이메일을 입력해주세요.</span>
+				
+				<label for="emailCheck"> 
+					<span class="required">*</span> 인증번호
 				</label>
 
 				<div class="signUp-input-area">
@@ -69,9 +71,9 @@
 					<button type="button">인증하기</button>
 				</div>
 
-				<span class="signUp-message confirm">인증되었습니다.</span> <label
-					for="memberPw"> <span class="required">*</span> 비밀번호
-
+				<span class="signUp-message confirm">인증되었습니다.</span> 
+				<label for="memberPw"> 
+					<span class="required">*</span> 비밀번호
 				</label>
 
 				<div class="signUp-input-area">
@@ -84,8 +86,9 @@
 						maxlength="30" autocomplete="off">
 				</div>
 
-				<span class="signUp-message error">비밀번호가 일치하지 않습니다.</span> <label
-					for="memberNickname"> <span class="required">*</span> 닉네임
+				<span class="signUp-message" id="pwMessage">영어, 숫자,특수문자(!,@,#,-,_) 6~30글자 입력해주세요</span>
+				
+				<label for="memberNickname"> <span class="required">*</span> 닉네임
 
 				</label>
 
@@ -94,20 +97,19 @@
 						placeholder="닉네임" maxlength="10">
 
 				</div>
-
-				<span class="signUp-message confirm">사용 가능한 닉네임 입니다.</span> <label
-					for="memberTel"> <span class="required">*</span> 전화번호
-
+				<span class="signUp-message" id="nicknameMessage">영어/숫자/한글 2~10사이로 작성해주세요.</span> 
+				
+				<label for="memberTel"> 
+					<span class="required">*</span> 전화번호
 				</label>
-
 				<div class="signUp-input-area">
 					<input type="text" id="memberTel" name="memberTel"
 						placeholder="(-없이 숫자만 입력)" maxlength="11">
-
 				</div>
-
-				<span class="signUp-message error">전화번호 형식이 올바르지 않습니다.</span> <label
-					for="memberAddress"> 주소 </label>
+				<span class="signUp-message" id="telMessage">전화번호을 입력해주세요.(-제외)</span> 
+				
+				
+				<label for="memberAddress"> 주소 </label>
 
 				<div class="signUp-input-area">
 					<input type="text" id="memberAddress" name="memberAddress"
@@ -118,7 +120,6 @@
 
 				<div class="signUp-input-area">
 					<input type="text" name="memberAddress" placeholder="도로명주소">
-
 				</div>
 
 				<div class="signUp-input-area">
@@ -135,6 +136,12 @@
 
 	<!-- footer include -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+	
+	<!--JQiery 라이브러리 추가 CAN방식-->
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	
+	<!--signUp.js 연결-->
+	<script src="${contextPath}/resources/js/member/signUp.js"></script>
 
 
 </body>

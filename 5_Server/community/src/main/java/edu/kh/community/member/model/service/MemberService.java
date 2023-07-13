@@ -115,4 +115,22 @@ public class MemberService {
 
 		return result;
 	}
+	
+	/**
+	 * 이메일 중복 검사 
+	 * @param memberEmail
+	 * @return result
+	 * @throws Exception
+	 */
+
+	public int emailDupCheck(String memberEmail) throws Exception {
+		
+		Connection conn = getConnection(); //DBCP에서 만들어 둔 커넥션 얻어오기
+		
+		int result = dao.emailDupCheck(conn, memberEmail);
+		
+		close(conn);
+		
+		return result;
+	}
 }

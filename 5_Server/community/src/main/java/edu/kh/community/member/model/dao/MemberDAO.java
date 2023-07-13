@@ -204,4 +204,41 @@ public class MemberDAO {
 		return result;
 	}
 
+	
+	/**
+	 * 이메일 중복 검사 DAO
+	 * @param conn
+	 * @param memberEmail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int emailDupCheck(Connection conn, String memberEmail)throws Exception {
+
+		int result = 0 ; //결과 저장 변수
+		
+		try {
+//			SQL얻어오기
+			String sql = prop.getProperty("emailDupCheck");
+			
+			//pstmt 생성
+			pstmt = conn.prepareStatement(sql);
+			
+			//위치홀더에 알맞은 값 세팅 
+			pstmt.setString(1, memberEmail);
+			
+			//select 수행후 결과 반환
+			rs = pstmt.executeQuery();
+			
+			//rs.next()로 조회 결과 조회
+			if(rs.next()) {
+				result = rs.getInt(1); //1번 컬럼 결과를 result에 대입하겠다 
+			}
+		} finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		return result;
+	}
+
 }
