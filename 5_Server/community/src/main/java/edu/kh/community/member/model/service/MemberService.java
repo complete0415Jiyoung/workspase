@@ -3,6 +3,8 @@ package edu.kh.community.member.model.service;
 import static edu.kh.community.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 import edu.kh.community.member.model.dao.MemberDAO;
 import edu.kh.community.member.model.vo.Member;
@@ -115,7 +117,7 @@ public class MemberService {
 
 		return result;
 	}
-	
+
 	/**
 	 * 이메일 중복 검사 
 	 * @param memberEmail
@@ -124,13 +126,62 @@ public class MemberService {
 	 */
 
 	public int emailDupCheck(String memberEmail) throws Exception {
-		
+
 		Connection conn = getConnection(); //DBCP에서 만들어 둔 커넥션 얻어오기
-		
+
 		int result = dao.emailDupCheck(conn, memberEmail);
-		
+
 		close(conn);
-		
+
 		return result;
 	}
+
+	/**
+	 * 닉네임 중복 검사 
+	 * @return
+	 */
+	public int nicknameDupCheck(String memberNickname) throws Exception {
+		Connection conn = getConnection(); 
+
+		int result = dao.nicknameDupCheck(conn,memberNickname );
+
+		close(conn);
+
+		return result;
+	}
+
+	/**
+	 * 회원정보 조회
+	 * @param memberEmail
+	 * @return mem
+	 * @throws Exception
+	 */
+	public Member selectOne(String memberEmail) throws Exception {
+
+		Connection conn = getConnection(); 
+
+		Member member = dao.selectOne(conn,memberEmail);
+
+		close(conn);
+
+		return member;
+
+	}
+	/**
+	 * 전체 회원 정보 조회
+	 * @param member
+	 * @return member
+	 * @throws Exception
+	 * 
+	 */
+	public List<Member> selectAll() throws Exception {
+		Connection conn = getConnection(); 
+
+		List <Member> list = dao.selectAll(conn);
+
+		close(conn);
+
+		return list;
+	}
+	
 }

@@ -44,13 +44,30 @@ WHERE MEMBER_NO=?
 AND MEMBER_PW=?;
 
 
-
-
 --이메일 중복 검사 
--- 중복되면 1, 아니면 0 
+-- 중복되면 1, 아니면 0 결과 
 SELECT COUNT(*) FROM MEMBER
 WHERE MEMBER_EMAIL='user01@kh.or.kr'
 AND SECESSION_FL='N';
 
 
+--닉네임 중복검사 
+--중복되면 1, 아니면 0 반환
+SELECT COUNT(*) FROM MEMBER
+WHERE MEMBER_NICK ='유저일'
+AND SECESSION_FL = 'N';
+
+
+--이메일이 일치하는 회원 정보 조회
+SELECT MEMBER_EMAIL, MEMBER_NICK, MEMBER_TEL, MEMBER_ADDR,  TO_CHAR(ENROLL_DT, 'YYYY"년" MM"월" DD"일"') AS ENROLL_DT 
+FROM MEMBER
+WHERE MEMBER_EMAIL= 'user01@kh.or.kr'
+AND SECESSION_FL= 'N';
+
+
+--회원 목록 조회 (회원번호 , 이메일, 닉네임)
+SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICK
+FROM MEMBER
+WHERE SECESSION_FL='N'
+ORDER BY MEMBER_NO;
 

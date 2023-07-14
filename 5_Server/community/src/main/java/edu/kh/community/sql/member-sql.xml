@@ -51,4 +51,27 @@
 		WHERE MEMBER_EMAIL=?
 		AND SECESSION_FL='N'
 	</entry>
+	
+	<!-- 닉네임 중복검사 -->
+	<entry key="nicknameDupCheck">
+		SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_NICK=?
+		AND SECESSION_FL='N'
+	</entry>
+	
+	<!-- 회원 정보 조회 -->
+	<entry key="selectOne">
+		SELECT MEMBER_EMAIL, MEMBER_NICK, MEMBER_TEL, MEMBER_ADDR,
+			TO_CHAR(ENROLL_DT, 'YYYY"년" MM"월" DD"일"') AS ENROLL_DT 
+		FROM MEMBER
+		WHERE MEMBER_EMAIL= ?
+		AND SECESSION_FL= 'N'
+	</entry>
+	<!-- 회원 목록 전체 조회 -->
+	<entry key="selectAll">
+		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICK
+		FROM MEMBER
+		WHERE SECESSION_FL='N'
+		ORDER BY MEMBER_NO
+	</entry>
 </properties>
