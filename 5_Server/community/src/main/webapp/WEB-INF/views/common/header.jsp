@@ -56,11 +56,17 @@
 
 </header>
 
+<!-- 
+	쿼리스트링 : 주소에 담겨져서 전달되는 파라미터를 나타내는 문자열
+	주소? name 속성=값&name속성=값
+	/member/login ?memberEmail=user01&memberPw=1234
+
+ -->
 <nav>
 	<ul>
-		<li><a href="#">공지사항</a></li>
-		<li><a href="#">자유 게시판</a></li>
-		<li><a href="#">질문 게시판</a></li>
+		<li><a href="${contextPath}/board/list?type=1">공지사항</a></li>
+		<li><a href="${contextPath}/board/list?type=2">자유 게시판</a></li>
+		<li><a href="${contextPath}/board/list?type=3">질문 게시판</a></li>
 		<li><a href="#">FAQ</a></li>
 		<li><a href="#">1:1 문의</a></li>
 	</ul>
