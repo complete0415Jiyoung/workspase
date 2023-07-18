@@ -59,7 +59,7 @@
 <!-- 
 	쿼리스트링 : 주소에 담겨져서 전달되는 파라미터를 나타내는 문자열
 	주소? name 속성=값&name속성=값
-	/member/login ?memberEmail=user01&memberPw=1234
+	/member/login?memberEmail=user01&memberPw=1234
 
  -->
 <nav>
