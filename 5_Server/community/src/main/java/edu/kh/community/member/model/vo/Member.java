@@ -15,8 +15,6 @@ import lombok.ToString;
 @ToString // toString 자동 추가
 @NoArgsConstructor // 기본 생성자
 @AllArgsConstructor // 모든 필드 초기화하는 매개 변수 생성자
-
-
 public class Member {
 	
 	private int memberNo;

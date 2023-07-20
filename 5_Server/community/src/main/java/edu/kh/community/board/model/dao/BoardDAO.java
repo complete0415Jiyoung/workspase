@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.community.board.model.vo.Board;
+import edu.kh.community.board.model.vo.BoardDetail;
+import edu.kh.community.board.model.vo.BoardImage;
 import edu.kh.community.board.model.vo.Pagination;
 
 public class BoardDAO {
@@ -144,7 +146,84 @@ public class BoardDAO {
 		
 		return boardList;
 	}
-	
-	
 
+	/**
+	 * 게시글 상세조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectBoardDetail(Connection conn, int boardNo) throws Exception {
+
+		BoardDetail detail = null;
+		try {
+			String sql = prop.getProperty("selectBoardDetail");
+			
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
+			
+			rs= pstmt.executeQuery();
+			
+			if(rs.next()) {
+				detail = new BoardDetail();
+	            
+	            detail.setBoardNo(rs.getInt(1));
+	            detail.setBoardTitle(rs.getString(2));
+	            detail.setBoardContent(rs.getString(3));
+	            detail.setCreateDate(rs.getString(4));
+	            detail.setUpdateDate(rs.getString(5));
+	            detail.setReadCount(rs.getInt(6));
+	            detail.setMemberNickname(rs.getString(7));
+	            detail.setProfileImage(rs.getString(8));
+	            detail.setMemberNo(rs.getInt(9));
+	            detail.setBoardName(rs.getString(10));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return detail;
+	}
+	
+	/**
+	 * 특정게시글 에 첨부된 이미지 조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return imageList
+	 * @throws Exception
+	 */
+	public List<BoardImage> selectImageList(Connection conn, int boardNo) throws Exception {
+		List<BoardImage> imageList = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("selectImageList");
+			
+			pstmt= conn.prepareStatement(sql);
+			
+			pstmt.setInt(1,boardNo);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				BoardImage image = new BoardImage();
+	            
+	            image.setImageNo(rs.getInt(1));
+	            image.setImageReName(rs.getString(2));
+	            image.setImageOriginal(rs.getString(3));
+	            image.setImageLevel(rs.getInt(4));
+	            image.setBoardNo(rs.getInt(5));
+			
+	            imageList.add(image);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		return imageList;
+	}
+	
 }

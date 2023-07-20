@@ -32,6 +32,24 @@
 		) 
 		WHERE RNUM BETWEEN ? AND ?
 	</entry>
+	
+	<!-- 게시글 상세조회 -->
+	<entry key="selectBoardDetail">
+	SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, 
+	        TO_CHAR(CREATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') CREATE_DT,
+	        TO_CHAR(UPDATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') UPDATE_DT,
+	        READ_COUNT,MEMBER_NICK, PROFILE_IMG, MEMBER_NO, BOARD_NM
+	FROM BOARD
+	JOIN MEMBER USING(MEMBER_NO)
+	JOIN BOARD_TYPE USING(BOARD_CD)
+	WHERE BOARD_NO=?
+	AND BOARD_ST='N'
+	</entry>
 
-
+	<!-- 게시글에 첨부된 이미지 조회 -->
+	<entry key="selectImageList">
+		SELECT * FROM BOARD_IMG
+		WHERE BOARD_NO=?
+		ORDER BY IMG_LEVEL
+	</entry>
 </properties>
