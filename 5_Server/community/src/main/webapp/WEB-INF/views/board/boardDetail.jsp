@@ -30,13 +30,13 @@
                 <div class="board-writer">
  
                     <c:if test="${empty detail.profileImage}">
-                    <!-- 프로필이미지가 없는 경우 -->
-                    <img src="${contextPath}/resources/images/user.png">
+                        <!-- 프로필이미지가 없는 경우 -->
+                        <img src="${contextPath}/resources/images/user.png">
                     </c:if>
 
                     <c:if test="${!empty detail.profileImage}">
-                    <!-- 프로필 이미지가 있는 경우 -->
-                    <img src="${contextPath}${detail.profileImage}">
+                        <!-- 프로필 이미지가 있는 경우 -->
+                        <img src="${contextPath}${detail.profileImage}">
                     </c:if>
  
  
@@ -160,7 +160,7 @@
         const boardNo = "${detail.boardNo}"; //있으면 "500", 없으면 빈 문자열,,
         
         //로그인한 회원의 번호
-        const loginMember = "${loginMember.memberNo}";
+        const loginMemberNo = "${loginMember.memberNo}";
         // -> 로그인 O : "10";
         // -> 로그인 X : ""; (빈문자열) 
         

@@ -19,7 +19,7 @@ import edu.kh.community.common.wrapper.EncryptWrapper;
 @WebFilter(filterName = "encryptfilter", 
 			urlPatterns = {"/member/login",
 							"/member/signUp",
-							"/member/myPage/changePw",
+							"/member/myPage/changeInfo",
 							"/member/myPage/secession"}
 			//" /member/* "
 			)

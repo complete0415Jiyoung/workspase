@@ -43,6 +43,8 @@ public class ReplyController extends HttpServlet {
 		String command = uri.substring(  (contextPath + "/reply/").length()  );
 		// selectReplyList
 
+		ReplyService service = new ReplyService();
+		
 		try {
 			// 댓글 목록 조회 요청인 경우
 			if(command.equals("selectReplyList")){
@@ -52,7 +54,6 @@ public class ReplyController extends HttpServlet {
 
 				// 댓글 목록 조회 서비스 호출후 결과 반환 
 
-				ReplyService service = new ReplyService();
 
 				List<Reply> rList = service.selectReplyList(boardNo);
 
@@ -61,7 +62,43 @@ public class ReplyController extends HttpServlet {
 				//JSON형태로 변환
 				new Gson().toJson(rList,resp.getWriter());
 				
-				}
+			}
+			
+			// 댓글 등록인 경우
+			if(command.equals("insert")) {
+				
+				//파라미터로 얻어오기
+				String replyContent= req.getParameter("replyContent");
+				int memberNo= Integer.parseInt(req.getParameter("memberNo")); 
+				int boardNo= Integer.parseInt(req.getParameter("boardNo")); 
+				
+				
+				// Reply 객체 생성 해서 파라미터 담기 
+				Reply reply = new Reply();
+				reply.setReplyContent(replyContent);
+				reply.setMemberNo(memberNo);
+				reply.setBoardNo(boardNo);
+				
+				// 댓글 등록 (insert) 서비스 호출후 결과 반환
+				int result = service.insertReply(reply);
+				
+				
+				// 서비스 호출 결과 그대로 응답 데이터로 내보냄
+				resp.getWriter().print(result);
+			}
+			
+			if(command.equals("delete")) {
+				//파라미터 얻어오기 
+				int replyNo = Integer.parseInt(req.getParameter("replyNo"));
+				
+				int result = service.deletReply(replyNo);
+				
+				resp.getWriter().print(result);
+				
+			}
+			
+			
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
