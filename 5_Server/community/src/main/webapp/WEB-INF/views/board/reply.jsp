@@ -34,15 +34,6 @@
                 </li>
 
             </c:forEach>
-
-            <li class="reply-row">
-               <textarea class="update-textarea">기존 댓글 내용</textarea>
-                
-                <div class="reply-btn-area">
-                    <button>수정</button>
-                    <button>삭제</button>
-                </div>
-            </li>
         </ul>
     </div>
     <!-- 댓글 작성 부분 -->

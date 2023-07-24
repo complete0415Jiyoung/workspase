@@ -88,6 +88,31 @@ public class ReplyService {
 		close(conn);
 		
 		return result;
+	}
+	/**
+	 * 댓글 수정하기 Service
+	 * @param replyNo
+	 * @param replyContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int update(int replyNo, String replyContent) throws Exception {
+		Connection conn= getConnection();
+		
+		// XSS 처리 
+		replyContent =Util.XSSHandling(replyContent);
+		
+		//개행문자 처리 
+		replyContent = Util.newLineHandling(replyContent);
+		
+		int result =dao.update(conn, replyNo, replyContent);
+		
+		if(result> 0) commit(conn);
+		else 		  rollback(conn);
+
+		close(conn);
+		
+		return result;
 	} 
 
 }

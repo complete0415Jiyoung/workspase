@@ -25,5 +25,12 @@
       REPLY_ST = 'Y'
       WHERE REPLY_NO = ?
    </entry>
+	<!-- 댓글 수정 -->
+   <entry key="update">
+      UPDATE REPLY SET
+      REPLY_CONTENT=?
+      WHERE REPLY_NO = ?
+      
+   </entry>
 	
 </properties>

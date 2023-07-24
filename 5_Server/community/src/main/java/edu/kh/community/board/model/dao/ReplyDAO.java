@@ -116,7 +116,7 @@ public class ReplyDAO {
 	 * @throws Exception
 	 */
 	public int deletReply(Connection conn, int replyNo) throws Exception{
-int result=0;
+		int result=0;
 		
 		try {
 			String sql= prop.getProperty("deleteReply");
@@ -131,5 +131,35 @@ int result=0;
 			close(pstmt);
 		}
 		return result;
+	}
+
+
+	/**
+	 * 댓글 수정 DAO
+	 * @param conn
+	 * @param replyNo
+	 * @param replyContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int update(Connection conn, int replyNo, String replyContent) throws Exception {
+	
+	int result=0;
+		
+		try {
+			String sql= prop.getProperty("update");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, replyContent);
+			pstmt.setInt(2, replyNo);
+			
+			result= pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	
 	}
 }

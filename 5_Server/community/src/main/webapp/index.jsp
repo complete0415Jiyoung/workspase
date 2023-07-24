@@ -145,7 +145,7 @@
 					<c:otherwise>
 						<article class="login-area">
 							<!-- 회원 프로필 이미지 -->
-							<a href="#"> <img src="/community/resources/images/user.png"
+							<a href="${contextPath}/member/myPage/profile"> <img src="/community/resources/images/user.png"
 								id="member-profile">
 							</a>
 
