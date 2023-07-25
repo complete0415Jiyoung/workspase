@@ -74,4 +74,11 @@
 		WHERE SECESSION_FL='N'
 		ORDER BY MEMBER_NO
 	</entry>
+	
+	<!-- 회원 프로필변경  -->
+	<entry key="updateProfileImage">
+		UPDATE MEMBER SET
+		PROFILE_IMG=?
+		WHERE MEMBER_NO=?
+	</entry>
 </properties>

@@ -208,3 +208,22 @@ form[name=myPage-form]{
     color:  white;
     border: 0;
 }
+
+/* 프로필 이미지 삭제 버튼 */
+#delete-image{
+    position: absolute;
+    top:0;
+    right: 0;
+
+    display: flex;
+    width: 20px;
+    height: 20px;
+    /* text-align: center; */
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ddd;
+    cursor: pointer;
+}
+
