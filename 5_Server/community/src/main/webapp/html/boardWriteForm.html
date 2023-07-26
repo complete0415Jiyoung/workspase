@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 등록</title>
+    
+    <link rel="stylesheet" href="../resources/css/main-style.css">
+    <link rel="stylesheet" href="../resources/css/boardWriteForm-style.css">
+    
+
+    <script src="https://kit.fontawesome.com/a5af36132e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <!-- 클릭 시 메인페이지로 이동하는 로고 -->
+            <section>
+                <a href="#">
+                    <img src="../resources/images/logo.jpg" id="home-logo">
+                </a>
+            </section>
+
+            <!-- header의 두번째 자식 div -->
+            <section> 
+                <article class="search-area">
+                    <!-- form태그 내부 input 태그 값을 서버 또는 페이지로 전달 -->
+                    <form action="#" name="search-form">
+
+                        <!-- fieldset : form 내부에서 input을 종류별로 묶는 용도로 많이 사용 -->
+                        <fieldset>
+
+                            <input type="search" id="query" name="query"
+                             placeholder="검색어를 입력해주세요." autocomplete="off">
+
+                             <!-- 검색 버튼 -->
+                             <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+
+                        </fieldset>
+
+                    </form>
+                </article>
+
+                
+            </section>
+
+            <section></section>
+
+        </header>
+
+        <nav>
+
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자유 게시판</a></li>
+                <li><a href="#">질문 게시판</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">1:1 문의</a></li>
+            </ul>
+        </nav>
+
+        <form action="#" enctype="multipart/form-data" method="post" class="board-write"
+        onsubmit="return writeValidate()">
+
+            <!-- 제목 -->
+            <h1 class="board-title">
+                <input type="text" name="boardTitle" placeholder="제목을 입력해주세요.">
+            </h1>
+            <!-- 쎔네일 -->
+            <h4>썸네일</h4>
+            <div class="img-box">
+                <div class="boardImg thumbnail">
+                    <label for="img0">
+                        <img class="preview">
+                    </label>
+                    <input type="file" class="inputImage" id="img0" name="0" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                    <!-- &times; : x모양을 문자 -->
+                </div>
+            </div>
+            
+            <!-- 업로드 이미지 -->
+            <h4>업로드 이미지</h4>
+            <div class="img-box">
+            
+                <div class="boardImg">
+                    <label for="img1">
+                        <img class="preview">
+                    </label>
+                    <input type="file" class="inputImage" id="img1" name="1" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+                <div class="boardImg">
+                    <label for="img2">
+                        <img class="preview">
+                    </label>
+                    <input type="file" class="inputImage" id="img2" name="2" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+                <div class="boardImg">
+                    <label for="img3">
+                        <img class="preview">
+                    </label>
+                    <input type="file" class="inputImage" id="img3" name="3" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+                <div class="boardImg">
+                    <label for="img4">
+                        <img class="preview">
+                    </label>
+                    <input type="file" class="inputImage" id="img4" name="4" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+            </div>
+
+            <!-- 내용 -->
+            <div class="board-content">
+                <textarea name="boardContent"></textarea>
+            </div>
+
+            <!-- 버튼영역 -->
+            <div class="board-btn-area">
+                <button type="submit" id="writeBtn">등록</button>
+                <button type="button" id="goToList">목록으로</button>
+            </div>
+
+            <!-- 숨겨진 값 -->
+            <!-- 동작 구분 : insert냐? update냐? -->
+            <input type="hidden" name="mode" value="insert">
+            <!-- 게시판 구분 : 어느 게시판인가 -->
+            <input type="hidden" name="type" value="1">
+            
+        </form>
+        
+    </main>
+    <footer>
+
+        <p>Copyright &copy; KH Information Educational Institue M-Class</p>
+
+        <article>
+            <a href="#">프로젝트 소개</a>
+            <span>|</span>
+            <a href="#">이용약관</a>
+            <span>|</span>
+            <a href="#">개인정보처리방침</a>
+            <span>|</span>
+            <a href="#">고객센터</a>
+        </article>
+
+    </footer>
+    <script src="../resources/js/board/board.js"></script>
+    <script src="../resources/js/board/boardWriteForm.js"></script>
+    
+</body>
+</html>

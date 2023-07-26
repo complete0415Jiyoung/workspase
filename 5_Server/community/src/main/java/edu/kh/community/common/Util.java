@@ -5,7 +5,10 @@ public class Util {
 	// 개행문자를 "<br>"로 변경하는 메서드
 	public static String newLineHandling(String content) {
 		
-		return content.replaceAll("\n|\r|\n\r|\r\n", "<br>");
+		return content.replaceAll("\r\n|\n|\r|\n\r", "<br>");
+		//textarea의 엔터 : \r\n
+		// \r : 캐리지 리턴 (첫번째로 돌아가기)-> 현재는 개항문자로 인식
+		// \n : 다음줄로 이동(다음줄로 이동)
 	}
 	
 	

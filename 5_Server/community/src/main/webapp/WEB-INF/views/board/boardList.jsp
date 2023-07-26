@@ -68,7 +68,12 @@
                 </table>
             </div>
             <div class="btn-area">
-                <button id="insertBtn">글쓰기</button>
+                <c:if test="${!empty loginMember}">
+                    <!-- /community/board/list : 현재주소-->
+                    <!-- /community/board/write : 이동 주소-->
+                    <button id="insertBtn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${pagination.currentPage}'">글쓰기</button>
+
+                </c:if>
             </div>
 
             <!-- ${param.type} -->

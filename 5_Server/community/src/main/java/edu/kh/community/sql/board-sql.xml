@@ -52,4 +52,23 @@
 		WHERE BOARD_NO=?
 		ORDER BY IMG_LEVEL
 	</entry>
+	
+	<!-- 다음게시글 번호 조회 -->
+	<entry key="nextBoardNo">
+	 SELECT SEQ_BOARD_NO.NEXTVAL FROM DUAL
+	</entry>
+	
+	
+	<!-- 게시글 삽입 -->
+	<entry key="insertBoard">
+		INSERT INTO BOARD
+		VALUES(?,?,?,DEFAULT,DEFAULT,DEFAULT,DEFAULT,?,?)
+	</entry>
+	
+	
+	<!--게시글 이미지 삽입  -->
+	<entry key="insertBoardImage">
+		INSERT INTO BOARD_IMG
+		VALUES(SEQ_IMG_NO.NEXTVAL,?,?,?,?)
+	</entry>
 </properties>

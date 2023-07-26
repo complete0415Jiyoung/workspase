@@ -106,13 +106,7 @@
             
             <!-- 내용 -->
             <div class="board-content">
-                ${detail.boardContent}<br>
-                내용입니다.<br>
-                내용입니다.<br>
-                내용입니다.<br>
-                내용입니다.<br>
-                내용입니다.<br>
-                내용입니다.<br>
+                ${detail.boardContent}
 
             </div>
 

@@ -98,6 +98,9 @@ nav{
     
     background-color: white;
     border-bottom: 2px solid black;
+    
+    z-index: 10;
+    
 }
 
 /* nav 스타일 */
