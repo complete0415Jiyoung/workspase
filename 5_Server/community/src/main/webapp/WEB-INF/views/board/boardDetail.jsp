@@ -116,7 +116,20 @@
                
                <!--  -->
                 <c:if test="${loginMember.memberNo==detail.memberNo}">
-                   <button id="updateBtn">수정</button>
+
+                    <%-- cp 가 없을 경우 일때 대한 처리 --%>
+                    
+                    <c:if test="${empty param.cp}">
+                        <!-- 파라미터에 cp가 없을 경우 -->
+                        <c:set var="cp" value="1"/>
+                    </c:if>
+                        
+                    <c:if test="${!empty param.cp}">
+                        <!-- 파라미터에 cp가 있을 경우 -->
+                        <c:set var="cp" value="${param.cp}"/>
+                    </c:if>
+
+                   <button id="updateBtn" onclick="location.href='write?mode=update&type=${param.type}&cp=${cp}&no=${detail.boardNo}'">수정</button>
                    <button id="deleteBtn">삭제</button>
                 </c:if>
                
@@ -135,7 +148,6 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     
     <script src="${contextPath}/resources/js/board/board.js"></script>
-    
     
     <script>
         //댓글 관련 JS 코드에 필요한 값을 전역 변수로 선언
@@ -158,8 +170,8 @@
         // -> 로그인 O : "10";
         // -> 로그인 X : ""; (빈문자열) 
         
-        
     </script>
+    
     <script src="${contextPath}/resources/js/board/reply.js"></script>
 </body>
 </html>

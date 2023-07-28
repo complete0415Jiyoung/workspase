@@ -106,3 +106,61 @@ VALUES(?,?,?,DEFAULT,DEFAULT,DEFAULT,DEFAULT,?,?);
 --게시글 이미지 삽입
 INSERT INTO BOARD_IMG
 VALUES(SEQ_IMG_NO.NEXTVAL,?,?,?,?);
+
+
+--게시글 수정
+UPDATE BOARD SET
+BOARD_TITLE=?,
+BOARD_CONTENT=?,
+UPDATE_DT=SYSDATE
+WHERE BOARD_NO=?;
+
+--게시글 이미지 수정
+--?번글 ?레벨의 변경명, 원본명을 수정
+UPDATE BOARD_IMG SET
+IMG_RENAME=?,
+IMG_ORIGINAL=?
+WHERE IMG_LEVEL=?
+AND BOARD_NO=?;
+
+--게시글 이미지 삭제
+
+--deleteList == "1,2,3"
+--pstmt.setString(2,deleteList)
+
+--게시글 삭제 
+UPDATE BOARD SET
+BOARD_ST='Y'
+WHERE BOARD_NO=?;
+
+
+--2번 게시판의 제목에 "50"포함된 게시글 수
+SELECT COUNT(*) FROM BOARD
+JOIN MEMBER USING (MEMBER_NO)
+WHERE BOARD_ST ='N'
+AND BOARD_CD =2
+--AND BOARD_TITLE LIKE '%50%'; --제목
+--AND BOARD_CONTENT LIKE '%50%' --내용
+--AND (BOARD_TITLE LIKE '%50%'OR BOARD_CONTENT LIKE '%50%');  --제목+내용
+AND MEMBER_NICK LIKE '%유저일%'; --작성자 
+
+
+		SELECT * FROM(
+			SELECT ROWNUM RNUM, A.* FROM(
+				SELECT BOARD_NO , BOARD_TITLE, MEMBER_NICK,
+						TO_CHAR(CREATE_DT,'YYYY-MM-DD') AS
+						CREATE_DT,
+						READ_COUNT
+				FROM BOARD
+				JOIN MEMBER USING(MEMBER_NO)
+				WHERE BOARD_CD = ?
+				AND BOARD_ST = 'N'
+                
+                --condition
+                AND BOARD_TITLE LIKE '%50%
+                
+				ORDER BY BOARD_NO DESC
+			) A
+		)
+		WHERE RNUM BETWEEN ? AND ?
+

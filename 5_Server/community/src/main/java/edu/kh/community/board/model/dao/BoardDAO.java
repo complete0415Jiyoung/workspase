@@ -302,12 +302,201 @@ public class BoardDAO {
 			pstmt.setString(2, image.getImageOriginal());
 			pstmt.setInt(3, image.getImageLevel());
 			pstmt.setInt(4, image.getBoardNo());
-			
+
 			result =pstmt.executeUpdate();
 		} finally {
 			close(pstmt);
 		}
 		return result;
 	}
+
+	/**
+	 * 게시글 부분을 수정하는 DAO
+	 * @param conn
+	 * @param detail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(Connection conn, BoardDetail detail) throws Exception{
+
+		int result=0;
+		try {
+			String sql = prop.getProperty("updateBoard");
+
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, detail.getBoardTitle());
+			pstmt.setString(2, detail.getBoardContent());
+			pstmt.setInt(3, detail.getBoardNo());
+
+			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
+	/**
+	 * 게시글 이미지 수정 DAO
+	 * @param conn
+	 * @param img
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoardImage(Connection conn, BoardImage img) throws Exception {
+
+		int result=0;
+		try {
+			String sql = prop.getProperty("updateBoardImage");
+
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, img.getImageReName());
+			pstmt.setString(2, img.getImageOriginal());
+			pstmt.setInt(3, img.getImageLevel());
+			pstmt.setInt(4, img.getBoardNo());
+
+			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+
+	}
+	/**
+	 * 이미지 삭제 dao
+	 * @param conn
+	 * @param deleteList
+	 * @param boardName
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteBoardImage(Connection conn, String deleteList, int boardNo)throws Exception {
+		int result= 0;
+		try {
+			//							완성되지 않은 SQL
+			String sql= prop.getProperty("deleteBoardImage")+ deleteList+")";
+			// "DELETE FROM BOARD_IMG WHERE BOARD_NO=? AND IMG_LEVEL IN(1,0)"
+
+			pstmt= conn.prepareStatement(sql);
+
+			pstmt.setInt(1, boardNo);
+			result =pstmt.executeUpdate();
+
+		} finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
+
+
+
+	/**게시글 삭제 DAO
+	 * @throws Exception
+	 * @param conn
+	 * @param boardNo
+	 * @return
+	 */
+	public int deleteBoard(Connection conn, int boardNo) throws Exception{
+		int result= 0;
+		try {
+			String sql = prop.getProperty("deleteBoard");
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, boardNo);
+
+			result = pstmt.executeUpdate();
+		}finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
+
+	/** 특정게시판에서 조건을 만족하는 게시글을 조회하는 Dao
+	 * 
+	 * @param conn
+	 * @param type
+	 * @param condition
+	 * @return listCount
+	 * @throws Exception
+	 * 
+	 */
+	public int searchListcount(Connection conn, int type, String condition) throws Exception {
+
+		int listCount =0;
+
+		try {
+			String sql = prop.getProperty("searchListCount") + condition;
+
+			pstmt=conn.prepareStatement(sql);
+
+			pstmt.setInt(1, type);
+
+			rs= pstmt.executeQuery();
+
+			if(rs.next()) {
+				listCount = rs.getInt(1);
+			}
+
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return listCount;
+	}
+
+	/**
+	 * 특정게시판에서 조건을 만족하는 게시글 목록 조회DAO
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @param condition
+	 * @return boardList
+	 * @throws Exception
+	 */
+	public List<Board> searchBoardList(Connection conn, Pagination pagination, int type, String condition)throws Exception {
+
+		List<Board> boardList = new ArrayList<Board>();
+
+		try {
+			String sql = prop.getProperty("searchBoardList1")
+					+condition+
+					prop.getProperty("searchBoardList2");
+
+			// BETWEEN 구문에 들어갈 범위 계산
+			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
+
+			int end =start + pagination.getLimit() - 1;
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, type);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+
+			rs= pstmt.executeQuery();
+
+			while (rs.next()) {
+				Board board = new Board();
+
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setMemberNickname(rs.getString("MEMBER_NICK"));
+				board.setCreateDate(rs.getString("CREATE_DT"));
+				board.setReadCount(rs.getInt("READ_COUNT"));
+
+				boardList.add(board);
+
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+
+		return boardList;
+	}
+
+
 
 }
