@@ -134,7 +134,8 @@ public class BoardDAO {
 				board.setMemberNickname(rs.getString("MEMBER_NICK"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
 				board.setReadCount(rs.getInt("READ_COUNT"));
-
+				board.setThumbnail(rs.getString("THUMBNAIL"));
+				
 				boardList.add(board);
 
 			}
