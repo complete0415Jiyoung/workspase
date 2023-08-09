@@ -27,16 +27,16 @@ public class SelectUserServlet extends HttpServlet {
 			
 			UserDAO dao = new UserDAO();
 			
-			UserDTO dto = dao.selectUser(userNo);
+			UserDTO user = dao.selectUser(userNo);
 			
-			req.setAttribute("User", dto);
+			req.setAttribute("User", user);
 			
 			RequestDispatcher dispatcher = null;
 			
-			if(dto != null) {
-				dispatcher = req.getRequestDispatcher("views/searchSuccess.jsp");
+			if(user != null) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/views/searchSuccess.jsp");
 			}else {
-				dispatcher = req.getRequestDispatcher("views/searchFail.jsp");
+				dispatcher = req.getRequestDispatcher("/WEB-INF/views/searchFail.jsp");
 	
 				dispatcher.forward(req, resp);
 			}
@@ -45,8 +45,6 @@ public class SelectUserServlet extends HttpServlet {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	
-	
 	
 	}
 }

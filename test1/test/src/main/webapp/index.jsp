@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="/selectUser">
+	<form action="<%=request.getContextPath()%>/selectUser">
 		<h1>회원정보조회</h1>
 		<input type="text" placeholder="회원 번호 입력" name="userNo">
 		<button>조회</button>
