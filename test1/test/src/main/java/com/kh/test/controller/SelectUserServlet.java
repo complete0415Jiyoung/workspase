@@ -2,6 +2,7 @@ package com.kh.test.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.jasper.tagplugins.jstl.core.Catch;
 
 import com.kh.test.model.UserDAO;
+import com.kh.test.model.UserDTO;
 
 
 @WebServlet("/selectUser")
@@ -23,9 +25,21 @@ public class SelectUserServlet extends HttpServlet {
 			
 			int userNo = Integer.parseInt(req.getParameter("userNo"));
 			
-			UserDAO dao =
+			UserDAO dao = new UserDAO();
 			
+			UserDTO dto = dao.selectUser(userNo);
 			
+			req.setAttribute("User", dto);
+			
+			RequestDispatcher dispatcher = null;
+			
+			if(dto != null) {
+				dispatcher = req.getRequestDispatcher("views/searchSuccess.jsp");
+			}else {
+				dispatcher = req.getRequestDispatcher("views/searchFail.jsp");
+	
+				dispatcher.forward(req, resp);
+			}
 			
 			
 		}catch(Exception e) {
