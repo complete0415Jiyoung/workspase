@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.Catch;
 
 import com.kh.test.model.UserDAO;
 import com.kh.test.model.UserDTO;
@@ -29,7 +28,7 @@ public class SelectUserServlet extends HttpServlet {
 			
 			UserDTO user = dao.selectUser(userNo);
 			
-			req.setAttribute("User", user);
+			req.setAttribute("user", user);
 			
 			RequestDispatcher dispatcher = null;
 			
@@ -37,9 +36,8 @@ public class SelectUserServlet extends HttpServlet {
 				dispatcher = req.getRequestDispatcher("/WEB-INF/views/searchSuccess.jsp");
 			}else {
 				dispatcher = req.getRequestDispatcher("/WEB-INF/views/searchFail.jsp");
-	
-				dispatcher.forward(req, resp);
 			}
+			dispatcher.forward(req, resp);
 			
 			
 		}catch(Exception e) {

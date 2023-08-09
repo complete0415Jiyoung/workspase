@@ -19,8 +19,7 @@ public class UserDAO {
 
 		try {
 			
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
+			Class.forName("oracle.jdbc.driver.OracleDriver");			
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","community_ljy","community1234");
 			
 		}catch(Exception e) {
@@ -31,7 +30,7 @@ public class UserDAO {
 	
 	public UserDTO selectUser(int userNo) throws Exception {
 		
-		UserDTO user = new UserDTO();
+		UserDTO user = null;
 		
 		try{
 			String sql = "SELECT * FROM TB_USER WHERE USER_NO=?";
@@ -43,16 +42,19 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				user.setUserNo(rs.getInt(1));
-				user.setUserId(rs.getString(2));
-				user.setUserName(rs.getString(3));
-				user.setUserAge(rs.getInt(4));
+
+				user = new UserDTO();
+				user.setUserNo(rs.getInt("USER_NO"));
+				user.setUserId(rs.getString("USER_ID"));
+				user.setUserName(rs.getString("USER_NAME"));
+				user.setUserAge(rs.getInt("USER_AGE"));
+				
 			}
 		}finally {
 			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
 				if(conn != null) conn.close();
-				if(pstmt != null) conn.close();
-				if(rs != null) conn.close();
 				
 			}catch(Exception e){
 				e.printStackTrace();
