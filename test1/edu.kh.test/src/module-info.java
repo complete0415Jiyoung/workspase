@@ -1,0 +1,2 @@
+module edu.kh.test {
+}
