@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 다른 모든 웹 구성 요소에 표시되는 공유 리소스 정의 -->	
+	
+	<!-- 
+		프로젝트 전반적으로 사용할 
+		DB연결 관련 내용
+		(JDBC, MyBatis, DBCP), AOP,
+		트렌젝션 처리, 파일 업로드 등을 작성
+	
+	 -->
+</beans>
