@@ -23,7 +23,7 @@
 			<td>${user.userAge}</td>
 		</tr>
 	</table>
-	<a href="${request.getContextPath()}">메인페이지로 돌아가기</a>
+	<a href="<%=request.getContextPath()%>">메인페이지로 돌아가기</a>
 
 </body>
 </html>

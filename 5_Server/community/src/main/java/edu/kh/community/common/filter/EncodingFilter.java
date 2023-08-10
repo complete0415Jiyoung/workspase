@@ -85,18 +85,5 @@ public class EncodingFilter extends HttpFilter implements Filter {
 		// 연결된 다음 필터 수행 (없으면 Servlet 수행)
 		chain.doFilter(request, response);
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
