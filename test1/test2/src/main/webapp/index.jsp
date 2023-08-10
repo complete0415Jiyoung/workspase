@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>조회 결과가 없습니다.</h1>
-	<a href="<%= request.getContextPath()%>">메인페이지로 돌아가기</a>
-
+	<form action="/selectUser">
+	<h1>회원정보조회(아이디 검색)</h1>
+	
+	<input type="text" name="userID">
+	<button>조회</button>
+	</form>
 </body>
 </html>

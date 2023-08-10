@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import com.kh.test.model.UserDAO;
-import com.kh.test.model.UserDTO;
+import com.kh.test.model.dao.UserDAO;
+import com.kh.test.model.service.userService;
+import com.kh.test.model.vo.User;
 
 
 @WebServlet("/selectUser")
@@ -22,22 +22,22 @@ public class SelectUserServlet extends HttpServlet {
 
 		try {
 			
-			int userNo = Integer.parseInt(req.getParameter("userNo"));
+			String userId = req.getParameter("userid");
 			
-			UserDAO dao = new UserDAO();
+			userService service = new userService();
 			
-			UserDTO user = dao.selectUser(userNo);
-			
-			req.setAttribute("user", user);
+			User user = service.selectId(userId);
+
+			req.setAttribute("user",user);
 			
 			RequestDispatcher dispatcher = null;
-			
 			if(user != null) {
 				dispatcher = req.getRequestDispatcher("/WEB-INF/views/searchSuccess.jsp");
 			}else {
 				dispatcher = req.getRequestDispatcher("/WEB-INF/views/searchFail.jsp");
 			}
 			dispatcher.forward(req, resp);
+			
 			
 			
 		}catch(Exception e) {
