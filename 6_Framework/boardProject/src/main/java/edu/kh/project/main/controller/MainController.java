@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 	
 	// tip : spring 에서 controller메소드 작성시 
-	// 반환갓을 모르겠으면 일단 Spring으로 작성!!
+	// 반환값을 모르겠으면 일단 Spring으로 작성!!
 	
 //	@RequestMapping("/") : 요청주소가 "/"인 경우 해당 메소드와 연결
 	
@@ -35,7 +35,7 @@ public class MainController {
 		// -> webapp폴더를 기준으로 
 		// 요청 위임할 JAP파일 경로를 리턴하면 된다
 		
-		//단, servlet - context.xal에 작성된
+		//단, servlet - context.xml에 작성된
 		// prefix, suffix 부분을 제외하고 작성
 		// prefix + 리턴값 + suffix로 경로 완성!!
 		
