@@ -16,10 +16,13 @@
 	<!-- 모든 서블릿이 공유하는 루트 스프링 컨테이너의 정의 및 필터 -->
 	<!-- The definition of the Root Spring Container shared by all Servlets 
 		and Filters -->
-		<!-- root-context.xml를 읽어옮 -->
+	<!-- root-context.xml를 읽어옮 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring/root-context.xml</param-value>
+		<param-value>
+			classpath:spring/root-context.xml
+			classpath:spring/spring-security.xml
+		</param-value>
 	</context-param>
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
