@@ -32,7 +32,6 @@ import edu.kh.project.member.model.service.MemberService;
 // -> GET/POST 방식을 구분
 
 
-
 @Controller // 요청/응답 처리하는 클래스 + bean으로 등록(Spring이 관리하는 객체)
 @RequestMapping("/member") // 공통된 주소 앞부분을 작성
 						//member로 시작하는 요청은 해당 컨트롤러에서 처리 
@@ -153,7 +152,7 @@ public class MemberController {
 		
 		// Member inputMember : 커멘드 객체 (필드에 파라미터 담겨있음)
 		
-		// @RequsetHeader(value = "referer")String referer
+		// @RequsetHeader(value = "referer") String referer
 		// -> 요청 HTTP header에서 "referer"(이전 주소)값을 얻어와 
 		// 	  매개 변수 String referer에 저장
 		
@@ -168,7 +167,7 @@ public class MemberController {
 		// (주의) required 속성 미작성시 기본 값은 true
 		// -> 파라미터가 전달 되지 않는 경우 주의
 		
-		//HttpServletResponse resp  :서버 -> 클라이언트 응답 방법을 가지고 있는 객체
+		//HttpServletResponse resp  : 서버 -> 클라이언트 응답 방법을 가지고 있는 객체
 		
 		//System.out.println(saveId);
 		
@@ -292,6 +291,95 @@ public class MemberController {
 		
 	}
 	
+	// 로그인 전용 화면 이동
+	@GetMapping("/login")
+	public String login() {
+		
+		return "member/login";
+	}
+	
+	//회원가입 페이지 이동
+	@GetMapping("/signUp")
+	public String signUp() {
+		
+		// /WEB-INF/views/member/signUp.jsp forward(요청위임)
+		// -> ViewResovler 가 prㄷfix , suffix 를 리턴 값 앞 뒤에 붙임
+		return "member/signUp";
+	}
+	
+	//회원가입 진행
+	@PostMapping("/signUp")
+	public String signUp(Member inputMember
+						, String[] memberAddress
+						, RedirectAttributes ra) {
+		
+		//---------------메게 변수 설명---------------------------------
+		// Member inputMember : 커맨드 객체(제출된 파라미터가 저장된 객체)
+	
+		// String[] memberAddress :
+		// input name ="memberAddress" 3개가 저장된 배열
+		
+		// RedirectAttuributes ra :
+		// 리다이렉트 시 데이터를 requestScope로 전달해주는 객체
+		
+		//-----------------------------------------------------------
+		
+		
+		// 12345^^^서울시^^^2층
+		// 주소 구분자 , -> ^^^ 변경
+		
+		//String addr = inputMember.getMemberAddress().replace(",", "^^^");
+		//inputMember.setMemberAddress(addr);
+		//-> 클라이언트가 , 직접 입력하면 문제 발생
+		
+		
+		//만약에 주소를 입력하지 않은 경우 (,,) null로 변경
+		if(inputMember.getMemberAddress().equals(",,")) {
+			inputMember.setMemberAddress(null);
+			
+		}else {
+			
+			// String.join("구분자", String[])
+			// 배열의 요소를 하나의 문자열로 변경 
+			// 단, 요소 사이에 "구분자" 추가
+			String addr = String.join("^^^", memberAddress);
+			inputMember.setMemberAddress(addr);
+		}
+		
+		// 회원가입 서비스 호출
+		int result = service.signUp(inputMember);
+		
+		// 가입성공 여부에 따라 주소 결정
+		String path ="redirect:";
+		String message = null;
+
+		if(result > 0) { //가입성공
+			path += "/"; // 메인페이지
+			message = inputMember.getMemberNickname()+"님 가입을 축하합니다.";
+		
+		}else {
+			//회원가입 페이지
+			path +="/signUp"; //상대경로
+			message = "회워가입이 실패했습니다.";
+		}
+		
+		// 리다이렉트 시 session에 잠깐 올라갔다가 내려오도록 세팅
+		ra.addFlashAttribute("message", message);
+		
+		return path;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/* 스프링 예외 처리 방법 (3종류, 우선 순위 존재, 중복 사용)
 	 * 
 	 * 1순위 : 메소드 단위로 처리 
@@ -306,7 +394,7 @@ public class MemberController {
 	 * */
 	
 	// 2순위
-	//현재 클래에서 발생하는 모든 예외을 모아서 처리
+	//현재 클래스에서 발생하는 모든 예외을 모아서 처리
 	//@ExceptionHandler(Exception.class)
 	public String exceptionHandler(Exception e, Model model) {
 		

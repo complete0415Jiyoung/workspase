@@ -98,6 +98,12 @@ MEMBER_PW= '$2a$10$WqFSjctwQEdwLBKbbXCM2O80NEc2BWT4FG26ypdZI5/iMiCP3Ydm2';
 
 COMMIT;
 
+--회원가입
+INSERT INTO "MEMBER"
+VALUES(SEQ_MEMBER_NO.NEXTVAL, 'user01@kh.or.kr', 'pass01!'
+	, '유저일', '01012341234', '06234,,서울 강남구 테헤란로 14길 6,,5층',
+	NULL, DEFAULT, DEFAULT, DEFAULT)
+
 
 
 

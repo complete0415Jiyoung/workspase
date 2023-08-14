@@ -80,7 +80,7 @@
                             </label>
 
                             <article class="signup-find-area">
-                                <a href="#">회원가입</a>
+                                <a href="/member/signUp">회원가입</a>
                                 <span>|</span>
                                 <a href="#">ID/PW 찾기</a>
                             </article>
@@ -93,13 +93,13 @@
                     <c:otherwise>
                         <article class="login-area">
 
-                            <a href="#">
+                            <a href="/myPage/profile">
                                 <img src="/resources/images/user.png" id="memberProfile">
                             </a>
 
                             <div class="my-info">
                                 <div>
-                                    <a href="#" id="nickname">${sessionScope.loginMember.memberNickname}</a>
+                                    <a href="/myPage/info" id="nickname">${sessionScope.loginMember.memberNickname}</a>
 
                                     <a href="/member/logout" id="logoutBtn">로그아웃</a>
                                 </div>   
@@ -122,6 +122,7 @@
 
     <%-- footer --%>
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
+    <%--main.js추가--%>
+    <script src="/resources/js/main.js"></script>
 </body>
 </html>
