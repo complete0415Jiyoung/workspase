@@ -33,7 +33,7 @@ public class MainController {
 		//Spring 에서 forword하는 방법!!
 		
 		// -> webapp폴더를 기준으로 
-		// 요청 위임할 JAP파일 경로를 리턴하면 된다
+		// 요청 위임할 JSP파일 경로를 리턴하면 된다
 		
 		//단, servlet - context.xml에 작성된
 		// prefix, suffix 부분을 제외하고 작성

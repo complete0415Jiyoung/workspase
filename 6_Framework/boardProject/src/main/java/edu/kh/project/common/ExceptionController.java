@@ -11,7 +11,7 @@ public class ExceptionController {
 	@ExceptionHandler(Exception.class)
 	public String exceptionHandler(Exception e, Model model) {
 
-		//Exception e : 예외 정보를 담고 있는 객체
+		// Exception e : 예외 정보를 담고 있는 객체
 		// Model model : 데이터 전달용 객체 (request scope가 기본)
 
 		e.printStackTrace();

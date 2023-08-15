@@ -303,7 +303,7 @@ public class MemberController {
 	public String signUp() {
 		
 		// /WEB-INF/views/member/signUp.jsp forward(요청위임)
-		// -> ViewResovler 가 prㄷfix , suffix 를 리턴 값 앞 뒤에 붙임
+		// -> ViewResovler 가 prefix , suffix 를 리턴 값 앞 뒤에 붙임
 		return "member/signUp";
 	}
 	
