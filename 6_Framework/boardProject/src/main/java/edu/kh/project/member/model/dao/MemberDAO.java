@@ -11,7 +11,7 @@ import edu.kh.project.member.model.dto.Member;
 public class MemberDAO {
 	
 	
-	// SqlSessionTemplate9마이바티 객체) DI
+	// SqlSessionTemplate(마이바티 객체) DI
 	@Autowired // 등록된 Bean중애서 SqlSessionTemplate 타입의 Bean을 주입
 	private SqlSessionTemplate sqlSession;
 	
@@ -44,7 +44,7 @@ public class MemberDAO {
 		
 //		return sqlSession.insert("1)namespace.id",2) inputmember);
 		
-		// inser 성공한 행의 개수 반환
+		// insert 성공한 행의 개수 반환
 		return sqlSession.insert("memberMapper.signUp",inputMember);
 	}
 
