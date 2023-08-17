@@ -97,6 +97,18 @@
 			<version>5.7.1</version>
 		</dependency>
 
+		<!-- Jackson Databind  -->
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.14.2</version>
+		</dependency>
+
+
+
+
+
 
 		<!-- Spring 모듈 -->
 		<dependency>
@@ -198,6 +210,12 @@
 			<version>${org.springframework-version}</version>
 			<scope>test</scope>
 		</dependency>
+
+
+
+
+
+
 	</dependencies>
 
 	<!-- build : 프로젝트 빌드 시 사용되는 플러그인 추가 및 버전 정보 설정 -->

@@ -165,7 +165,7 @@ public class MyPageController {
 			// - 메인페이지로 redirect
 			path += "/";
 			// - 로그아웃 
-			status.isComplete();
+			status.setComplete();
 			// - 쿠키 삭제 
 			Cookie cookis = new Cookie("saveId", "");
 			// 같은 쿠키가 이미 존재한다면 덮어쓰기 된다

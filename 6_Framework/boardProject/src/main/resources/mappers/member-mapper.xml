@@ -14,7 +14,7 @@
 		
 		-속성 
 		 Type : 연결할 DTO (패키지명 + 클래스 또는 별칭)
-		 id : 만들어진 resultMap을 지칭할 식별면(이름)
+		 id : 만들어진 resultMap을 지칭할 식별명(이름)
 		 
 		 <id> 태그 : PK 역할 컬럼 - 필드 매핑
 		 <result>태그 <id> 제외 나머지

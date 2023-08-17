@@ -32,18 +32,18 @@
                 
                 --%>
 
-                <form action="info" method="POST" name="myPageFrm">
+                <form action="info" method="POST" name="myPageFrm" id ="updateInfo">
 
                     <div class="myPage-row">
                         <label>닉네임</label>
                         <input type="text" name="memberNickname"  maxlength="10" 
-                                value="${loginMember.memberNickname}">
+                                value="${loginMember.memberNickname}" id="memberNickname">
                     </div>
 
                     <div class="myPage-row">
                         <label>전화번호</label>
                         <input type="text" name="memberTel"  maxlength="11" 
-                                value="${loginMember.memberTel}">
+                                value="${loginMember.memberTel}" id="memberTel">
                     </div>
 
                     <div class="myPage-row info-title">
@@ -113,6 +113,6 @@
             }).open();
         }
     </script>
-    
+    <script src="/resources/js/myPage/myPage.js"></script>
 </body>
 </html>
