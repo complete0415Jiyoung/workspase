@@ -2,6 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="ajaxMapper">
 
+	<resultMap type="Member" id="member_rm">
+		
+		<!-- DB의 기본키 (복합키면 여러개 작성)-->
+		<id property="memberNo" column="MEMBER_NO"/>
+		
+		<!-- DB의 일반 컬럼들 -->
+		<result property="memberEmail" column="MEMBER_EMAIL"/>
+		<result property="memberPw" column="MEMBER_PW"></result>
+		<result property="memberNickname" column="MEMBER_NICKNAME"/>
+		<result property="memberTel" column="MEMBER_TEL"/>
+		<result property="memberAddress" column="MEMBER_ADDR"/>
+		<result property="profileImage" column="PROFILE_IMG"/>
+		<result property="enrollDate" column="ENROLL_DATE"/>
+		<result property="memberDeleteFlag" column="MEMBER_DEL_FL"/>
+		<result property="authority" column="AUTHORITY"/>
+	</resultMap>
+
 	<!-- 이메일로 닉네임조회 -->
 	<select id="selectNickname" parameterType="string" resultType="string">
 		SELECT MEMBER_NICKNAME
@@ -34,5 +51,33 @@
 		WHERE MEMBER_NICKNAME = #{nickname}
 		AND MEMBER_DEL_FL = 'N'
 	</select>
+	
+	
+	<!-- RESULT Map은 언제 사용 
+		조회 결과 컬럼명과 DTO의 필드명이 다를 때 사용
+	
+	-->
+	<!-- 이메일로 회원 정보 조회 -->
+	<select id="selectMember" resultMap="member_rm" >
+		SELECT  MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME, MEMBER_TEL ,
+    		NVL(MEMBER_ADDR, '미작성') AS MEMBER_ADDR,
+    		TO_CHAR(ENROLL_DATE,'YYYY"년"MM"분" DD"일" HH24"시" MI"분" SS"초" ') AS ENROLL_DATE
+		FROM MEMBER
+		WHERE MEMBER_EMAIL =#{email}
+		AND MEMBER_DEL_FL= 'N'
+	</select>
+	<!-- 이메일이 일부라도 일치하는 모든 회원 조회 -->
+	<select id="selectMemberList" resultMap="member_rm" parameterType="list" >
+		SELECT  MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME
+		FROM MEMBER
+		WHERE MEMBER_EMAIL LIKE '%${input}%'
+		AND MEMBER_DEL_FL= 'N'
+		ORDER BY MEMBER_NO
+	</select>
+	
+	<!-- ${input}을 사용한 이유 ?
+		#{}으로 사용하면 '%'값'%' 형태로 
+		SQL이 정상적인 형태가 아니게 되기 때문에 
+		'값'을 감싸고 있는 ''제거하기 위해 -->
 
 </mapper>

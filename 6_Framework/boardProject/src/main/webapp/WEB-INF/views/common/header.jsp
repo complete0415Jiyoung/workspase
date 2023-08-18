@@ -91,10 +91,21 @@
 
 <nav>
     <ul>
-        <li><a href="#">공지사항</a></li>
+        <%-- <li><a href="#">공지사항</a></li>
         <li><a href="#">자유 게시판</a></li>
         <li><a href="#">질문 게시판</a></li>
         <li><a href="#">FAQ</a></li>
-        <li><a href="#">1:1문의</a></li>
+        <li><a href="#">1:1문의</a></li> --%>
+
+
+        <%-- interceptor을 이용해서 조회디ㅗㄴ boardTypeList를 
+            application scope에서 얻어와 화면에 출력 --%>
+        <c:forEach items="${boardTypeList}" var="boardType">
+            <li>
+                <a href="#">${boardType.BOARD_NAME}</a>
+            </li>
+        </c:forEach>
+
+
     </ul>
 </nav>

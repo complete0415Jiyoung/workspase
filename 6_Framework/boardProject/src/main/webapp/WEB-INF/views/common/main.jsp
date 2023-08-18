@@ -37,6 +37,34 @@
                 <button id="btn1">조회</button>
                 <h4 id="result1"></h4>
 
+                <hr>
+                <h3>이메일을 입력받아 일치하는 회원의 정보 조회</h3>
+                email: <input type="text" id="inputEmail">
+                <button id="btn2">조회</button>
+                <ul id="result2"></ul>
+
+
+                <hr>
+                <h3>이메일이 일부라도 일치하는 모든 회원 조회</h3> 
+                검색어 : <input type="text" id="input">
+                <button id="btn3">조회</button>
+                <table border="1" style="border-collapse: collapse;">
+                    <thead >
+                        <tr>
+                            <th>회원번호</th>
+                            <th>이메일</th>
+                            <th>닉네임</th>
+                        </tr>
+                    </thead>
+                    <tbody id="result3">
+                        <tr>
+                            <td>1</td>
+                            <td>user01@kh.or.kr</td>
+                            <td>유저일</td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
             </section>
 
             <section class="content-2">
