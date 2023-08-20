@@ -377,8 +377,8 @@ sendAuthKeyBtn.addEventListener("click", function(){
     if(checkObj.memberEmail){ // 중복이 아닌 이메일인 경우
 
 
-
-
+        //******************************************************************* */
+        
         /* fetch() API 방식 ajax */
         fetch("/sendEmail/signUp?email="+memberEmail.value)
         .then(resp => resp.text())
@@ -394,7 +394,8 @@ sendAuthKeyBtn.addEventListener("click", function(){
             console.log("이메일 발송 중 에러 발생");
             console.log(err);
         });
-       
+        
+        //******************************************************************* */
 
 
         alert("인증번호가 발송 되었습니다.");

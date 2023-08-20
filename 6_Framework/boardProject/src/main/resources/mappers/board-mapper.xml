@@ -2,12 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardMapper">
 	
-	<!-- resulttype이 ""map인 경우
-		K: 컬럼명 (BOARD_CODE , BOARD_NAME)
-		V: 컬럼 값(	  1 	,   공지사항	)
+	<!-- resultType이 "map"인 경우
+		K: 컬럼 명 (BOARD_CODE , BOARD_NAME)
+		V: 컬럼 값 (	  1 	 ,   공지사항	 )
 	 -->
-	
-	
 	
 	<!-- 게시판 종류목록 조회 -->
 	<select id="selectBoardTypeList" resultType="map">

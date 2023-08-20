@@ -27,7 +27,7 @@ public class BoardTypeInterceptor implements HandlerInterceptor {
 	 * 
 	 * */
 	
-	// 전처리
+	// 전처리 Dispatcher Servlet -> Controller 사이 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
@@ -51,6 +51,7 @@ public class BoardTypeInterceptor implements HandlerInterceptor {
 		
 		
 		return HandlerInterceptor.super.preHandle(request, response, handler);
+						//Dispatcher Servlet -> Controller 사이
 	}
 
 	@Override
