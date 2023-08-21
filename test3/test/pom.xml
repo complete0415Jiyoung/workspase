@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.kh</groupId>
 	<artifactId>test</artifactId>
-	<name>test3</name>
+	<name>test</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -92,12 +92,7 @@
 		</dependency>
 
 		<!-- Servlet -->
-		<!--<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>  -->
+		<!-- Servlet 버전을 4.0으로 변경 -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -105,7 +100,6 @@
 			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
@@ -125,13 +119,6 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-
-
-		
-
-
-
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -164,10 +151,16 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.2.2</version>
+				<version>1.2.1</version>
 				<configuration>
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
+			</plugin>
+			<!-- Could not initialize class org.apache.maven.plugin.war.util.WebappStructureSerializer -->
+			<!-- 메이븐 구성 문제로 인한 pom.xml 오류 발생 시 해결 -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
 			</plugin>
 		</plugins>
 	</build>

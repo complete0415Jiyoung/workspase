@@ -98,13 +98,14 @@
         <li><a href="#">1:1문의</a></li> --%>
 
 
-        <%-- interceptor을 이용해서 조회디ㅗㄴ boardTypeList를 
+        <%-- interceptor을 이용해서 조회된 boardTypeList를 
             application scope에서 얻어와 화면에 출력 --%>
         <c:forEach items="${boardTypeList}" var="boardType">
             <li>
-                <a href="#">${boardType.BOARD_NAME}</a>
+                <a href="/board/${boardType.BOARD_CODE}">${boardType.BOARD_NAME}</a>
             </li>
         </c:forEach>
+        
 
 
     </ul>

@@ -373,4 +373,158 @@ CREATE SEQUENCE SEQ_BOARD_NO NOCACHE; -- 게시글 번호
 CREATE SEQUENCE SEQ_IMG_NO NOCACHE; -- 게시글 이미지 번호
 CREATE SEQUENCE SEQ_COMMENT_NO NOCACHE; -- 댓글 번호
 
+-------------------------------------------------------------------------
+-- BOARD 테이블 샘플 데이터 삽입(PL/SQL)
+BEGIN
+   FOR I IN 1..1500 LOOP
+      INSERT INTO BOARD 
+      VALUES( SEQ_BOARD_NO.NEXTVAL,
+              SEQ_BOARD_NO.CURRVAL || '번째 게시글',
+              SEQ_BOARD_NO.CURRVAL || '번째 게시글 내용 입니다.',
+              DEFAULT, DEFAULT, DEFAULT, DEFAULT, 1, 
+              CEIL(DBMS_RANDOM.VALUE(0,5))
+      );
+   END LOOP;
+END;
+/
+-- 회원번호 있는 지 조회
+SELECT * FROM MEMBER WHERE MEMBER_NO=1;
+-- BOARD_TYPE에 컬럼 몇개 인지 조회 
+SELECT * FROM BOARD_TYPE;
 
+SELECT COUNT(*) FROM BOARD;
+
+COMMIT;
+
+-- BOARD_CODE가 1인 (공지사항)인 게시글을 최신 순으로 조회
+-- 단, 삭제 글 제외
+SELECT * FROM BOARD 
+WHERE BOARD_CODE =1
+AND BOARD_DEL_FL = 'N'
+ORDER BY BOARD_NO DESC;
+
+-- COMMENT 테이블 샘플 데이터 삽입(PL/SQL)
+BEGIN
+   FOR I IN 1..1000 LOOP
+      INSERT INTO "COMMENT" 
+      VALUES(SEQ_COMMENT_NO.NEXTVAL, 
+            SEQ_COMMENT_NO.CURRVAL || '번째 댓글',
+            DEFAULT, DEFAULT,
+             CEIL(DBMS_RANDOM.VALUE(0,1500)),
+             1, NULL);
+   END LOOP;
+END;
+/
+
+SELECT * FROM "COMMENT";
+COMMIT;
+--게시글 샘플 이미지 넣기 
+INSERT INTO BOARD_IMG
+VALUES (SEQ_IMG_NO.NEXTVAL, '/resources/images/board/',
+    '20230821141913_00001.png', '빵빵이1', 0, 1498);
+
+INSERT INTO BOARD_IMG
+VALUES (SEQ_IMG_NO.NEXTVAL, '/resources/images/board/',
+    '20230821141913_00002.png', '빵빵이2', 0, 1497);
+
+INSERT INTO BOARD_IMG
+VALUES (SEQ_IMG_NO.NEXTVAL, '/resources/images/board/',
+    '20230821141913_00003.png', '빵빵이3', 0, 1488);
+    
+INSERT INTO BOARD_IMG
+VALUES (SEQ_IMG_NO.NEXTVAL, '/resources/images/board/',
+    '20230821141913_00004.png', '빵빵이5', 0, 1495);
+    
+INSERT INTO BOARD_IMG
+VALUES (SEQ_IMG_NO.NEXTVAL, '/resources/images/board/',
+    '20230821141913_00005.png', '빵빵이4', 0, 1479);
+    
+COMMIT;
+    
+SELECT BOARD_NO FROM BOARD
+WHERE BOARD_CODE =1
+ORDER BY 1 DESC;
+
+-----------------------------------------
+--특정게시판에 삭제 되지 않은 게시글 수 조회
+SELECT COUNT(*) FROM BOARD
+WHERE BOARD_DEL_FL = 'N'
+AND BOARD_CODE =1;
+
+-- 특정게시판에 목록조회
+-- 1. 최신순서 
+-- 2. 1page(1~10행)
+-- 3. 삭제된 글 제외
+
+-- 마이바티스 O
+--> RowBounds 객체 이용
+SELECT  BOARD_NO, BOARD_TITLE, MEMBER_NICKNAME,
+         TO_CHAR(B_CREATE_DATE, 'YYYY-MM-DD') B_CREATE_DATE,
+         READ_COUNT
+FROM "BOARD"
+JOIN "MEMBER" USING(MEMBER_NO)
+WHERE BOARD_DEL_FL = 'N'
+AND BOARD_CODE = 1
+ORDER BY BOARD_NO DESC;
+
+
+
+
+-- 마이바티스가 x 기본으로 해야하는 
+-- 1~10행 조회
+SELECT * FROM(SELECT A.* FROM (
+    SELECT  ROWNUM NUM, BOARD_NO, BOARD_TITLE, MEMBER_NICKNAME,
+             TO_CHAR(B_CREATE_DATE, 'YYYY-MM-DD') B_CREATE_DATE,
+            READ_COUNT
+    FROM "BOARD"
+    JOIN "MEMBER" USING(MEMBER_NO)
+    WHERE BOARD_DEL_FL = 'N'
+    AND BOARD_CODE = 1
+    ORDER BY BOARD_NO DESC
+    ) A 
+)
+WHERE NUM BETWEEN 11 AND 20;
+
+
+
+SELECT * FROM(
+    SELECT A.* FROM(
+        SELECT ROWNUM NUM, BOARD_NO, BOARD_TITLE, MEMBER_NICKNAME,
+            TO_CHAR(B_CREATE_DATE, 'YYYY-MM-DD') B_CREATE_DATE,
+            READ_COUNT
+        FROM "BOARD"
+        JOIN "MEMBER" USING(MEMBER_NO)
+        WHERE BOARD_DEL_FL = 'N'
+        AND BOARD_CODE = 1
+        ORDER BY BOARD_NO DESC
+    ) A
+)
+WHERE NUM BETWEEN 1 AND 10;
+
+
+
+SELECT BOARD_NO, BOARD_TITLE, MEMBER_NICKNAME, READ_COUNT, 
+         
+            CASE  
+               WHEN SYSDATE - B_CREATE_DATE < 1/24/60
+               THEN FLOOR( (SYSDATE - B_CREATE_DATE) * 24 * 60 * 60 ) || '초 전'
+               WHEN SYSDATE - B_CREATE_DATE < 1/24
+               THEN FLOOR( (SYSDATE - B_CREATE_DATE) * 24 * 60) || '분 전'
+               WHEN SYSDATE - B_CREATE_DATE < 1
+               THEN FLOOR( (SYSDATE - B_CREATE_DATE) * 24) || '시간 전'
+               ELSE TO_CHAR(B_CREATE_DATE, 'YYYY-MM-DD')
+            END B_CREATE_DATE,
+         (SELECT COUNT(*) FROM "COMMENT" C
+          WHERE C.BOARD_NO = B.BOARD_NO) COMMENT_COUNT,
+          
+         (SELECT COUNT(*) FROM BOARD_LIKE L
+          WHERE L.BOARD_NO = B.BOARD_NO) LIKE_COUNT,
+          
+         (SELECT IMG_PATH || IMG_RENAME FROM BOARD_IMG I
+         WHERE I.BOARD_NO = B.BOARD_NO
+         AND IMG_ORDER = 0) THUMBNAIL
+      FROM "BOARD" B
+      JOIN "MEMBER" USING(MEMBER_NO)
+      WHERE BOARD_DEL_FL = 'N'
+      AND BOARD_CODE = 1
+      ORDER BY BOARD_NO DESC
