@@ -11,6 +11,10 @@ import org.springframework.stereotype.Repository;
 import edu.kh.project.board.model.dto.Board;
 import edu.kh.project.board.model.dto.Pagination;
 
+/**
+ * @author user1
+ *
+ */
 @Repository
 public class BoardDao {
 	
@@ -58,6 +62,24 @@ public class BoardDao {
 		// 3) selectList("namespace.id", 파라미터, Rowbounds)호출
 		
 		return sqlSession.selectList("boardMapper.selectBoardList", boardCode, rowBounds);
+	}
+
+
+	/** 게시글 상세조회
+	 * @param map
+	 * @return board
+	 */
+	public Board selectBoard(Map<String, Object> map) {
+		return sqlSession.selectOne("boardMapper.selectBoard", map);
+	}
+
+
+	/**좋아요 여부 확인
+	 * @param map
+	 * @return result
+	 */
+	public int boardLikeCheck(Map<String, Object> map) {
+		return sqlSession.selectOne("boardMapper.boardLikeCheck", map);
 	}
 
 }
