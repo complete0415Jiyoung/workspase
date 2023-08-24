@@ -163,7 +163,37 @@
     </main>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    
+    <%-- 누가( 로그인한 회원 번호) 어떤 게시글(현재 게시글 번호) 좋아요 클릭/취소  
+            로그인한 회원 번호 얻어오기
+            1) ajax로 session 에 있는 loginMember의 memberNO로 반환
+            2) HTML요소에 로그인한 회원의 번호를 숨겨 놓고 JS로 얻어오기
+            3) JSP 파일 제일 위에 있는 script태그에 JS + EL이용해서
+             전역변수로 선언해두기
+    --%>
+    <script>
+        // JS에서 작성 가능한 언어/ 라이브러리
+        // -> HTML, css, js, java, EL, JSTL
+        
+        // JSP 해석 순서 : Java /EL/ JSTL > HTML,CSS,JS
 
+        // 게시글 번호 전역 변수로 선언
+        const boardNo = "${board.boardNo}"
+
+        // 로그인한 회원 번호를 전역 변수로 선언
+        // 작성한 EL구문이 Null일 경우 빈칸으로 출력 되어 
+        // 변수에 값이 대입 되지 않는 문제가 발생 할 수 있음!
+        // 해결방법 :  EL 구문은 '', ""문자열로 감싸면 해결 (해석 순서!!)
+        //          -> EL 값이 null이어도 ""(빈문자열)로 출력
+        const loginMemberNo = "${loginMember.memberNo}"
+        
+        console.log(boardNo);
+        console.log(loginMemberNo);
+
+    </script>
+
+
+    <script src="/resources/js/board/boardDetail.js"></script>
 
 </body>
 </html>

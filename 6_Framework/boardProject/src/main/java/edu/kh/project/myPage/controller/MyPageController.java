@@ -1,10 +1,14 @@
 package edu.kh.project.myPage.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -13,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.project.member.model.dto.Member;
@@ -175,8 +180,6 @@ public class MyPageController {
 			resp.addCookie(cookis); // 요청 객체를 통해 클라이언트에게 전달 
 									//클라이언트 컴퓨터에 파일로 생성
 			
-			
-			
 		}else {
 			// 4. 탈퇴 실패 시 
 			// - message : 현재 비밀번호가 일치하지 않습니다. 
@@ -188,5 +191,43 @@ public class MyPageController {
 		ra.addFlashAttribute("message", message);
 		return path;
 		
-	}	
+	}
+	
+	/* MultipartFile : input type="file"로 제출된 파일을 저장하는 객체
+	 * 
+	 * [제공하는 메소드]
+	 * - transferTo() : 파일을 지정된 경로에 저장(메모리 -> HDD/SSD)
+	 * - getOriginalFileName() : 파일 원본명
+	 * - getSize() : 파일 크기
+	 * 
+	 * */
+	
+	// 프로필 이미지 수정 
+	@PostMapping("/profile")
+	public String uadateProfile(
+			@RequestParam("profileImage") MultipartFile profileImage //업로드한 파일
+			, @SessionAttribute("loginMember") Member loginMember //로그인한 회원 정보
+			, RedirectAttributes ra //리다이렉트 시 메세지 전달 
+			, HttpSession session //세션 객체
+			)throws IllegalStateException, IOException {
+		
+		// 웹접근 경로 
+		String webPath = "/resources/images/member/";
+		
+		// 실제로 이미지 파일이 저장되어야 하는 서버 컴퓨터 경로
+		String filePath = session.getServletContext().getRealPath(webPath);
+		// C:\workspace\6_Framework\boardProject\src\main\webapp\resources\image
+		
+		// 프로필 이미지 수정 서비스 호출
+		int result = service.updateProfile(profileImage, webPath, filePath, loginMember);
+		
+		String message = null;
+		if(result > 0) message ="프로필 이미지가 변경 되었습니다.";
+	
+		else message ="프로필 변경 실패.";
+		
+		ra.addFlashAttribute("message", message);
+		
+		return "redirect:profile";
+	}
 }

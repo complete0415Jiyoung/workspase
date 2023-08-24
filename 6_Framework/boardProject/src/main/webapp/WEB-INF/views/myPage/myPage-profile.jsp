@@ -31,12 +31,31 @@
                 <h1 class="myPage-title">프로필</h1>
                 <span class="myPage-subject">프로필 이미지를 변경할 수 있습니다.</span>
 
-                <form aciont="profile" method="POST" name="myPageFrm">
+                <%-- 
+                    - 파일 제출 시 무조건 POST 방식
+                    - enctype 속성 추가 
+
+                    - enctypy : form 태그 데이터가 서로로 제출 될 때 인코딩 되는 방법을 지전
+                        (POST 방식일 때만 사용 가능)
+                    - application/x-www-form-urlencoded : 모든 문자를 서버로 전송 하기 전에 인코딩
+                        (form태그 기본 값)
+                    - multipart/form-data : 모든 문자를 인코딩 하지 안음
+                        (원본 데이터가 유지 되어 이미지, 파일들을 서버로 전송할 수 있음)
+                --%>
+
+
+                <form action="profile" method="POST" name="myPageFrm" id ="profileFrm" enctype="multipart/form-data">
 
                     <div class="profile-image-area">
 
-                        <img src="/resources/images/user.png" id="profileImage">
-
+                        <%-- 프로필 이미지 가 없으면 기본이미지 --%>
+                        <c:if test="${empty loginMember.profileImage}" >
+                            <img src="/resources/images/user.png" id="profileImage">
+                        </c:if>
+                        <%-- 프로필 이미지 가 있으면 이미지 --%>
+                        <c:if test="${!empty loginMember.profileImage}" >
+                            <img src = "${loginMember.profileImage}" id="profileImage">
+                        </c:if>
                     </div>
                     <span id="deleteImage">x</span>
 
@@ -48,12 +67,12 @@
                     
                     <div class="myPage-row">
                         <label>이메일</label>
-                        <span>로그인 회원 이메일</span>
+                        <span>${loginMember.memberEmail}</span>
                     </div>
                     
                     <div class="myPage-row">
                         <label>가입일</label>
-                        <span>로그인 회원 가입일</span>
+                        <span>${loginMember.enrollDate}</span>
                     </div>
                     
                 </form>
@@ -67,6 +86,8 @@
     </main>
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    
+    <script src="/resources/js/myPage/myPage.js"></script>
 
 </body>
 </html>

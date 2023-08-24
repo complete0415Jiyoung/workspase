@@ -124,7 +124,15 @@
                         <article class="login-area">
 
                             <a href="/myPage/profile">
+                                
+                                <c:if test="${empty loginMember.profileImage}" >
                                 <img src="/resources/images/user.png" id="memberProfile">
+                                </c:if>
+                                <c:if test="${!empty loginMember.profileImage}" >
+                                <img src="${loginMember.profileImage}"  id="memberProfile">
+                                </c:if>
+                                
+                                
                             </a>
 
                             <div class="my-info">

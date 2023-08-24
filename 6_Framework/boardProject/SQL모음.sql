@@ -603,3 +603,19 @@ WHERE BOARD_NO =1498 --게시글번호
 AND MEMBER_NO = 1--로그인한회원 번호
 ;
 
+--좋아요 개수 조회
+SELECT COUNT(*) FROM BOARD_LIKE 
+WHERE BOARD_NO = 1498;
+
+-- 조회수 증가 
+UPDATE BOARD SET
+READ_COUNT= READ_COUNT +1 
+WHERE BOARD_NO =1498;
+
+commit;
+
+----------------------------------------------------------------------------
+--프로필 이미지 수정 
+UPDATE MEMBER SET
+PROFILE_IMG =#{ }
+ WHERE MEMBER_NO = #{회원번호};

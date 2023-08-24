@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.SessionAttributes;
-
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ncs.test.member.model.service.MemberService;
@@ -20,35 +20,35 @@ import com.ncs.test.member.model.service.MemberService;
 import com.ncs.test.member.model.vo.Member;
 
 @Controller
+public class MemberController { 
 
-public class MemberController {
+	@Autowired
+	private MemberService memberService;
 
-@Autowired
+	@RequestMapping("login")
 
-private MemberService memberService;
+	public String memberLogin(Member member, Model model, HttpServletRequest request) {
 
-@RequestMapping("login")
+		Member loginMember = memberService.loginMember(member);
 
-public String memberLogin(Member member, Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
 
-Member loginMember = memberService.loginMember(member);
+		if(loginMember == null) {
 
-HttpSession session = request.getSession();
+			model.addAttribute("msg", "로그인 실패");
 
-if(loginMember == null) {
+			return "common/errorPage";
 
-model.addAttribute("msg", "로그인 실패");
+		}else {
 
-return "common/errorPage";
+			session.setAttribute("loginMember", loginMember);
 
-}else {
+			return "redirect:/";
 
-session.setAttribute("loginMember", loginMember);
+		}
+		
+		
 
-return "redirect:/";
-
-}
-
-}
+	}
 
 }
