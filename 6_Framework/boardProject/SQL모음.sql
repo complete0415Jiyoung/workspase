@@ -619,3 +619,57 @@ commit;
 UPDATE MEMBER SET
 PROFILE_IMG =#{ }
  WHERE MEMBER_NO = #{회원번호};
+
+----------------------------------------------------------
+INSERT INTO BOARD 
+      VALUES( SEQ_BOARD_NO.NEXTVAL,
+              SEQ_BOARD_NO.CURRVAL || '번째 게시글',
+              SEQ_BOARD_NO.CURRVAL || '번째 게시글 내용 입니다.',
+              DEFAULT, DEFAULT, DEFAULT, DEFAULT, 1, 
+              CEIL(DBMS_RANDOM.VALUE(0,5));
+
+-- 한번에 여러개 INSERT하기
+
+-- INSERT ALL : 여러 테이블에 동시에 INSERT하는 구문
+--> 시퀀스 생성 구문을 작성하지 못함 (탈락)
+
+-- INSERT + SUB.QUERY
+
+INSERT INTO BOARD_IMG
+SELECT SEQ_IMG_NO.NEXTVAL, A.*
+FROM(SELECT '웹접근경로'IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+            0 IMG_ORDER , 1505 BOARD_NO
+        FROM DUAL
+        
+        UNION ALL
+        
+        SELECT '웹접근경로'IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+                    1 IMG_ODER , 1505 BOARD_NO
+        FROM DUAL
+        
+        UNION ALL
+        
+        SELECT '웹접근경로'IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+                    2 IMG_ODER , 1505 BOARD_NO
+        FROM DUAL) A
+        ;
+
+SELECT * FROM BOARD_IMG ORDER BY IMG_NO DESC;
+
+ROLLBACK;
+
+SELECT '웹접근경로'IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+            0 IMG_ODER , 1505 BOARD_NO
+FROM DUAL
+
+UNION ALL
+
+SELECT '웹접근경로'IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+            1 IMG_ODER , 1505 BOARD_NO
+FROM DUAL
+
+UNION ALL
+
+SELECT '웹접근경로'IMG_PATH, '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL,
+            2 IMG_ODER , 1505 BOARD_NO
+FROM DUAL;
