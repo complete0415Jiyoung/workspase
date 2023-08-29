@@ -126,3 +126,12 @@
     font-size: 20px;
     cursor: pointer;
 }
+
+/* 삭제 버튼 */
+.delete-image{
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -55,3 +55,12 @@ boardLike.addEventListener("click", e=>{
     })//예외 발생 시 처리 할 구문
 
 })
+
+// 게시글 수정 버튼 클릭시 
+document.getElementById("updateBtn").addEventListener("click", ()=>{
+
+    // 요청 주소 - /board2/1/1507/update?cp=1 (GET방식)
+    location.href= location.pathname.replace("board","board2")
+                    + "/update"
+                    + location.search  //?ch=?
+});
