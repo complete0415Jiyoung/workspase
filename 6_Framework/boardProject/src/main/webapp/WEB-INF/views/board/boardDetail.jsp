@@ -190,8 +190,13 @@
         console.log(boardNo);
         console.log(loginMemberNo);
 
-    </script>
+        // 목록으로 
+        const boardCode = "${boardCode}"
+        //const cp = "${param.cp}"
+        //const key = "${param.key}"
+        //const query = "${param.query}"
 
+    </script>
 
     <script src="/resources/js/board/boardDetail.js"></script>
     <script src="/resources/js/board/comment.js"></script>

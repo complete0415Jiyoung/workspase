@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRange;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -85,16 +86,29 @@ public class BoardController {
 	@GetMapping("/{boardCode:[0-9]+}") // boardCode는 1자리 이상 숫자
 	public String selectBoardList(@PathVariable("boardCode") int boardCode
 			, @RequestParam(value="cp", required = false, defaultValue = "1") int cp
-			, Model model) {
+			, Model model
+			, @RequestParam Map<String, Object> paramMap //파라미터가 전부다 담겨 있음 
+			) {
 		
 		// boardCode 확인
 		//System.out.println("boardCode: "+ boardCode);
 		
-		// 게시글을 목록 조회하는 service호출 
-		Map<String, Object> map = service.selectBoardList(boardCode, cp);
-		
-		//조회 결과를 request scope에 세팅 후 forward
-		model.addAttribute("map", map);
+		if( paramMap.get("key") == null ) {//검색어가 없을 때 
+			
+			// 게시글을 목록 조회하는 service호출 
+			Map<String, Object> map = service.selectBoardList(boardCode, cp);
+			
+			//조회 결과를 request scope에 세팅 후 forward
+			model.addAttribute("map", map);
+
+		}else { //검색어가 있다 (검색 O)
+			
+			paramMap.put("boardCode", boardCode);
+			
+			Map<String , Object> map = service.selectBoardList(paramMap, cp);
+			
+			model.addAttribute("map", map);
+		}
 		
 		return "board/boardList";
 		
@@ -269,6 +283,7 @@ public class BoardController {
 		return service.like(paramMap);
 	}
 
+	
 	
 	
 	

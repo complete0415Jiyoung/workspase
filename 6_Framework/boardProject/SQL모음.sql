@@ -685,10 +685,109 @@ IMG_PATH = #{imagePath},
 IMG_ORIGINAL = #{imageOriginal},
 IMG_RENAME = #{imageReName}
 WHERE BOARD_NO = #{boardNo}
-AND IMG_ORDER= #{imageOrder}
+AND IMG_ORDER= #{imageOrder};
+------------------------------------------------------------------------
+--댓글 관련 
+
+--댓글 목록 조회 
+SELECT COMMENT_NO, COMMENT_CONTENT,
+    TO_CHAR(C_CREATE_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"')C_CREATE_DATE,
+    BOARD_NO, MEMBER_NO, MEMBER_NICKNAME, PROFILE_IMG, PARENT_NO, COMMENT_DEL_FL
+FROM "COMMENT"
+JOIN MEMBER USING(MEMBER_NO)
+WHERE BOARD_NO = 1506
+ORDER BY COMMENT_NO;
+
+SELECT * FROM BOARD
+ORDER BY BOARD_NO DESC;
 
 
+INSERT INTO "COMMENT"
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '부모 댓글1', DEFAULT, DEFAULT, 1506, 1, NULL);
 
+INSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '부모 댓글2', DEFAULT, DEFAULT, 1506, 1, NULL);
+
+INSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글1-1', DEFAULT, DEFAULT, 1506, 1, 1022);
+
+INSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글1-2', DEFAULT, DEFAULT, 1506, 1, 1022);
+
+iNSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글1-3', DEFAULT, DEFAULT, 1506, 1, 1022);
+
+
+INSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글2-1', DEFAULT, DEFAULT, 1506, 1, 1023);
+
+INSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글2-2', DEFAULT, DEFAULT, 1506, 1, 1023);
+
+iNSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글2-3', DEFAULT, DEFAULT, 1506, 1, 1023);
+
+
+INSERT INTO "COMMENT"                                     -- 게시글, 회원
+VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글2-1-1', DEFAULT, DEFAULT, 1506, 1, 1028);
+
+COMMIT;
+
+/* 계층형 쿼리(START WITH, CONNECT BY, ORDER SIBLINGS BY)
+    - 상위 타입과 하위 타입간의 관계를 계층식으로 표현 할 수 있게 하는 질의어(SELECT)
+
+    - START WITH : 상위 타입(최상위 부모)으로 사용될 행을 지정 (서브쿼리로 지정 가능)
+
+    - CONNECT BY 
+    -> 상위 타입과 하위 타입 사이의 관계를 규정
+    -> PRIOR(이전의) 연산자와 같이 사용하여
+         현재 행 이전에 상위 타입 또는 하위 타입이 있을지 규정
+
+    1) 부모 -> 자식 계층 구조
+         CONNECT BY PRIOR 자식 컬럼 = 부모 컬럼
+
+     2) 자식 -> 부모 계층 구조
+         CONNECT BY PRIOR 부모 컬럼 = 자식 컬럼
+
+    - ORDER SIBLINGS BY : 계층 구조 정렬
+
+
+    ** 계층형 쿼리가 적용 SELECT 해석 순서 **
+
+    5 : SELECT
+    1 : FROM (+JOIN)
+    4 : WHERE
+    2 : START WITH
+    3 : CONNECT BY
+    6 : ORDER SIBLINGS BY
+    
+    - WHERE절의 계층형 쿼리 보다 순서가 늦기 때문에 
+       먼저 조건을 반영하고 싶은 경우 FROM절 서브쿼리(인라인뷰)을 이용
+
+*/
+
+--댓글 목록 조회 (계층형 쿼리 적용)
+SELECT LEVEL, C.* FROM 
+(SELECT COMMENT_NO, COMMENT_CONTENT,
+    TO_CHAR(C_CREATE_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"')C_CREATE_DATE,
+    BOARD_NO, MEMBER_NO, MEMBER_NICKNAME, PROFILE_IMG, PARENT_NO, COMMENT_DEL_FL
+FROM "COMMENT"
+JOIN MEMBER USING(MEMBER_NO)
+WHERE BOARD_NO = 1507) C
+WHERE COMMENT_DEL_FL='N'
+START WITH PARENT_NO IS NULL
+CONNECT BY PRIOR COMMENT_NO= PARENT_NO 
+ORDER SIBLINGS BY COMMENT_NO
+;
+
+commit;
+
+--댓글 수정
+UPDATE "COMMENT" SET
+    COMMENT_CONTENT=""
+WHERE  COMMENT_NO=""
+
+    
 
 
 

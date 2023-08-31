@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
@@ -163,6 +164,40 @@ public class BoardController2 {
 		}else {
 			message="게시글 수정 실패";
 			path += "update";
+		}
+		ra.addFlashAttribute("message", message);		
+		
+		return path;
+	}
+	
+	
+	//게시글 삭제
+	@GetMapping("/{boardCode}/{boardNo}/delete")
+	public String boardDelete(
+					  @PathVariable("boardCode") int boardCode
+					, @PathVariable("boardNo") int boardNo
+					, Model model 
+					, RedirectAttributes ra
+					, @RequestHeader("referer") String referer
+					
+			) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("boardCode", boardCode);
+		map.put("boardNo", boardNo);
+		
+		int result = service.boardDelete(map);
+		
+		String message = null;
+		String path = "redirect:";
+
+		if(result > 0) {
+			message ="게시글이 삭제되었습니다";	
+			path +="/board/"+ boardCode;
+		}else {
+			message="게시글 삭제 실패";
+			path += "/board/"+ boardCode +"/"+boardNo;
+			//path += referer;
 		}
 		ra.addFlashAttribute("message", message);		
 		
