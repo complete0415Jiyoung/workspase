@@ -402,6 +402,12 @@
       ORDER BY BOARD_NO DESC
 	</select>
 	
+	<!-- 이미지 목록 조회 -->
+	<select id="selectImageListAll" resultType="string">
+		SELECT IMG_RENAME FROM BOARD_IMG
+		
+	</select>
+	
 	
 	
 </mapper>

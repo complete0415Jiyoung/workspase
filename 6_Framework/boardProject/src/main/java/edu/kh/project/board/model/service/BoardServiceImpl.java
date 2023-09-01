@@ -129,4 +129,10 @@ public class BoardServiceImpl implements BoardService{
 
 		return map;
 	}
+	
+	//DB이미지 파일 목록 조회
+	@Override
+	public List<String> selectImageList() {
+		return dao.selectImageList();
+	}
 }
