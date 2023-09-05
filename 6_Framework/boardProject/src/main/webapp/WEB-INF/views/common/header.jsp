@@ -108,7 +108,11 @@
                 <a href="/board/${boardType.BOARD_CODE}">${boardType.BOARD_NAME}</a>
             </li>
         </c:forEach>
-        
+
+        <%-- 로그인 했을 때만 채팅이 보여짐 --%>
+        <c:if test="${!empty loginMember}" >
+        <li><a href="/chatting">채팅</a></li>
+        </c:if>
 
 
     </ul>

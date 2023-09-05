@@ -190,3 +190,36 @@ btn3.addEventListener("click", ()=>{
     })
     .catch(err => console.log(err))
 })
+
+//----------------------------
+// 웹소켓 테스트
+
+//1. SockJS라이브러리 추가
+
+// 2. SockJS를 이용하여  
+let testSock = new SockJS("/testSock/");
+
+function sendMessage(name, str){
+    //매개 변수를 JS에 저장
+    let obj={}; // 비어 있는 객체
+
+    obj.name= name; // 객체에 일치하는 key가 없다면 자동으로 추가
+    obj.str= str;
+
+    // console.log(obj);
+
+    //웹소켓 연결된 곳으로 메세지 전달
+    testSock.send(JSON.stringify(obj));
+                //JS객체 -> JSON
+}
+
+// 웹소켓 객체 (testSock)가 서버로 부터 전달 받은 메세지가 있을 경우
+testSock.onmessage = e => {
+    // e : 이벤트 객체
+    // e.data : 전달받은 메세지(JSON)
+
+    let obj = JSON.parse(e.data); //JAON-> js객체
+
+    console.log(`보낸 사람 :  ${obj.name} / ${obj.str}`);
+
+}
