@@ -87,13 +87,13 @@ public class OpenAPIController {
 		//1. 작성된 url 정보를 넣어 URL 객체 생성
 		URL requestUrl = new URL(url);
 
-		//2. 생성된 URL 객체로 URLCpnnection 생성
+		//2. 생성된 URL 객체로 URLConnection 생성
 		HttpURLConnection urlConn = (HttpURLConnection)requestUrl.openConnection();
 
 		//3. 요청 시 필요한 Header 설정
 		urlConn.setRequestMethod("GET");
 
-		//4. 해당 OpenAPI 서버로 요청 후 입력스트립을 통해서 응답객체 얻어오기
+		//4. 해당 OpenAPI 서버로 요청 후 입력스트림을 통해서 응답객체 얻어오기
 		BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
 
 		String responseText ="";
@@ -128,14 +128,14 @@ public class OpenAPIController {
 		//1. 작성된 url 정보를 넣어 URL 객체 생성
 		URL requestUrl = new URL(url);
 
-		//2. 생성된 URL 객체로 URLCpnnection 생성
+		//2. 생성된 URL 객체로 URLConnection 생성
 		HttpURLConnection urlConn = (HttpURLConnection)requestUrl.openConnection();
 		
 		
 		//3. 요청 시 필요한 Header 설정
 		urlConn.setRequestMethod("GET");
 
-		//4. 해당 OpenAPI 서버로 요청 후 입력스트립을 통해서 응답객체 얻어오기
+		//4. 해당 OpenAPI 서버로 요청 후 입력스트림을 통해서 응답객체 얻어오기
 		BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
 
 		String responseText ="";

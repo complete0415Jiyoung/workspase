@@ -125,8 +125,8 @@
 							// console.log($(result).find("item"))
 
 							// xml형식의 응답데이터를 받았을 때 
-							// 1. 넘겨 받은 데이터를 Jquesry화 시킨 후에
-							//   응답데이터 안에 실제 데이터가 담겨 잇는 요소를 선택해 준다
+							// 1. 넘겨 받은 데이터를 Jquery화 시킨 후에
+							//   응답데이터 안에 실제 데이터가 담겨 있는 요소를 선택해 준다
 
 							const itemArr = $(result).find("item");
 							// 2. 반복문을 통해 실제 데이터가 담긴 요소들에 접근해서 동적으로 요소 만들기
@@ -137,23 +137,16 @@
 								console.log($(item).find("stationName")
 										.text())
 
-								value += "<tr>" + "<td>"
-										+ $(item).find("stationName")
-												.text() + "</td>" + "<td>"
-										+ $(item).find("dataTime").text()
-										+ "</td>" + "<td>"
-										+ $(item).find("khaiValue").text()
-										+ "</td>" + "<td>"
-										+ $(item).find("pm10Value").text()
-										+ "</td>" + "<td>"
-										+ $(item).find("so2Value").text()
-										+ "</td>" + "<td>"
-										+ $(item).find("coValue").text()
-										+ "</td>" + "<td>"
-										+ $(item).find("no2Value").text()
-										+ "</td>" + "<td>"
-										+ $(item).find("o3Value").text()
-										+ "</td>" + "</tr>"
+								value += "<tr>" 
+										+ "<td>"+ $(item).find("stationName").text() + "</td>"
+										+ "<td>"+ $(item).find("dataTime").text()+ "</td>" 
+										+ "<td>"+ $(item).find("khaiValue").text()+ "</td>" 
+										+ "<td>"+ $(item).find("pm10Value").text()+ "</td>" 
+										+ "<td>"+ $(item).find("so2Value").text()+ "</td>" 
+										+ "<td>"+ $(item).find("coValue").text()+ "</td>" 
+										+ "<td>"+ $(item).find("no2Value").text()+ "</td>" 
+										+ "<td>"+ $(item).find("o3Value").text()+ "</td>" 
+										+ "</tr>"
 
 							})
 
