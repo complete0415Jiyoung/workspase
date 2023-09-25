@@ -58,6 +58,7 @@ public class BoardController2 {
 			, RedirectAttributes ra
 			, HttpSession session) throws IllegalStateException, IOException{
 		
+		System.out.println("board.getImageList()!!!!! :::"+board.getImageList());
 		
 		// 파라미터 : 제목, 내용, 파일(0~5개)
 		// 파일저장 경로 : httpSession
@@ -78,11 +79,12 @@ public class BoardController2 {
 		// 2. boardCode도 board에 세팅
 		board.setBoardCode(boardCode);
 		
-		// 3. 업로드된 이밎 서버에 실제로 저장되는 경로
+		// 3. 업로드된 이미지 서버에 실제로 저장되는 경로
 		//    + 웹에서 요청 시 이미지를 볼 수 있는 경로
 		String webPath ="/resources/images/board/";
 		String filePath = session.getServletContext().getRealPath(webPath);
 
+		System.out.println("im!!!!!!!!!!! ::"+ images);
 		// 게시글 삽입을 하는 서비스 호출 후 삽입된 게시글의 번호 반환 받기
 		int boardNo = service.boardInsert(board, images, webPath, filePath);
 		
